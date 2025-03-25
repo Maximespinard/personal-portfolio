@@ -1,1 +1,13 @@
 @import 'tailwindcss';
+
+@layer base {
+}
+
+body {
+  color: white;
+}
+
+@theme {
+  --color-navbar: #1a0b2e;
+  --color-background: #11071f;
+}
