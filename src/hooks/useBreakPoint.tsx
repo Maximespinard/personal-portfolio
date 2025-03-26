@@ -2,7 +2,7 @@ import { useMediaQuery } from 'react-responsive';
 
 const useBreakPoint = () => {
   const isMobile = useMediaQuery({
-    query: '(max-width: 1000px)',
+    query: '(max-width: 1024px)',
   });
 
   return { isMobile };

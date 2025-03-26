@@ -9,5 +9,8 @@ body {
 
 @theme {
   --color-navbar: #1a0b2e;
-  --color-background: #11071f;
+  --color-main-background: #11071f;
+  --color-main-purple: #7127ba;
+
+  --text-tiny: 0.65rem;
 }

@@ -6,7 +6,7 @@ import useBreakPoint from '../hooks/useBreakPoint';
 const NavBar = () => {
   const { isMobile } = useBreakPoint();
 
-  return <nav>{isMobile ? <NavMobile /> : <NavDesktop />}</nav>;
+  return <nav>{isMobile ? <NavMobile /> : <NavDesktop />}</nav>; // TODO: Sticky NavBar
 };
 
 export default NavBar;
