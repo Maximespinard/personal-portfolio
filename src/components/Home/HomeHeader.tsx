@@ -4,9 +4,9 @@ import elipse from '../../assets/elipse.png';
 
 const HomeHeader = () => {
   return (
-    <div className="container font-mono mt-10">
-      <div className="flex flex-col-reverse sm:flex-row items-center ">
-        <div className="lg:ml-8 relative flex flex-col items-center sm-8 lg:sm-0 order-last sm:order-first">
+    <div className="container mt-10">
+      <div className="flex flex-col sm:flex-row items-center">
+        <div className="mt-12 lg:ml-8 relative flex flex-col items-center order-last sm:order-first">
           <img
             src={meIcon}
             alt="Maxime Spinard"
@@ -16,9 +16,9 @@ const HomeHeader = () => {
             <Arrow />
           </span>
         </div>
-        <div className="sm:ml-8 sm:relative mt-10">
+        <div className="sm:ml-8 sm:relative mt-5">
           <div className="flex flex-col ">
-            <span className="text-base sm:absolute sm:-top-32 ">
+            <span className="text-base sm:absolute sm:-top-24 ">
               Hello! I am
               <span className="text-main-purple"> Maxime Spinard</span>
             </span>

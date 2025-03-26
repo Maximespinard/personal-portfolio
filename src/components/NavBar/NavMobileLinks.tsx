@@ -6,7 +6,7 @@ interface NavMobileLinksProps {
 
 const NavMobileLinks: React.FC<NavMobileLinksProps> = ({ toggleDrawer }) => {
   return (
-    <ul className="p-4 flex flex-col font-mono">
+    <ul className="p-4 flex flex-col">
       <li className="mb-4">
         <NavLink
           to="/"
