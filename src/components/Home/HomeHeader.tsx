@@ -18,14 +18,14 @@ const HomeHeader = () => {
         </div>
         <div className="sm:ml-8 sm:relative mt-5">
           <div className="flex flex-col ">
-            <span className="text-base sm:absolute sm:-top-24 ">
+            <span className="text-base sm:absolute sm:-top-12 md:-top-20 lg:-top-24 ">
               Hello! I am
               <span className="text-main-purple"> Maxime Spinard</span>
             </span>
             <div className="mt-5 sm:mt-0 sm:space-y-2">
               <p className="text-sm underline lg:text-base">A Developer who</p>
               <h2
-                className="text-3xl font-bold lg:text-5xl"
+                className="text-3xl font-bold lg:text-5xl whitespace-nowrap"
                 role="heading"
                 aria-level={2}
               >
