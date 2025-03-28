@@ -9,7 +9,7 @@ function App() {
       <header>
         <NavBar />
       </header>
-      <main className="bg-main-background min-h-screen px-6 py-2 sm:px-20 sm:py-32">
+      <main className="bg-main-background min-h-screen py-6 px-10 sm:p-20 md:px-30">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/journey" element={<Journey />} />
