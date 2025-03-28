@@ -2,13 +2,29 @@ import coffeeIcon from '../assets/icons/coffee-icon.png';
 import lightBall from '../assets/icons/lightball.png';
 import thing from '../assets/icons/thing.png';
 
+import CssIcon from '../assets/icons/stacks/css.svg';
+import ExpressIcon from '../assets/icons/stacks/express.svg';
+import FigmaIcon from '../assets/icons/stacks/figma.svg';
+import HtmlIcon from '../assets/icons/stacks/html.svg';
+import JavascriptIcon from '../assets/icons/stacks/javascript.svg';
+import MongodbIcon from '../assets/icons/stacks/mongodb.svg';
+import MuiIcon from '../assets/icons/stacks/mui.svg';
+import NextjIcons from '../assets/icons/stacks/nextjs.svg';
+import NodeIcon from '../assets/icons/stacks/node.svg';
+import ReactIcon from '../assets/icons/stacks/react.svg';
+import ReduxIcon from '../assets/icons/stacks/redux.svg';
+import TailwindIcon from '../assets/icons/stacks/tailwind.svg';
+import ViteJsIcon from '../assets/icons/stacks/vitejs.svg';
+import { ComponentType, SVGProps } from 'react';
+
+// Experiences for Home exp section
 export interface ExperienceItem {
   icon: string;
   title: string;
   description: string;
 }
 
-export const experience: ExperienceItem[] = [
+export const experiences: ExperienceItem[] = [
   {
     icon: coffeeIcon,
     title: 'Smart Car-Sharing Platform',
@@ -32,5 +48,66 @@ export const experience: ExperienceItem[] = [
     title: 'Auto Rental Engine',
     description:
       'Seamless vehicle booking system with real-time availability checks and integrated payment flows.',
+  },
+];
+
+// Stack technologies for Home Stack section
+export interface StackItem {
+  icon: ComponentType<SVGProps<SVGSVGElement>> | string; // Type correct
+  description: string;
+}
+
+export const technicalStacks: StackItem[] = [
+  {
+    icon: ReactIcon,
+    description: 'React',
+  },
+  {
+    icon: NextjIcons,
+    description: 'Next.js',
+  },
+  {
+    icon: ViteJsIcon,
+    description: 'Vite.js',
+  },
+  {
+    icon: NodeIcon,
+    description: 'Node.js',
+  },
+  {
+    icon: ExpressIcon,
+    description: 'Express.js',
+  },
+  {
+    icon: MongodbIcon,
+    description: 'MongoDB',
+  },
+  {
+    icon: ReduxIcon,
+    description: 'Redux Toolkit',
+  },
+  {
+    icon: TailwindIcon,
+    description: 'Tailwind CSS',
+  },
+  {
+    icon: MuiIcon,
+    description: 'Material UI',
+  },
+  {
+    icon: FigmaIcon,
+    description: 'Figma',
+  },
+  {
+    icon: HtmlIcon,
+    description: 'HTML5',
+  },
+  {
+    icon: CssIcon,
+    description: 'CSS3',
+  },
+  {
+    icon: JavascriptIcon,
+    description: 'JavaScript',
   },
 ];

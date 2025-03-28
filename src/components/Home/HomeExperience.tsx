@@ -4,7 +4,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import PurpleBg from '../../assets/ui/purple-bg.svg'; // Assurez-vous que le chemin d'accès est correct
 
 import useBreakPoint from '../../hooks/useBreakPoint';
-import { experience } from '../../utils/data';
+import { experiences } from '../../utils/data';
 
 import HomeExperienceCard from './HomeExperienceCard';
 
@@ -19,7 +19,7 @@ const HomeExperienceMobile = () => {
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      {experience.map((item, index) => (
+      {experiences.map((item, index) => (
         <SwiperSlide key={index}>
           <HomeExperienceCard item={item} />
         </SwiperSlide>
@@ -33,7 +33,7 @@ const HomeExperienceDesktop = () => {
       <div className="absolute inset-0 flex items-center justify-center z-[-1]">
         <PurpleBg />
       </div>
-      {experience.map((item, index) => (
+      {experiences.map((item, index) => (
         <HomeExperienceCard key={index} item={item} />
       ))}
     </div>
@@ -44,7 +44,7 @@ const HomeExperience = () => {
   const { isDesktop } = useBreakPoint();
   return (
     <section className="relative z-0">
-      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 lg:text-left">
+      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-5 md:mb-3 lg:text-left">
         Work Experience
       </h2>
       {!isDesktop ? <HomeExperienceMobile /> : <HomeExperienceDesktop />}
