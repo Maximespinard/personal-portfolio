@@ -15,14 +15,8 @@ import ReactIcon from '../assets/icons/stacks/react.svg';
 import ReduxIcon from '../assets/icons/stacks/redux.svg';
 import TailwindIcon from '../assets/icons/stacks/tailwind.svg';
 import ViteJsIcon from '../assets/icons/stacks/vitejs.svg';
-import { ComponentType, SVGProps } from 'react';
 
-// Experiences for Home exp section
-export interface ExperienceItem {
-  icon: string;
-  title: string;
-  description: string;
-}
+import { ExperienceItem, StackItem } from '../types';
 
 export const experiences: ExperienceItem[] = [
   {
@@ -51,13 +45,7 @@ export const experiences: ExperienceItem[] = [
   },
 ];
 
-// Stack technologies for Home Stack section
-export interface StackItem {
-  icon: ComponentType<SVGProps<SVGSVGElement>> | string; // Type correct
-  description: string;
-}
-
-export const technicalStacks: StackItem[] = [
+export const stacksData: StackItem[] = [
   {
     icon: ReactIcon,
     description: 'React',

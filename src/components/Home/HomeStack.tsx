@@ -1,43 +1,39 @@
-import { ComponentType, SVGProps } from 'react';
+import React, { SVGProps } from 'react';
 import StackWebImage from '../../assets/ui/stack-web.svg';
-
 import useBreakPoint from '../../hooks/useBreakPoint';
-import { technicalStacks } from '../../utils/data';
+import { stacksData } from '../../utils/data';
+import { StackItem } from '../../types';
 
-interface StackItem {
-  icon: ComponentType<SVGProps<SVGSVGElement>> | string;
-  description: string;
+interface StackWebImageProps extends SVGProps<SVGSVGElement> {
+  className?: string;
 }
+
+const StackWebImageWithProps: React.FC<StackWebImageProps> = (props) => {
+  return <StackWebImage {...props} />;
+};
 
 const HomeStack = () => {
   const { isMinTablet } = useBreakPoint();
-  const firstRow = isMinTablet
-    ? technicalStacks.slice(0, 7)
-    : technicalStacks.slice(0, 6);
-  const secondRow = technicalStacks.slice(7, 13);
+  const techStackGroup1 = isMinTablet
+    ? stacksData.slice(0, 7)
+    : stacksData.slice(0, 6);
+  const techStackGroup2 = stacksData.slice(7, 13);
 
-  const StackItems = (stacks: StackItem[]) => {
-    return (
-      <div className="flex items-center justify-center gap-4">
-        {stacks.map((stack, index) => (
+  const StackItems = ({ stacks }: { stacks: StackItem[] }) => (
+    <div className="flex items-center justify-center space-x-2 md:space-x-3">
+      {stacks.map((stack, i) => {
+        const Icon = stack.icon;
+        return (
           <div
-            key={index}
-            className="flex flex-col items-center justify-center text-center w-11 h-11 md:w-14 md:h-14 bg-gray-800/50 rounded-full shadow-lg"
+            key={i}
+            className="flex flex-col items-center justify-center text-center w-12 h-12 bg-gray-800/50 rounded-full shadow-lg"
           >
-            {typeof stack.icon === 'string' ? (
-              <img
-                src={stack.icon}
-                alt={stack.description}
-                className="w-8 h-8 md:w-10 md:h-10"
-              />
-            ) : (
-              <stack.icon className="w-8 h-8 md:w-10 md:h-10" />
-            )}
+            {Icon && <Icon className="w-8 h-8 text-purple-400" />}
           </div>
-        ))}
-      </div>
-    );
-  };
+        );
+      })}
+    </div>
+  );
 
   return (
     <div>
@@ -51,13 +47,11 @@ const HomeStack = () => {
         Fueled by modern stacks and obsessive optimization
       </p>
       <div className="space-y-4 mt-10">
-        {StackItems(firstRow)}
-        {StackItems(secondRow)}
+        <StackItems stacks={techStackGroup1} />
+        <StackItems stacks={techStackGroup2} />
       </div>
-      {/* Conteneur pour l'image SVG */}
       <div className="overflow-hidden -mx-10 sm:-mx-20 md:-mx-30 flex justify-center">
-        {/* StackWebImage avec une largeur minimale et hauteur auto, le tout via className */}
-        <StackWebImage className="min-w-[882px] w-[882px] h-auto object-none" />
+        <StackWebImageWithProps className="min-w-[882px] h-auto -mt-3" />
       </div>
     </div>
   );
