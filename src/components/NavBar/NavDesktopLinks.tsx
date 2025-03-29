@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavDesktopLinks = () => {
   return (
-    <ul className="flex flex-row justify-between basis-2/5">
+    <ul className="flex flex-row justify-between basis-2/5 text-base">
       <li>
         <NavLink
           to="/"
