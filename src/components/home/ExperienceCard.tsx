@@ -1,13 +1,13 @@
-import { ExperienceItem } from '../../utils/data';
+import { ExperienceItem } from '../../types';
 
-const HomeExperienceCard = ({ item }: { item: ExperienceItem }) => {
+const ExperienceCard = ({ item }: { item: ExperienceItem }) => {
   return (
     <div className="bg-custom-gradient py-8 px-5 border-t-2 border-bright-purple rounded-3xl">
       <div className="space-y-2 relative lg:flex lg:items-center lg:justify-center lg:space-x-4">
         <img
           src={item.icon}
           alt="icon"
-          className=" rounded-full hidden lg:block! md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]" // Ajout de la classe lg:block hidden
+          className=" rounded-full hidden lg:block! md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]"
         />
         <div className="space-y-4 md:space-y-3">
           <h3 className="text-xl font-semibold text-center lg:text-left">
@@ -31,4 +31,4 @@ const HomeExperienceCard = ({ item }: { item: ExperienceItem }) => {
   );
 };
 
-export default HomeExperienceCard;
+export default ExperienceCard;

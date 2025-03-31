@@ -16,7 +16,10 @@ import ReduxIcon from '../assets/icons/stacks/redux.svg';
 import TailwindIcon from '../assets/icons/stacks/tailwind.svg';
 import ViteJsIcon from '../assets/icons/stacks/vitejs.svg';
 
-import { ExperienceItem, StackItem } from '../types';
+import ecommerceImage from '../assets/ui/ecommerce-example.png';
+import portfolioImage from '../assets/ui/portfolio-example.png';
+
+import { ExperienceItem, StackItem, ProjectExample } from '../types';
 
 export const experiences: ExperienceItem[] = [
   {
@@ -97,5 +100,23 @@ export const stacksData: StackItem[] = [
   {
     icon: JavascriptIcon,
     description: 'JavaScript',
+  },
+];
+
+export const projectsData: ProjectExample[] = [
+  {
+    title: 'Custom Online Stores',
+    image: ecommerceImage,
+    description: `Build conversion-focused shopping experiences with intuitive 
+    product browsing, secure checkout flows, and mobile-first 
+    design. Includes real-time inventory management and analytics 
+    for smarter business decisions`,
+  },
+  {
+    title: 'Digital Showcases',
+    image: portfolioImage,
+    description: `Elevate your work with clean, interactive portfolios. Highlight 
+      projects through case studies, client testimonials, and immersive 
+      galleries. Responsive design ensures your talent shines on any device.`,
   },
 ];

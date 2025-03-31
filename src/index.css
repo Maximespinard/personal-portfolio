@@ -5,9 +5,25 @@
 @import 'swiper/css/scrollbar';
 
 @layer base {
+  body {
+    @apply text-white font-mono;
+  }
 }
 
 @layer utilities {
+  /* Classes de blend-mode pour améliorer les superpositions */
+  .blend-multiply {
+    mix-blend-mode: multiply;
+  }
+
+  .blend-overlay {
+    mix-blend-mode: overlay;
+  }
+
+  .blend-screen {
+    mix-blend-mode: screen;
+  }
+
   .bg-custom-gradient {
     background-image: linear-gradient(
       to right,
@@ -18,11 +34,6 @@
       #190634 100%
     );
   }
-}
-
-body {
-  color: white;
-  font-family: monospace;
 }
 
 @theme {

@@ -12,7 +12,7 @@ const StackWebImageWithProps: React.FC<StackWebImageProps> = (props) => {
   return <StackWebImage {...props} />;
 };
 
-const HomeStack = () => {
+const Stacks = () => {
   const { isMinTablet } = useBreakPoint();
   const techStackGroup1 = isMinTablet
     ? stacksData.slice(0, 7)
@@ -57,4 +57,4 @@ const HomeStack = () => {
   );
 };
 
-export default HomeStack;
+export default Stacks;
