@@ -96,6 +96,26 @@ export const SlideUpOnScroll: React.FC<SlideProps> = ({
   </motion.div>
 );
 
+export const SlideDownOnScroll: React.FC<SlideProps> = ({
+  children,
+  delay = 0,
+  duration = 0.5,
+  y = 50,
+  className = '',
+  ...props
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: -y }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '-100px' }}
+    transition={{ duration, delay }}
+    className={className}
+    {...props}
+  >
+    {children}
+  </motion.div>
+);
+
 export const SlideIn: React.FC<SlideInProps> = ({
   children,
   delay = 0,

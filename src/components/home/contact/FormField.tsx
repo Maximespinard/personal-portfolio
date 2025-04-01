@@ -1,6 +1,6 @@
 import React from 'react';
 import { UseFormRegister, FieldError } from 'react-hook-form';
-import { FormData } from '../ContactForm';
+import { FormData } from '.';
 
 interface FormFieldProps {
   id: keyof FormData;
@@ -27,7 +27,7 @@ const FormField: React.FC<FormFieldProps> = ({
             id={id}
             {...register(id)}
             rows={rows}
-            className={`w-full bg-stack-bg/50 border-2 prevent-autofill ${
+            className={`w-full bg-stack-bg/50 border-2 ${
               error
                 ? 'border-red-500'
                 : 'border-button-bg group-hover:border-button-border'

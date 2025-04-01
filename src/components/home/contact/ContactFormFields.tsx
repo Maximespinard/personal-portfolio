@@ -1,7 +1,7 @@
 import React from 'react';
 import { UseFormRegister, FieldErrors } from 'react-hook-form';
 import { SlideFromRight } from '../../animations';
-import { FormData } from '../ContactForm';
+import { FormData } from '.';
 import FormField from './FormField';
 
 interface ContactFormFieldsProps {

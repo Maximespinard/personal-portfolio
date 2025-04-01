@@ -7,3 +7,4 @@ export { SlideUp } from './SlideUp';
 export { SlideUpOnScroll } from './SlideUpOnScroll';
 export { SlideFromLeft } from './SlideFromLeft';
 export { SlideFromRight } from './SlideFromRight';
+export { SlideDownOnScroll } from './SlideDownOnScroll';

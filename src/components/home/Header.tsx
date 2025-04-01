@@ -1,7 +1,7 @@
 import React from 'react';
 import { SlideFromLeft, FadeIn, SlideFromRight } from '../animations';
-import Arrow from '../../assets/icons/arrow.svg';
-import meIcon from '../../assets/icons/me-icon.png';
+import Arrow from '../../assets/icons/rest/arrow.svg';
+import meIcon from '../../assets/icons/rest/me-icon.png';
 import elipse from '../../assets/ui/elipse.png';
 
 const HomeHeader: React.FC = () => {

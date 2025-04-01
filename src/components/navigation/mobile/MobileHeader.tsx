@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from '../../../assets/icons/logo.svg';
+import Logo from '../../../assets/icons/rest/logo.svg';
 
 interface MobileHeaderProps {
   toggleDrawer: () => void;

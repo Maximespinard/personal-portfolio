@@ -1,6 +1,6 @@
-import coffeeIcon from '../assets/icons/coffee-icon.png';
-import lightBall from '../assets/icons/lightball.png';
-import thing from '../assets/icons/thing.png';
+import coffeeIcon from '../assets/icons/rest/coffee-icon.png';
+import lightBall from '../assets/icons/rest/lightball.png';
+import thing from '../assets/icons/rest/thing.png';
 
 import CssIcon from '../assets/icons/stacks/css.svg';
 import ExpressIcon from '../assets/icons/stacks/express.svg';

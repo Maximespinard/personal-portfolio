@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 
-import { FadeIn, SlideFromLeft } from '../animations';
-import ContactSuccess from './contact/ContactSuccess';
-import ContactFormFields from './contact/ContactFormFields';
-import ContactHeader from './contact/ContactHeader';
-import ContactFooter from './contact/ContactFooter';
+import { SlideFromLeft } from '../../animations';
+import ContactSuccess from './ContactSuccess';
+import ContactFormFields from './ContactFormFields';
+import ContactHeader from './ContactHeader';
+import ContactFooter from './ContactFooter';
 
 const formSchema = z.object({
   name: z.string().min(1, 'Required'),
@@ -44,7 +45,11 @@ const ContactForm: React.FC = () => {
   return (
     <div className="w-full mx-auto my-12 mt-20 px-4">
       <div className="bg-gradient-to-br from-[#1a0b2e] to-[#11071f] rounded-3xl shadow-2xl overflow-hidden border border-[#2c1250]">
-        <SlideFromLeft className="p-10 md:p-12 md:pb-6">
+        <SlideFromLeft
+          className="p-10 md:p-12 md:pb-6"
+          delay={0.25}
+          duration={1}
+        >
           <ContactHeader />
 
           <ContactFormFields register={register} errors={errors} />
