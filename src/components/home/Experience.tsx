@@ -5,6 +5,7 @@ import useBreakPoint from '../../hooks/useBreakPoint';
 import { experiences } from '../../utils/data';
 
 import ExperienceCard from './ExperienceCard';
+import { SlideUp } from '../animations';
 
 const ExperienceMobile = () => {
   return (
@@ -42,9 +43,11 @@ const Experience = () => {
   const { isDesktop } = useBreakPoint();
   return (
     <section className="relative z-0">
-      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-5 md:mb-3 lg:text-left">
-        Work Experience
-      </h2>
+      <SlideUp duration={0.75} delay={0.5}>
+        <h2 className="text-2xl md:text-3xl font-semibold text-center mb-5 md:mb-3 lg:text-left">
+          Work Experience
+        </h2>
+      </SlideUp>
       {!isDesktop ? <ExperienceMobile /> : <ExperienceDesktop />}
     </section>
   );

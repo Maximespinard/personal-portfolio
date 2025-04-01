@@ -1,8 +1,9 @@
 import { ExperienceItem } from '../../types';
+import { SlideUpOnScroll } from '../animations';
 
 const ExperienceCard = ({ item }: { item: ExperienceItem }) => {
   return (
-    <div className="bg-custom-gradient py-8 px-5 border-t-2 border-bright-purple rounded-3xl">
+    <SlideUpOnScroll className="bg-custom-gradient py-8 px-5 border-t-2 border-bright-purple rounded-3xl">
       <div className="space-y-2 relative lg:flex lg:items-center lg:justify-center lg:space-x-4">
         <img
           src={item.icon}
@@ -27,7 +28,7 @@ const ExperienceCard = ({ item }: { item: ExperienceItem }) => {
           </button>
         </div>
       </div>
-    </div>
+    </SlideUpOnScroll>
   );
 };
 

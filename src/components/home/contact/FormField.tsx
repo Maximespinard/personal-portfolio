@@ -27,11 +27,11 @@ const FormField: React.FC<FormFieldProps> = ({
             id={id}
             {...register(id)}
             rows={rows}
-            className={`w-full bg-[#251c31]/50 border-2 ${
+            className={`w-full bg-stack-bg/50 border-2 prevent-autofill ${
               error
                 ? 'border-red-500'
-                : 'border-[#2c1250] group-hover:border-[#693b93]'
-            } rounded-xl p-4 text-white outline-none focus:border-[#7127ba] transition-colors h-full min-h-[140px]`}
+                : 'border-button-bg group-hover:border-button-border'
+            } rounded-xl p-4 text-white outline-none focus:border-main-purple transition-colors h-full min-h-[140px]`}
             placeholder={label}
           />
         ) : (
@@ -39,11 +39,11 @@ const FormField: React.FC<FormFieldProps> = ({
             type={type}
             id={id}
             {...register(id)}
-            className={`w-full bg-[#251c31]/50 border-2 ${
+            className={`w-full bg-stack-bg/50 border-2 prevent-autofill ${
               error
                 ? 'border-red-500'
-                : 'border-[#2c1250] group-hover:border-[#693b93]'
-            } rounded-xl p-4 text-white outline-none focus:border-[#7127ba] transition-colors`}
+                : 'border-button-bg group-hover:border-button-border'
+            } rounded-xl p-4 text-white outline-none focus:border-main-purple transition-colors`}
             placeholder={label}
           />
         )}

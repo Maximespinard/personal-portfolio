@@ -34,6 +34,11 @@
       #190634 100%
     );
   }
+  .prevent-autofill {
+    -webkit-text-fill-color: white !important;
+    -webkit-box-shadow: 0 0 0 30px theme('colors.stack-bg') inset !important;
+    box-shadow: 0 0 0 30px theme('colors.stack-bg') inset !important;
+  }
 }
 
 @theme {
