@@ -10,19 +10,16 @@ import PurpleBg from '../assets/ui/purple-bg.svg';
 const Home: React.FC = () => {
   return (
     <div className="space-y-12">
-      <div className="relative">
-        {/* Background image positioned absolute */}
+      <div className="relative md:min-h-[75vh] md:pt-10">
         <div className="absolute inset-0 top-0 z-0 pointer-events-none">
-          <PurpleBg className="w-full h-auto" />
+          <PurpleBg className="w-full h-full" />
         </div>
-
         {/* Content positioned relative to appear above the background */}
         <div className="relative z-10">
           <Header />
           <AboutMe />
         </div>
       </div>
-
       <Experience />
       <Stacks />
       <ProjectExamples />
