@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
-import NavDesktopLogo from './NavDesktopLogo';
-import NavDesktopLinks from './NavDesktopLinks';
+import React, { useState, useEffect, useRef } from 'react';
+import DesktopLogo from './DesktopLogo';
+import DesktopLinks from './DesktopLinks';
 
-const NavDesktop = () => {
+const Desktop: React.FC = () => {
   const navRef = useRef<HTMLDivElement>(null);
-  const [navHeight, setNavHeight] = useState(0);
+  const [navHeight, setNavHeight] = useState<number>(0);
 
   useEffect(() => {
     if (navRef.current) {
@@ -18,12 +18,12 @@ const NavDesktop = () => {
         ref={navRef}
         className="fixed w-full top-0 bg-navbar h-20 flex flex-row items-center px-30 py-5 z-100"
       >
-        <NavDesktopLogo />
-        <NavDesktopLinks />
+        <DesktopLogo />
+        <DesktopLinks />
       </div>
       <div style={{ height: navHeight }}></div>
     </>
   );
 };
 
-export default NavDesktop;
+export default Desktop;

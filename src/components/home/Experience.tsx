@@ -1,8 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
-import PurpleBg from '../../assets/ui/purple-bg.svg'; // Assurez-vous que le chemin d'accès est correct
-
+import PurpleBg from '../../assets/ui/purple-bg.svg';
 import useBreakPoint from '../../hooks/useBreakPoint';
 import { experiences } from '../../utils/data';
 

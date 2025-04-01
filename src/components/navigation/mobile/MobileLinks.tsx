@@ -1,10 +1,11 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-interface NavMobileLinksProps {
+interface MobileLinksProps {
   toggleDrawer: () => void;
 }
 
-const NavMobileLinks: React.FC<NavMobileLinksProps> = ({ toggleDrawer }) => {
+const MobileLinks: React.FC<MobileLinksProps> = ({ toggleDrawer }) => {
   return (
     <ul className="p-4 flex flex-col">
       <li className="mb-4">
@@ -41,4 +42,4 @@ const NavMobileLinks: React.FC<NavMobileLinksProps> = ({ toggleDrawer }) => {
   );
 };
 
-export default NavMobileLinks;
+export default MobileLinks;

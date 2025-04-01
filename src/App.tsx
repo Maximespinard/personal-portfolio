@@ -1,9 +1,10 @@
+import React from 'react';
 import { Route, Routes } from 'react-router';
-import NavBar from './layout/NavBar';
+import NavBar from './components/navigation';
 import Home from './pages/Home';
 import Journey from './pages/Journey';
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <header>
@@ -17,6 +18,6 @@ function App() {
       </main>
     </>
   );
-}
+};
 
 export default App;

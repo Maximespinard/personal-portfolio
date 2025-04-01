@@ -1,12 +1,13 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from '../../assets/icons/logo.svg';
+import Logo from '../../../assets/icons/logo.svg';
 
-interface NavMobileHeaderProps {
+interface MobileHeaderProps {
   toggleDrawer: () => void;
   isDrawerOpen: boolean;
 }
 
-const NavMobileHeader: React.FC<NavMobileHeaderProps> = ({
+const MobileHeader: React.FC<MobileHeaderProps> = ({
   toggleDrawer,
   isDrawerOpen,
 }) => {
@@ -43,4 +44,4 @@ const NavMobileHeader: React.FC<NavMobileHeaderProps> = ({
   );
 };
 
-export default NavMobileHeader;
+export default MobileHeader;

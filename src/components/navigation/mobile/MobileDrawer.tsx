@@ -1,17 +1,17 @@
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
-interface NavMobileDrawerProps {
+interface MobileDrawerProps {
   isDrawerOpen: boolean;
   toggleDrawer: () => void;
   children: React.ReactNode;
 }
 
-const NavMobileDrawer: React.FC<NavMobileDrawerProps> = ({
+const MobileDrawer: React.FC<MobileDrawerProps> = ({
   isDrawerOpen,
   toggleDrawer,
   children,
 }) => {
-  const drawerRef = useRef<HTMLDivElement | null>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
@@ -68,4 +68,4 @@ const NavMobileDrawer: React.FC<NavMobileDrawerProps> = ({
   );
 };
 
-export default NavMobileDrawer;
+export default MobileDrawer;
