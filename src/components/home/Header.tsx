@@ -1,6 +1,5 @@
 import React from 'react';
 import { SlideFromLeft, FadeIn, SlideFromRight } from '../animations';
-import Arrow from '../../assets/icons/rest/arrow.svg';
 import meIcon from '../../assets/icons/rest/me-icon.png';
 import elipse from '../../assets/ui/elipse.png';
 
@@ -64,9 +63,6 @@ const HomeHeader: React.FC = () => {
               className="min-w-[180px] max-w-[180px] sm:min-w-[200px] sm:max-w-[200px] lg:min-w-[250px] lg:max-w-[250px]"
             />
           </FadeIn>
-          <span className="absolute hidden sm:block sm:-top-8 sm:-right-4">
-            <Arrow />
-          </span>
         </SlideFromLeft>
       </div>
     </div>
