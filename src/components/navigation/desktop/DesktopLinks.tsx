@@ -1,12 +1,26 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const NavDesktopLinks = () => {
+const NavDesktopLinks: React.FC = () => {
+  const scrollToContact = (): void => {
+    // Find the contact form section and scroll to it
+    const contactSection = document.querySelector('#contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToTop = (): void => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <ul className="flex flex-row justify-between basis-2/5 text-base">
       <li>
         <NavLink
           to="/"
           className="hover:text-primary transition-colors text-secondary"
+          onClick={scrollToTop}
         >
           Home
         </NavLink>
@@ -21,9 +35,9 @@ const NavDesktopLinks = () => {
       </li>
       <li className="cursor-pointer">
         <a
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={scrollToContact}
           className="hover:text-primary transition-colors cursor-pointer"
-          aria-label="Scroll to top"
+          aria-label="Scroll to contact section"
         >
           Connect
         </a>

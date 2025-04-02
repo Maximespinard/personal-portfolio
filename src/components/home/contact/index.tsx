@@ -43,7 +43,7 @@ const ContactForm: React.FC = () => {
   }
 
   return (
-    <div className="w-full mx-auto my-12 mt-20 px-4">
+    <div id="contact-section" className="w-full mx-auto my-12 mt-20 px-4">
       <div className="bg-gradient-to-br from-[#1a0b2e] to-[#11071f] rounded-3xl shadow-2xl overflow-hidden border border-[#2c1250]">
         <SlideFromLeft
           className="p-10 md:p-12 md:pb-6"
