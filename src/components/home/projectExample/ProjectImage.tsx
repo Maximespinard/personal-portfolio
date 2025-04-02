@@ -10,7 +10,7 @@ const ProjectImage: React.FC<ProjectImageProps> = ({ project }) => {
 
   if (!image) return null;
 
-  return <img className="w-full" alt={title} src={image} />;
+  return <img className="w-full rounded-2xl" alt={title} src={image} />;
 };
 
 export default ProjectImage;

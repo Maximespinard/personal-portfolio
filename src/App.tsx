@@ -11,7 +11,7 @@ const App: React.FC = () => {
         <header>
           <NavBar />
         </header>
-        <main className="min-h-screen py-6 px-10 sm:p-20 md:px-30 lg:px-20 overflow-hidden">
+        <main className="min-h-screen py-6 px-10 sm:p-20 md:px-30 lg:px-20 2xl:px-[20%] overflow-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/journey" element={<Journey />} />

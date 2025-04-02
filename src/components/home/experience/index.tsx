@@ -2,15 +2,13 @@ import React from 'react';
 import PurpleBg from '../../../assets/ui/purple-bg.svg';
 import useBreakPoint from '../../../hooks/useBreakPoint';
 import { experiences } from '../../../utils/data';
-import ExperienceCard from './ExperienceCard';
 import { SlideUp } from '../../animations';
-
-// Import the enhanced mobile component
+import ExperienceCard from './ExperienceCard';
 import ExperienceMobile from './ExperienceMobile';
 
 const ExperienceDesktop: React.FC = () => {
   return (
-    <div className="container mx-auto py-8 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl relative">
+    <div className="container mx-auto py-8 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
       <div className="absolute inset-0 flex items-center justify-center z-[-1] opacity-70">
         <PurpleBg />
       </div>

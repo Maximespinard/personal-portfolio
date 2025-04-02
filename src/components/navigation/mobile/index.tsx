@@ -16,7 +16,7 @@ const Mobile: React.FC = () => {
 
       {isDrawerOpen && (
         <div
-          className="fixed inset-0 bg-black opacity-50 z-40"
+          className="fixed inset-0 bg-main-background opacity-50 z-40"
           onClick={toggleDrawer}
         />
       )}

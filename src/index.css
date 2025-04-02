@@ -11,7 +11,6 @@
 }
 
 @layer utilities {
-  /* Classes de blend-mode pour améliorer les superpositions */
   .blend-multiply {
     mix-blend-mode: multiply;
   }
@@ -34,6 +33,26 @@
       #190634 100%
     );
   }
+
+  .bg-gradient-intense {
+    background-image: linear-gradient(
+      to right,
+      #05020a 0%,
+      #130428 25%,
+      #0e0319 50%,
+      #3a1e5c 75%,
+      #47156f 100%
+    );
+  }
+
+  .project-card {
+    @apply min-lg:bg-main-background/80 text-base my-5 lg:p-7 mt-2 lg:mt-10 lg:w-[115%] rounded-2xl relative lg:z-10 lg:backdrop-blur-sm shadow-xl lg:border lg:border-slate-700/50 lg:bg-gradient-to-br lg:from-indigo-900/40 lg:to-purple-900/20;
+  }
+
+  .project-card-right {
+    @apply lg:absolute lg:-left-20 lg:text-right;
+  }
+
   .prevent-autofill {
     -webkit-text-fill-color: white !important;
     -webkit-box-shadow: 0 0 0 30px theme('colors.stack-bg') inset !important;
@@ -42,13 +61,10 @@
 }
 
 @theme {
-  --color-navbar: #1a0b2e;
-  --color-main-background: #11071f;
+  --color-main-background: #1a0b2e;
   --color-main-purple: #7127ba;
   --color-button-bg: #2c1250;
   --color-button-border: #693b93;
   --color-bright-purple: #4f228d;
   --color-stack-bg: #251c31;
-
-  --text-tiny: 0.65rem;
 }
