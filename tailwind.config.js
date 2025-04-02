@@ -20,6 +20,8 @@ module.exports = {
       backgroundImage: {
         'custom-gradient':
           'linear-gradient(to right, #130428 7%, #251043 34%, #38126d 57%, #261045 85%, #190634 100%)',
+        'project-card-gradient':
+          'linear-gradient(to bottom right, rgba(79, 70, 229, 0.3), rgba(124, 58, 237, 0.1))',
       },
     },
   },

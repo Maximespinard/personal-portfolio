@@ -10,7 +10,7 @@ import ProjectImage from './ProjectImage';
 
 const ProjectExamples: React.FC = () => {
   return (
-    <>
+    <div className="md:mt-25 space-y-10">
       {projectsData.map((project, index) => {
         const isSecondExample = index === 1;
 
@@ -47,7 +47,7 @@ const ProjectExamples: React.FC = () => {
           </SlideUpOnScroll>
         );
       })}
-    </>
+    </div>
   );
 };
 

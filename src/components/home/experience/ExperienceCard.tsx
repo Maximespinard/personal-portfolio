@@ -12,7 +12,7 @@ const ExperienceCard: React.FC<{ item: ExperienceItem }> = ({ item }) => {
         {/* Icon at the top for mobile, left side for desktop */}
         <FadeIn delay={0.2}>
           <div
-            className={`${isDesktop ? 'hidden lg:block' : 'flex justify-center mb-4'}`}
+            className={`${isDesktop ? 'max-lg:hidden w-[150px]' : 'flex justify-center mb-4'}`}
           >
             <img
               src={item.icon}

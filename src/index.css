@@ -34,6 +34,15 @@
       #190634 100%
     );
   }
+
+  .project-card {
+    @apply min-lg:bg-main-background/80 text-base my-5 lg:p-7 mt-2 lg:mt-10 lg:w-[115%] rounded-2xl relative lg:z-10 lg:backdrop-blur-sm shadow-xl lg:border lg:border-slate-700/50 lg:bg-gradient-to-br lg:from-indigo-900/40 lg:to-purple-900/20;
+  }
+
+  .project-card-right {
+    @apply lg:absolute lg:-left-20 lg:text-right;
+  }
+
   .prevent-autofill {
     -webkit-text-fill-color: white !important;
     -webkit-box-shadow: 0 0 0 30px theme('colors.stack-bg') inset !important;

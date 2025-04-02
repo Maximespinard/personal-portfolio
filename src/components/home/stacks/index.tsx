@@ -36,7 +36,7 @@ const Stacks: React.FC = () => {
         </p>
       </SlideIn>
 
-      <SlideFromLeft className="mb-5" delay={0.25}>
+      <SlideFromLeft className="my-5" delay={0.25}>
         <StackItems stacks={techStackGroup1} />
       </SlideFromLeft>
       <SlideFromRight delay={0.5}>

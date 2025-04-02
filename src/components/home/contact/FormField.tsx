@@ -1,12 +1,12 @@
 import React from 'react';
 import { UseFormRegister, FieldError } from 'react-hook-form';
-import { FormData } from '.';
+import { ContactFormData } from '../../../utils/formValidations';
 
 interface FormFieldProps {
-  id: keyof FormData;
+  id: keyof ContactFormData;
   label: string;
   type: 'text' | 'email' | 'textarea';
-  register: UseFormRegister<FormData>;
+  register: UseFormRegister<ContactFormData>;
   error?: FieldError;
   rows?: number;
 }

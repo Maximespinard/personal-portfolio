@@ -1,12 +1,12 @@
 import React from 'react';
 import { UseFormRegister, FieldErrors } from 'react-hook-form';
 import { SlideFromRight } from '../../animations';
-import { FormData } from '.';
+import { ContactFormData } from '../../../utils/formValidations';
 import FormField from './FormField';
 
 interface ContactFormFieldsProps {
-  register: UseFormRegister<FormData>;
-  errors: FieldErrors<FormData>;
+  register: UseFormRegister<ContactFormData>;
+  errors: FieldErrors<ContactFormData>;
 }
 
 const ContactFormFields: React.FC<ContactFormFieldsProps> = ({
