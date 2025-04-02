@@ -2,10 +2,10 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards, Pagination, Autoplay } from 'swiper/modules';
 import { experiences } from '../../../utils/data';
-import ExperienceCard from './ExperienceCard';
 import useSwiperNavigation from '../../../hooks/useSwiperNavigation';
 import ArrowLeft from '../../../assets/icons/rest/arrow-left.svg';
 import ArrowRight from '../../../assets/icons/rest/arrow-right.svg';
+import ExperienceCard from './ExperienceCard';
 
 const ExperienceMobile: React.FC = () => {
   useSwiperNavigation();

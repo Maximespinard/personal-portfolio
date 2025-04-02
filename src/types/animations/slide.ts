@@ -18,7 +18,11 @@ export interface SlideInProps extends Omit<BaseSlideProps, 'animate'> {
 }
 
 export interface SlideFromLeftProps
-  extends Omit<BaseSlideProps, 'whileInView' | 'viewport'> {}
+  extends Omit<BaseSlideProps, 'whileInView' | 'viewport'> {
+  direction?: 'left';
+}
 
 export interface SlideFromRightProps
-  extends Omit<BaseSlideProps, 'whileInView' | 'viewport'> {}
+  extends Omit<BaseSlideProps, 'whileInView' | 'viewport'> {
+  direction?: 'right';
+}

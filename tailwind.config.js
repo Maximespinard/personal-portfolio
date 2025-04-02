@@ -14,9 +14,6 @@ module.exports = {
       fontFamily: {
         mono: ['monospace', 'sans-serif'],
       },
-      fontSize: {
-        tiny: '0.65rem',
-      },
       backgroundImage: {
         'custom-gradient':
           'linear-gradient(to right, #130428 7%, #251043 34%, #38126d 57%, #261045 85%, #190634 100%)',

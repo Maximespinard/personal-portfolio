@@ -11,7 +11,6 @@
 }
 
 @layer utilities {
-  /* Existing utilities */
   .blend-multiply {
     mix-blend-mode: multiply;
   }
@@ -68,6 +67,4 @@
   --color-button-border: #693b93;
   --color-bright-purple: #4f228d;
   --color-stack-bg: #251c31;
-
-  --text-tiny: 0.65rem;
 }
