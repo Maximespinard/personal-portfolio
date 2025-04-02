@@ -1,10 +1,27 @@
 module.exports = {
-  content: [
-    // Ajoutez ici les chemins vers vos fichiers source
-    './src/**/*.{html,js,jsx,ts,tsx}',
-  ],
+  content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        navbar: '#1a0b2e',
+        'main-background': '#11071f',
+        'main-purple': '#7127ba',
+        'button-bg': '#2c1250',
+        'button-border': '#693b93',
+        'bright-purple': '#4f228d',
+        'stack-bg': '#251c31',
+      },
+      fontFamily: {
+        mono: ['monospace', 'sans-serif'],
+      },
+      fontSize: {
+        tiny: '0.65rem',
+      },
+      backgroundImage: {
+        'custom-gradient':
+          'linear-gradient(to right, #130428 7%, #251043 34%, #38126d 57%, #261045 85%, #190634 100%)',
+      },
+    },
   },
   plugins: [],
 };

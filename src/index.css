@@ -1,13 +1,54 @@
 @import 'tailwindcss';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/scrollbar';
 
 @layer base {
+  body {
+    @apply text-white font-mono;
+  }
 }
 
-body {
-  color: white;
+@layer utilities {
+  /* Classes de blend-mode pour améliorer les superpositions */
+  .blend-multiply {
+    mix-blend-mode: multiply;
+  }
+
+  .blend-overlay {
+    mix-blend-mode: overlay;
+  }
+
+  .blend-screen {
+    mix-blend-mode: screen;
+  }
+
+  .bg-custom-gradient {
+    background-image: linear-gradient(
+      to right,
+      #130428 7%,
+      #251043 34%,
+      #38126d 57%,
+      #261045 85%,
+      #190634 100%
+    );
+  }
+  .prevent-autofill {
+    -webkit-text-fill-color: white !important;
+    -webkit-box-shadow: 0 0 0 30px theme('colors.stack-bg') inset !important;
+    box-shadow: 0 0 0 30px theme('colors.stack-bg') inset !important;
+  }
 }
 
 @theme {
   --color-navbar: #1a0b2e;
-  --color-background: #11071f;
+  --color-main-background: #11071f;
+  --color-main-purple: #7127ba;
+  --color-button-bg: #2c1250;
+  --color-button-border: #693b93;
+  --color-bright-purple: #4f228d;
+  --color-stack-bg: #251c31;
+
+  --text-tiny: 0.65rem;
 }
