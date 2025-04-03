@@ -45,6 +45,7 @@ const ContactForm: React.FC = () => {
 
       setIsSubmitted(true);
       reset();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (error) {
       console.error('Submission error:', error);
       alert('Failed to submit form. Please try again.');
