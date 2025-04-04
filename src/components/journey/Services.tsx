@@ -1,10 +1,4 @@
-import {
-  FadeIn,
-  HoverScale,
-  SlideFromLeft,
-  SlideFromRight,
-  SlideUpOnScroll,
-} from '../animations';
+import { SlideFromLeft, SlideFromRight, SlideUpOnScroll } from '../animations';
 
 const Services = () => {
   return (
@@ -205,20 +199,6 @@ const Services = () => {
             </div>
           </SlideFromRight>
         </div>
-
-        <FadeIn delay={0.5} className="mt-16 text-center">
-          <div className="inline-block relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-xl opacity-70 blur-sm"></div>
-            <HoverScale>
-              <a
-                href="#contact-section"
-                className="relative inline-block px-10 py-5 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-xl text-white font-medium shadow-lg shadow-purple-900/20 border border-[#693b93] text-lg"
-              >
-                Let's Build Something Amazing
-              </a>
-            </HoverScale>
-          </div>
-        </FadeIn>
       </div>
     </section>
   );

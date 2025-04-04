@@ -1,12 +1,14 @@
 import React from 'react';
 import AboutMe from '../components/home/AboutMe.tsx';
 import Header from '../components/home/Header.tsx';
-import Experience from '../components/home/experience/index.tsx';
-import Stacks from '../components/home/stacks/index.tsx';
-import ProjectExamples from '../components/home/projectExample/index.tsx';
 import ContactForm from '../components/home/contact/index.tsx';
 import { FadeIn } from '../components/animations/FadeIn.tsx';
 import PurpleBg from '../assets/ui/purple-bg.svg';
+import ProfileBanner from '../components/journey/ProfileBanner.tsx';
+import Services from '../components/journey/Services.tsx';
+import CareerTimeline from '../components/journey/CareerTimeline.tsx';
+import FeaturedProjects from '../components/journey/FeaturedProjects.tsx';
+import SkillsSpotlight from '../components/journey/SkillsSpotlight.tsx';
 
 const Home: React.FC = () => {
   return (
@@ -21,9 +23,11 @@ const Home: React.FC = () => {
           <AboutMe />
         </div>
       </div>
-      <Experience />
-      <Stacks />
-      <ProjectExamples />
+      <ProfileBanner />
+      <Services />
+      <CareerTimeline />
+      <FeaturedProjects />
+      <SkillsSpotlight />
       <ContactForm />
     </div>
   );

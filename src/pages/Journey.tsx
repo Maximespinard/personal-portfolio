@@ -1,6 +1,6 @@
 import React from 'react';
 import SkillsSpotlight from '../components/journey/SkillsSpotlight';
-import Header from '../components/journey/Header';
+import Header from '../components/journey/ProfileBanner';
 import CareerTimeline from '../components/journey/CareerTimeline';
 import FeaturedProjects from '../components/journey/FeaturedProjects';
 import Services from '../components/journey/Services';
