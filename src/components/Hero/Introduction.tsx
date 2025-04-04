@@ -3,7 +3,7 @@ import { SlideFromLeft, FadeIn, SlideFromRight } from '../animations';
 import meIcon from '../../assets/icons/rest/me-icon.png';
 import elipse from '../../assets/ui/elipse.png';
 
-const HomeHeader: React.FC = () => {
+const Introduction: React.FC = () => {
   return (
     <div className="container mx-auto flex items-center justify-center">
       <div className="flex flex-col sm:flex-row items-center">
@@ -69,4 +69,4 @@ const HomeHeader: React.FC = () => {
   );
 };
 
-export default HomeHeader;
+export default Introduction;

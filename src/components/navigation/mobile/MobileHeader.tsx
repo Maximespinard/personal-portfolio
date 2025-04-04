@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import Logo from '../../../assets/icons/rest/logo.svg';
 
 interface MobileHeaderProps {
@@ -35,9 +34,16 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
         </svg>
       </button>
       <div className="flex-grow flex justify-center">
-        <NavLink to="/" className="cursor-pointer">
+        <a
+          href="#/"
+          className="cursor-pointer"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
           <Logo />
-        </NavLink>
+        </a>
       </div>
       <div className="w-6" />
     </div>

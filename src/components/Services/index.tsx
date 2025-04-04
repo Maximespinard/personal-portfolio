@@ -2,7 +2,10 @@ import { SlideFromLeft, SlideFromRight, SlideUpOnScroll } from '../animations';
 
 const Services = () => {
   return (
-    <section className="relative z-10 sm:px-4 pb-24 overflow-hidden">
+    <section
+      className="relative z-10 sm:px-4 pb-24 overflow-hidden"
+      id="services-section"
+    >
       <SlideUpOnScroll className="text-center mb-16">
         <h2 className="text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-300">
           Services Offered

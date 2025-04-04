@@ -1,6 +1,6 @@
 import React from 'react';
 import { UseFormRegister, FieldError } from 'react-hook-form';
-import { ContactFormData } from '../../../utils/formValidations';
+import { ContactFormData } from '../../utils/formValidations';
 
 interface FormFieldProps {
   id: keyof ContactFormData;

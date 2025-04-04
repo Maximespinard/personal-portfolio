@@ -1,5 +1,5 @@
 import React from 'react';
-import { SlideFromRight, HoverScale } from '../../animations';
+import { SlideFromRight, HoverScale } from '../animations';
 import SocialIcons from './SocialIcons';
 
 interface ContactFooterProps {

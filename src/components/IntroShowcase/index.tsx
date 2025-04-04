@@ -5,10 +5,10 @@ import {
   SlideFromRight,
 } from '../animations';
 
-interface ProfileBannerProps {
+interface IntroShowCaseProps {
   handleHireMeClick: (e: React.MouseEvent) => void;
 }
-const ProfileBanner = ({ handleHireMeClick }: ProfileBannerProps) => {
+const IntroShowCase = ({ handleHireMeClick }: IntroShowCaseProps) => {
   return (
     <div className="relative pt-10 pb-16 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#1a0b2e]/60 to-[#11071f] z-0"></div>
@@ -61,4 +61,4 @@ const ProfileBanner = ({ handleHireMeClick }: ProfileBannerProps) => {
     </div>
   );
 };
-export default ProfileBanner;
+export default IntroShowCase;

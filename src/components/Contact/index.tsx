@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { useBotProtection } from '../../../hooks/useBotProtection';
-import { submitContactForm } from '../../../services/contactApi';
+import { useBotProtection } from '../../hooks/useBotProtection';
+import { submitContactForm } from '../../services/contactApi';
 import {
   contactFormSchema,
   ContactFormData,
-} from '../../../utils/formValidations';
-import { SlideFromLeft } from '../../animations';
+} from '../../utils/formValidations';
+import { SlideFromLeft } from '../animations';
 
 import ContactSuccess from './ContactSuccess';
 import ContactFormFields from './ContactFormFields';

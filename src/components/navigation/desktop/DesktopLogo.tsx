@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import Logo from '../../../assets/icons/rest/logo.svg';
 
 const NavDesktopLogo: React.FC = () => {
@@ -9,13 +8,16 @@ const NavDesktopLogo: React.FC = () => {
 
   return (
     <span className="basis-3/5 cursor-pointer">
-      <NavLink
-        to="/"
+      <a
+        href="#"
         className="basis-3/5 cursor-pointer"
-        onClick={scrollToTop}
+        onClick={(e) => {
+          e.preventDefault();
+          scrollToTop();
+        }}
       >
         <Logo />
-      </NavLink>
+      </a>
     </span>
   );
 };

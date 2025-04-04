@@ -2,7 +2,7 @@ import { SlideFromLeft, SlideFromRight, SlideUpOnScroll } from '../animations';
 
 const CareerTimeline = () => {
   return (
-    <section className="relative z-10 sm:px-4">
+    <section className="relative z-10 sm:px-4" id="career-section">
       <SlideUpOnScroll className="text-center mb-12">
         <h2 className="text-3xl font-bold mb-2">Professional Path</h2>
         <p className="text-zinc-400 max-w-2xl mx-auto">

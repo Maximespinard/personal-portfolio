@@ -1,18 +1,17 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
 interface MobileLinksProps {
   toggleDrawer: () => void;
 }
 
 const MobileLinks: React.FC<MobileLinksProps> = ({ toggleDrawer }) => {
-  const scrollToContact = (): void => {
+  const scrollToSection = (sectionId: string): void => {
     toggleDrawer();
     // Wait for drawer animation to complete, then scroll
     setTimeout(() => {
-      const contactSection = document.querySelector('#contact-section');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
+      const section = document.querySelector(`#${sectionId}`);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
       }
     }, 300);
   };
@@ -27,27 +26,49 @@ const MobileLinks: React.FC<MobileLinksProps> = ({ toggleDrawer }) => {
   return (
     <ul className="p-4 flex flex-col">
       <li className="mb-4">
-        <NavLink
-          to="/"
+        <a
+          href="#"
           className="block p-3 hover:bg-gray-800 rounded transition duration-200"
-          onClick={scrollToTop}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToTop();
+          }}
         >
           Home
-        </NavLink>
-      </li>
-      <li className="mb-4">
-        <NavLink
-          to="/journey"
-          className="block p-3 hover:bg-gray-800 rounded transition duration-200"
-          onClick={toggleDrawer}
-        >
-          Journey
-        </NavLink>
+        </a>
       </li>
       <li className="mb-4">
         <a
-          onClick={scrollToContact}
+          href="#services-section"
+          className="block p-3 hover:bg-gray-800 rounded transition duration-200"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('services-section');
+          }}
+        >
+          Services
+        </a>
+      </li>
+      <li className="mb-4">
+        <a
+          href="#career-section"
+          className="block p-3 hover:bg-gray-800 rounded transition duration-200"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('career-section');
+          }}
+        >
+          Journey
+        </a>
+      </li>
+      <li className="mb-4">
+        <a
+          href="#contact-section"
           className="block p-3 hover:bg-gray-800 rounded transition duration-200 cursor-pointer"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('contact-section');
+          }}
           aria-label="Scroll to contact section"
         >
           Connect

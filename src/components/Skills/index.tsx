@@ -1,5 +1,5 @@
 import React from 'react';
-import { SlideFromLeft, SlideFromRight } from '../../components/animations';
+import { SlideFromLeft, SlideFromRight } from '../animations';
 import { stacksData } from '../../utils/data';
 
 interface SkillCategoryProps {
