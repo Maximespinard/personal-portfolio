@@ -1,41 +1,69 @@
-import React from 'react';
-import { FadeIn, HoverScale } from '../../animations';
+import React, { useEffect } from 'react';
+import { FadeIn, SlideUp, HoverScale } from '../../animations';
 
 interface ContactSuccessProps {
   onReset: () => void;
 }
 
 const ContactSuccess: React.FC<ContactSuccessProps> = ({ onReset }) => {
+  // Prevent scrolling while the success modal is shown
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   return (
-    <FadeIn className="max-w-md mx-auto bg-gradient-to-br from-[#1a0b2e] to-[#11071f] rounded-3xl shadow-2xl p-10 text-center border border-[#2c1250]">
-      <div className="w-20 h-20 bg-gradient-to-br from-[#7127ba] to-[#4f228d] rounded-2xl mx-auto flex items-center justify-center mb-8 transform rotate-12">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-10 w-10 text-white"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 13l4 4L19 7"
-          />
-        </svg>
-      </div>
-      <h3 className="text-3xl font-bold mb-3 text-white">Thank You!</h3>
-      <p className="mb-8 text-zinc-400 text-lg">
-        Your message has been sent successfully. I'll get back to you soon.
-      </p>
-      <HoverScale scale={1.05}>
-        <button
-          onClick={onReset}
-          className="px-8 py-3 bg-gradient-to-r from-[#7127ba] to-[#4f228d] text-white font-medium rounded-xl transition duration-200 border border-[#693b93]"
-        >
-          Send Another Message
-        </button>
-      </HoverScale>
+    <FadeIn
+      className="fixed inset-0 z-50 flex items-center justify-center bg-main-background/90 backdrop-blur-md p-6"
+      duration={0.4}
+    >
+      <SlideUp delay={0.2} duration={0.6} className="max-w-md w-full">
+        <div className="bg-gradient-to-br from-[#1a0b2e] to-[#11071f] rounded-3xl shadow-2xl p-10 text-center border-2 border-[#2c1250]">
+          <FadeIn delay={0.4} duration={0.5}>
+            <div className="w-24 h-24 bg-gradient-to-br from-[#7127ba] to-[#4f228d] rounded-2xl mx-auto flex items-center justify-center mb-8 transform rotate-12">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-14 w-14 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={3}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+          </FadeIn>
+
+          <SlideUp delay={0.5} duration={0.5} y={20}>
+            <h3 className="text-4xl font-bold mb-4 text-white">Thank You!</h3>
+          </SlideUp>
+
+          <SlideUp delay={0.6} duration={0.5} y={20}>
+            <p className="mb-12 text-zinc-300 text-lg">
+              Your message has been sent successfully.
+              <br />
+              I'll get back to you soon.
+            </p>
+          </SlideUp>
+
+          <FadeIn delay={0.8} duration={0.5}>
+            <HoverScale scale={1.05}>
+              <button
+                onClick={onReset}
+                className="px-10 py-4 bg-gradient-to-r from-[#7127ba] to-[#4f228d] text-white font-medium rounded-xl transition duration-200 border border-[#693b93] shadow-lg shadow-[#7127ba]/20"
+              >
+                Back to Home
+              </button>
+            </HoverScale>
+          </FadeIn>
+        </div>
+      </SlideUp>
     </FadeIn>
   );
 };

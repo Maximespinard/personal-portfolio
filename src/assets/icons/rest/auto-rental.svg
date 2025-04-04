@@ -1,0 +1,215 @@
+<svg
+    width="80"
+    height="80"
+    viewBox="0 0 80 80"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {/* Background gradient circle */}
+    <circle cx="40" cy="40" r="40" fill="url(#autoRentalGradient)" />
+    
+    {/* Subtle inner glow */}
+    <circle cx="40" cy="40" r="36" fill="url(#rentalInnerGlow)" opacity="0.6" />
+    
+    {/* Modern SUV/luxury vehicle silhouette */}
+    <path
+      d="M59 36L55 28.5C54 26.5 52.5 25 49 25H31C27.5 25 26 26.5 25 28.5L21 36C19 38 17 39.5 17 43V48C17 49.105 17.895 50 19 50H23C24.105 50 25 49.105 25 48V46H55V48C55 49.105 55.895 50 57 50H61C62.105 50 63 49.105 63 48V43C63 39.5 61 38 59 36Z"
+      fill="#371864"
+      stroke="#7127ba"
+      strokeWidth="1.5"
+      strokeLinejoin="round"
+    />
+    
+    {/* Modern car grille */}
+    <path
+      d="M27 36H53"
+      stroke="#7127ba"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+    
+    {/* Windows with reflections */}
+    <path
+      d="M31 28L29 36H51L49 28H31Z"
+      fill="#C4B5FD"
+      fillOpacity="0.2"
+      stroke="#7127ba"
+      strokeWidth="0.8"
+    />
+    
+    <path 
+      d="M33 30L32 34"
+      stroke="#C4B5FD"
+      strokeWidth="0.8"
+      strokeLinecap="round"
+    />
+    
+    <path 
+      d="M47 30L48 34"
+      stroke="#C4B5FD"
+      strokeWidth="0.8"
+      strokeLinecap="round"
+    />
+    
+    {/* Wheels with premium details */}
+    <circle cx="26" cy="40" r="5" fill="#251c31" stroke="#7127ba" strokeWidth="1.5" />
+    <circle cx="26" cy="40" r="3" fill="#2D1F40" />
+    <circle cx="26" cy="40" r="1.5" fill="#4F228D" />
+    <path
+      d="M25 37.5L26 40L28.5 41"
+      stroke="#7127ba"
+      strokeWidth="0.8"
+      strokeLinecap="round"
+    />
+    <path
+      d="M27 37.5L26 40L23.5 41"
+      stroke="#7127ba"
+      strokeWidth="0.8"
+      strokeLinecap="round"
+    />
+    
+    <circle cx="54" cy="40" r="5" fill="#251c31" stroke="#7127ba" strokeWidth="1.5" />
+    <circle cx="54" cy="40" r="3" fill="#2D1F40" />
+    <circle cx="54" cy="40" r="1.5" fill="#4F228D" />
+    <path
+      d="M53 37.5L54 40L56.5 41"
+      stroke="#7127ba"
+      strokeWidth="0.8"
+      strokeLinecap="round"
+    />
+    <path
+      d="M55 37.5L54 40L51.5 41"
+      stroke="#7127ba"
+      strokeWidth="0.8"
+      strokeLinecap="round"
+    />
+    
+    {/* Headlights */}
+    <path
+      d="M22 36C22 35.448 21.552 35 21 35H19C18.448 35 18 35.448 18 36V37C18 37.552 18.448 38 19 38H21C21.552 38 22 37.552 22 37V36Z"
+      fill="#F9FAFB"
+    />
+    
+    <path
+      d="M62 36C62 35.448 61.552 35 61 35H59C58.448 35 58 35.448 58 36V37C58 37.552 58.448 38 59 38H61C61.552 38 62 37.552 62 37V36Z"
+      fill="#F9FAFB"
+    />
+    
+    {/* Bumper */}
+    <path
+      d="M25 45H55"
+      stroke="#251c31"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+    
+    {/* Rental business elements */}
+    <path
+      d="M30 25C30 19 40 19 40 19C40 19 50 19 50 25"
+      stroke="#7127ba"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeDasharray="1 2"
+    />
+    
+    {/* Key icon */}
+    <circle cx="40" cy="13" r="2.5" fill="#4F228D" />
+    <path
+      d="M40 15.5V19"
+      stroke="#7127ba"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M36 16L39 19H41L44 16"
+      stroke="#7127ba"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    
+    {/* Digital rental tracking */}
+    <circle cx="15" cy="30" r="1.5" fill="#7127ba" fillOpacity="0.6" />
+    <circle cx="65" cy="30" r="1.5" fill="#7127ba" fillOpacity="0.6" />
+    
+    <path
+      d="M16.5 30H18.5"
+      stroke="#7127ba"
+      strokeWidth="1"
+      strokeLinecap="round"
+    />
+    
+    <path
+      d="M63.5 30H61.5"
+      stroke="#7127ba"
+      strokeWidth="1"
+      strokeLinecap="round"
+    />
+    
+    {/* Rental documents */}
+    <path
+      d="M39 54H41C41.552 54 42 54.448 42 55V61C42 61.552 41.552 62 41 62H39C38.448 62 38 61.552 38 61V55C38 54.448 38.448 54 39 54Z"
+      fill="#4F228D"
+    />
+    <path
+      d="M39 56H41"
+      stroke="#251c31"
+      strokeWidth="0.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M39 58H41"
+      stroke="#251c31"
+      strokeWidth="0.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M39 60H41"
+      stroke="#251c31"
+      strokeWidth="0.5"
+      strokeLinecap="round"
+    />
+    
+    {/* Calendar for booking */}
+    <rect x="32" y="54" width="5" height="8" rx="1" fill="#7127ba" fillOpacity="0.7" />
+    <path
+      d="M33 56H36"
+      stroke="#251c31"
+      strokeWidth="0.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M33 58H36"
+      stroke="#251c31"
+      strokeWidth="0.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M33 60H36"
+      stroke="#251c31"
+      strokeWidth="0.5"
+      strokeLinecap="round"
+    />
+    
+    {/* Digital check elements */}
+    <circle cx="47" cy="58" r="3" fill="#7127ba" fillOpacity="0.7" />
+    <path
+      d="M45 58L46.5 59.5L49 57"
+      stroke="#251c31"
+      strokeWidth="0.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    
+    {/* Gradients definitions */}
+    <defs>
+      <linearGradient id="autoRentalGradient" x1="15" y1="10" x2="65" y2="70" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stopColor="#251c31" />
+        <stop offset="1" stopColor="#1a0b2e" />
+      </linearGradient>
+      <radialGradient id="rentalInnerGlow" cx="40" cy="40" r="36" gradientUnits="userSpaceOnUse">
+        <stop offset="0.6" stopColor="#251c31" stopOpacity="0" />
+        <stop offset="1" stopColor="#7127ba" stopOpacity="0.2" />
+      </radialGradient>
+    </defs>
+  </svg>
