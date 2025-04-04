@@ -9,6 +9,8 @@ import {
 import { experiences } from '../utils/data';
 import { stacksData } from '../utils/data';
 import PurpleBg from '../assets/ui/purple-bg.svg';
+import ProjectCard from '../components/journey/ProjectCard';
+import SkillsSpotlight from '../components/journey/SkillsSpotlight';
 
 // Custom icons for projects (SVG components)
 const CarSharingIcon: React.FC = () => (
@@ -78,15 +80,8 @@ const AutoRentalIcon: React.FC = () => (
 // Journey Page Component
 const Journey: React.FC = () => {
   // Array of project icons to map with experiences
-  const projectIcons = [
-    <CarSharingIcon key="car-sharing" />,
-    <ELearningIcon key="e-learning" />,
-    <VisualHubIcon key="visual-hub" />,
-    <AutoRentalIcon key="auto-rental" />,
-  ];
 
   // Filter out a subset of stack items to show
-  const highlightedSkills = stacksData.slice(0, 9);
 
   return (
     <div className="space-y-16 relative">
@@ -279,288 +274,253 @@ const Journey: React.FC = () => {
         <SlideUpOnScroll className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-2">Featured Projects</h2>
           <p className="text-zinc-400 max-w-2xl mx-auto">
-            Deep dive into selected projects with detailed case studies
-          </p>
-        </SlideUpOnScroll>
-
-        <div className="max-w-6xl mx-auto">
-          {experiences.map((project, index) => (
-            <SlideUpOnScroll
-              key={index}
-              delay={0.1 * index}
-              className="bg-gradient-to-br from-[#1a0b2e] to-[#11071f] rounded-xl border border-[#2c1250] mb-10 overflow-hidden hover:shadow-lg hover:shadow-purple-900/10 transition-all duration-300"
-            >
-              <div className="p-8 md:p-10">
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-                  {/* Project Icon */}
-                  <div className="flex-shrink-0">
-                    {index === 0 && <CarSharingIcon />}
-                    {index === 1 && <ELearningIcon />}
-                    {index === 2 && <VisualHubIcon />}
-                    {index === 3 && <AutoRentalIcon />}
-                  </div>
-
-                  {/* Project Content */}
-                  <div className="flex-grow">
-                    <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-
-                    <div className="mb-6">
-                      <h4 className="text-lg text-purple-400 mb-2">Overview</h4>
-                      <p className="text-zinc-300">{project.description}</p>
-                    </div>
-
-                    <div className="mb-6">
-                      <h4 className="text-lg text-purple-400 mb-2">
-                        Key Features
-                      </h4>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                        {[1, 2, 3, 4].map((item) => (
-                          <li key={item} className="flex items-start">
-                            <span className="mr-2 text-purple-400">✓</span>
-                            <span className="text-zinc-300">
-                              {index === 0 &&
-                                item === 1 &&
-                                'Real-time availability tracking'}
-                              {index === 0 &&
-                                item === 2 &&
-                                'Secure payment integration'}
-                              {index === 0 &&
-                                item === 3 &&
-                                'User verification system'}
-                              {index === 0 &&
-                                item === 4 &&
-                                'Booking history and analytics'}
-
-                              {index === 1 &&
-                                item === 1 &&
-                                'Course management dashboard'}
-                              {index === 1 &&
-                                item === 2 &&
-                                'Progress tracking analytics'}
-                              {index === 1 &&
-                                item === 3 &&
-                                'Interactive learning modules'}
-                              {index === 1 &&
-                                item === 4 &&
-                                'Assignment submission system'}
-
-                              {index === 2 &&
-                                item === 1 &&
-                                'AI-powered image tagging'}
-                              {index === 2 &&
-                                item === 2 &&
-                                'Batch upload optimization'}
-                              {index === 2 &&
-                                item === 3 &&
-                                'Advanced search capabilities'}
-                              {index === 2 &&
-                                item === 4 &&
-                                'Usage analytics dashboard'}
-
-                              {index === 3 &&
-                                item === 1 &&
-                                'Inventory management system'}
-                              {index === 3 &&
-                                item === 2 &&
-                                'Customer booking portal'}
-                              {index === 3 &&
-                                item === 3 &&
-                                'Maintenance scheduling'}
-                              {index === 3 &&
-                                item === 4 &&
-                                'Revenue reporting tools'}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="mb-6">
-                      <h4 className="text-lg text-purple-400 mb-2">
-                        Technologies Used
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {[1, 2, 3, 4, 5].map((tech) => (
-                          <span
-                            key={tech}
-                            className="bg-[#251c31] px-3 py-1 rounded-full text-sm text-zinc-300"
-                          >
-                            {index === 0 && tech === 1 && 'React'}
-                            {index === 0 && tech === 2 && 'Node.js'}
-                            {index === 0 && tech === 3 && 'MongoDB'}
-                            {index === 0 && tech === 4 && 'Socket.IO'}
-                            {index === 0 && tech === 5 && 'Stripe API'}
-
-                            {index === 1 && tech === 1 && 'Next.js'}
-                            {index === 1 && tech === 2 && 'Express'}
-                            {index === 1 && tech === 3 && 'PostgreSQL'}
-                            {index === 1 && tech === 4 && 'Redux'}
-                            {index === 1 && tech === 5 && 'AWS S3'}
-
-                            {index === 2 && tech === 1 && 'React'}
-                            {index === 2 && tech === 2 && 'Node.js'}
-                            {index === 2 && tech === 3 && 'TensorFlow.js'}
-                            {index === 2 && tech === 4 && 'Firebase'}
-                            {index === 2 && tech === 5 && 'Cloudinary'}
-
-                            {index === 3 && tech === 1 && 'React'}
-                            {index === 3 && tech === 2 && 'Express'}
-                            {index === 3 && tech === 3 && 'MongoDB'}
-                            {index === 3 && tech === 4 && 'Redux Toolkit'}
-                            {index === 3 && tech === 5 && 'Tailwind CSS'}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SlideUpOnScroll>
-          ))}
-        </div>
-      </section>
-      {/* Skills Section */}
-      <section className="relative z-10 px-4 pb-16">
-        <SlideUpOnScroll className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">Technical Expertise</h2>
-          <p className="text-zinc-400 max-w-2xl mx-auto">
-            Specialized skills that power my development services
-          </p>
-        </SlideUpOnScroll>
-
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6">
-            {highlightedSkills.map((skill, index) => {
-              const Icon = skill.icon;
-              return (
-                <SlideFromLeft
-                  key={index}
-                  delay={0.05 * index}
-                  className="bg-[#251c31]/60 p-4 rounded-xl border border-[#2c1250]/60 flex flex-col items-center"
-                >
-                  <div className="w-16 h-16 flex items-center justify-center mb-3">
-                    <Icon className="w-12 h-12 text-purple-400" />
-                  </div>
-                  <p className="text-white font-medium text-center">
-                    {skill.description}
-                  </p>
-                </SlideFromLeft>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="relative z-10 px-4 pb-24">
-        <SlideUpOnScroll className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">Services Offered</h2>
-          <p className="text-zinc-400 max-w-2xl mx-auto">
-            Comprehensive development solutions tailored to your needs
+            Click on a project to explore details
           </p>
         </SlideUpOnScroll>
 
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <SlideFromLeft
-              delay={0.1}
-              className="bg-gradient-to-br from-[#1a0b2e] to-[#11071f] p-6 rounded-xl border border-[#2c1250]"
-            >
-              <div className="w-12 h-12 bg-[#251c31] rounded-xl flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-[#7127ba]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
+          {experiences.map((project, index) => (
+            <ProjectCard
+              key={index}
+              project={project}
+              index={index}
+              icon={
+                index === 0 ? (
+                  <CarSharingIcon />
+                ) : index === 1 ? (
+                  <ELearningIcon />
+                ) : index === 2 ? (
+                  <VisualHubIcon />
+                ) : (
+                  <AutoRentalIcon />
+                )
+              }
+            />
+          ))}
+        </div>
+      </section>
+      {/* Skills Section */}
+      <SkillsSpotlight />
+
+      {/* Services Section */}
+      <section className="relative z-10 px-4 pb-24 overflow-hidden">
+        <SlideUpOnScroll className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-300">
+            Services Offered
+          </h2>
+          <p className="text-zinc-400 max-w-2xl mx-auto text-lg">
+            Transforming ideas into exceptional digital experiences
+          </p>
+        </SlideUpOnScroll>
+
+        {/* Background accents */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-40 -left-20 w-64 h-64 bg-purple-900/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-indigo-900/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* E-Commerce */}
+            <SlideFromLeft delay={0.1}>
+              <div className="group relative">
+                {/* Card glow effect on hover */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-2xl opacity-0 group-hover:opacity-70 blur transition duration-500"></div>
+
+                <div className="relative bg-gradient-to-br from-[#1a0b2e] to-[#11071f] p-8 rounded-2xl border border-[#2c1250] h-full transform transition-all duration-500 group-hover:translate-y-[-8px]">
+                  <div className="absolute right-6 top-6 opacity-20">
+                    <svg
+                      className="w-24 h-24 text-[#7127ba]/30"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                  </div>
+
+                  <div className="w-16 h-16 mb-6 bg-gradient-to-br from-[#7127ba] to-[#4f228d] rounded-2xl flex items-center justify-center shadow-lg mx-auto">
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                      ></path>
+                    </svg>
+                  </div>
+
+                  <h3 className="text-2xl font-bold mb-4 text-white">
+                    E-Commerce Solutions
+                  </h3>
+
+                  <p className="text-zinc-400 mb-6">
+                    Custom online stores with secure payment processing,
+                    inventory management, and conversion-focused user
+                    experiences.
+                  </p>
+
+                  <ul className="space-y-2 mb-8">
+                    <li className="flex items-center text-zinc-300">
+                      <span className="text-purple-400 mr-2">✓</span>
+                      Secure payment gateways
+                    </li>
+                    <li className="flex items-center text-zinc-300">
+                      <span className="text-purple-400 mr-2">✓</span>
+                      Inventory tracking systems
+                    </li>
+                    <li className="flex items-center text-zinc-300">
+                      <span className="text-purple-400 mr-2">✓</span>
+                      Mobile-optimized shopping
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">
-                Custom Web Applications
-              </h3>
-              <p className="text-zinc-400">
-                End-to-end development of bespoke web applications built to
-                address your specific business requirements.
-              </p>
             </SlideFromLeft>
 
-            <SlideUpOnScroll
-              delay={0.2}
-              className="bg-gradient-to-br from-[#1a0b2e] to-[#11071f] p-6 rounded-xl border border-[#2c1250]"
-            >
-              <div className="w-12 h-12 bg-[#251c31] rounded-xl flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-[#7127ba]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
+            {/* Portfolio & Landing Pages */}
+            <SlideUpOnScroll delay={0.2}>
+              <div className="group relative">
+                {/* Card glow effect on hover */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-2xl opacity-0 group-hover:opacity-70 blur transition duration-500"></div>
+
+                <div className="relative bg-gradient-to-br from-[#1a0b2e] to-[#11071f] p-8 rounded-2xl border border-[#2c1250] h-full transform transition-all duration-500 group-hover:translate-y-[-8px]">
+                  <div className="absolute right-6 top-6 opacity-20">
+                    <svg
+                      className="w-24 h-24 text-[#7127ba]/30"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                  </div>
+
+                  <div className="w-16 h-16 mb-6 bg-gradient-to-br from-[#7127ba] to-[#4f228d] rounded-2xl flex items-center justify-center shadow-lg mx-auto">
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                      ></path>
+                    </svg>
+                  </div>
+
+                  <h3 className="text-2xl font-bold mb-4 text-white">
+                    Portfolio & Landing Pages
+                  </h3>
+
+                  <p className="text-zinc-400 mb-6">
+                    Stunning, high-converting websites designed to showcase your
+                    work and turn visitors into clients.
+                  </p>
+
+                  <ul className="space-y-2 mb-8">
+                    <li className="flex items-center text-zinc-300">
+                      <span className="text-purple-400 mr-2">✓</span>
+                      Conversion-optimized layouts
+                    </li>
+                    <li className="flex items-center text-zinc-300">
+                      <span className="text-purple-400 mr-2">✓</span>
+                      Interactive user experiences
+                    </li>
+                    <li className="flex items-center text-zinc-300">
+                      <span className="text-purple-400 mr-2">✓</span>
+                      SEO-friendly architecture
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">Technical Consultation</h3>
-              <p className="text-zinc-400">
-                Expert advice on technology stack selection, architecture
-                planning, and implementation strategies for your projects.
-              </p>
             </SlideUpOnScroll>
 
-            <SlideFromRight
-              delay={0.3}
-              className="bg-gradient-to-br from-[#1a0b2e] to-[#11071f] p-6 rounded-xl border border-[#2c1250]"
-            >
-              <div className="w-12 h-12 bg-[#251c31] rounded-xl flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-[#7127ba]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
-                  />
-                </svg>
+            {/* Custom Business Tools */}
+            <SlideFromRight delay={0.3}>
+              <div className="group relative">
+                {/* Card glow effect on hover */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-2xl opacity-0 group-hover:opacity-70 blur transition duration-500"></div>
+
+                <div className="relative bg-gradient-to-br from-[#1a0b2e] to-[#11071f] p-8 rounded-2xl border border-[#2c1250] h-full transform transition-all duration-500 group-hover:translate-y-[-8px]">
+                  <div className="absolute right-6 top-6 opacity-20">
+                    <svg
+                      className="w-24 h-24 text-[#7127ba]/30"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                    </svg>
+                  </div>
+
+                  <div className="w-16 h-16 mb-6 bg-gradient-to-br from-[#7127ba] to-[#4f228d] rounded-2xl flex items-center justify-center shadow-lg mx-auto">
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                      ></path>
+                    </svg>
+                  </div>
+
+                  <h3 className="text-2xl font-bold mb-4 text-white">
+                    Custom Business Tools
+                  </h3>
+
+                  <p className="text-zinc-400 mb-6">
+                    Tailored applications like invoice generators, CRM
+                    dashboards, and workflow automation tools.
+                  </p>
+
+                  <ul className="space-y-2 mb-8">
+                    <li className="flex items-center text-zinc-300">
+                      <span className="text-purple-400 mr-2">✓</span>
+                      Invoice management systems
+                    </li>
+                    <li className="flex items-center text-zinc-300">
+                      <span className="text-purple-400 mr-2">✓</span>
+                      Custom admin dashboards
+                    </li>
+                    <li className="flex items-center text-zinc-300">
+                      <span className="text-purple-400 mr-2">✓</span>
+                      Workflow automation
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">System Integration</h3>
-              <p className="text-zinc-400">
-                Seamless integration of third-party services and APIs to create
-                cohesive, efficient workflows for your business.
-              </p>
             </SlideFromRight>
           </div>
 
-          <FadeIn delay={0.4} className="mt-12 text-center">
-            <HoverScale>
-              <a
-                href="#contact-section"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-xl text-white font-medium shadow-lg shadow-purple-900/20 border border-[#693b93]"
-              >
-                Discuss Your Project
-              </a>
-            </HoverScale>
+          <FadeIn delay={0.5} className="mt-16 text-center">
+            <div className="inline-block relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-xl opacity-70 blur-sm"></div>
+              <HoverScale>
+                <a
+                  href="#contact-section"
+                  className="relative inline-block px-10 py-5 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-xl text-white font-medium shadow-lg shadow-purple-900/20 border border-[#693b93] text-lg"
+                >
+                  Let's Build Something Amazing
+                </a>
+              </HoverScale>
+            </div>
           </FadeIn>
         </div>
       </section>
 
       {/* Background Elements */}
-      <div className="absolute inset-0 top-0 z-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 -top-[15%] z-0 pointer-events-none overflow-hidden">
         <FadeIn className="absolute inset-0 opacity-30">
           <PurpleBg className="w-full h-full" />
         </FadeIn>

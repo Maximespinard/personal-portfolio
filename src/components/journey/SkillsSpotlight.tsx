@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  SlideFromLeft,
-  SlideFromRight,
-  HoverScale,
-} from '../../components/animations';
+import { SlideFromLeft, SlideFromRight } from '../../components/animations';
 import { stacksData } from '../../utils/data';
 
 interface SkillCategoryProps {
@@ -56,26 +52,6 @@ const SkillCategory: React.FC<SkillCategoryProps> = ({
   );
 };
 
-interface AchievementProps {
-  icon: string;
-  title: string;
-  value: string | number;
-}
-
-const Achievement: React.FC<AchievementProps> = ({ icon, title, value }) => {
-  return (
-    <HoverScale className="bg-[#1a0b2e] rounded-xl p-6 border border-[#2c1250] text-center">
-      <div className="flex flex-col items-center">
-        <div className="w-12 h-12 bg-gradient-to-br from-[#7127ba] to-[#4f228d] rounded-full flex items-center justify-center mb-4">
-          <span className="text-white text-xl">{icon}</span>
-        </div>
-        <span className="text-3xl font-bold text-white mb-1">{value}</span>
-        <span className="text-zinc-400 text-sm">{title}</span>
-      </div>
-    </HoverScale>
-  );
-};
-
 const SkillsSpotlight: React.FC = () => {
   return (
     <section className="my-16">
@@ -109,13 +85,6 @@ const SkillsSpotlight: React.FC = () => {
           ]}
           isRight={true}
         />
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Achievement icon="🚀" title="Projects Completed" value="25+" />
-        <Achievement icon="⏱️" title="Years Experience" value="7+" />
-        <Achievement icon="👥" title="Happy Clients" value="20+" />
-        <Achievement icon="🔄" title="Daily Deployments" value="3+" />
       </div>
     </section>
   );
