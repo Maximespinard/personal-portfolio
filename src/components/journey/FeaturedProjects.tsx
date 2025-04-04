@@ -86,7 +86,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
   };
 
   return (
-    <section id="projects" className="relative z-10 px-4 overflow-hidden">
+    <section id="projects" className="relative z-10 sm:px-4 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-64 h-64 bg-purple-900/10 rounded-full blur-3xl"></div>

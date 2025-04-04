@@ -6,7 +6,7 @@ interface SkillCategoryProps {
   title: string;
   skills: {
     name: string;
-    proficiency: number; // 1-100
+    proficiency: number;
     icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   }[];
   isRight?: boolean;

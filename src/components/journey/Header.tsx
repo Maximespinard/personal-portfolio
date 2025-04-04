@@ -5,7 +5,10 @@ import {
   SlideFromRight,
 } from '../animations';
 
-const Header = () => {
+interface HeaderProps {
+  handleHireMeClick: (e: React.MouseEvent) => void;
+}
+const Header = ({ handleHireMeClick }: HeaderProps) => {
   return (
     <div className="relative pt-10 pb-16 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#1a0b2e]/60 to-[#11071f] z-0"></div>
@@ -45,6 +48,7 @@ const Header = () => {
             </HoverScale>
             <HoverScale>
               <a
+                onClick={handleHireMeClick}
                 href="#contact-section"
                 className="px-8 py-3 bg-[#251c31] border border-[#4f228d] rounded-xl text-white font-medium"
               >
