@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   SlideUpOnScroll,
   HoverScale,
@@ -16,8 +16,11 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, icon }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const toggleExpand = () => {
+    // If we're closing the card, scroll back to the top of this card
+
     setIsExpanded(!isExpanded);
   };
 
@@ -27,6 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, icon }) => {
   return (
     <SlideUpOnScroll delay={0.1 * index} className="mb-12 last:mb-0">
       <div
+        ref={cardRef}
         className={`group relative rounded-2xl overflow-hidden transition-all duration-500 ${
           isExpanded
             ? 'bg-gradient-to-br from-[#1a0b2e] to-[#11071f] border-2 border-[#7127ba]/30 shadow-2xl shadow-[#7127ba]/20 transform'
@@ -47,7 +51,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, icon }) => {
             <div className="flex-shrink-0 transition-transform duration-500 group-hover:scale-105">
               <HoverScale scale={1.08}>
                 <div
-                  className={`p-2 rounded-xl ${isExpanded ? 'bg-[#251c31]' : 'bg-transparent'} transition-all duration-500`}
+                  onClick={toggleExpand}
+                  className={`p-2 rounded-xl ${isExpanded ? 'bg-[#251c31]' : 'bg-transparent'} transition-all duration-500 cursor-pointer`}
                 >
                   {icon}
                 </div>
@@ -118,7 +123,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, icon }) => {
 
           {/* Expanded Content */}
           {isExpanded && (
-            <div className="mt-6 border-t border-[#2c1250] pt-6">
+            <div
+              className="mt-6 border-t border-[#2c1250] pt-6"
+              style={{ height: 'auto' }}
+            >
               {/* Project Description */}
               <FadeIn delay={0.1} className="mb-6">
                 <p className="text-zinc-300 leading-relaxed">
@@ -230,12 +238,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, icon }) => {
               )}
               {/* Close Button */}
               <div className="mt-6 text-right">
-                <button
-                  onClick={toggleExpand}
-                  className="px-4 py-2 text-purple-300 text-sm font-medium hover:text-white transition-colors"
-                >
-                  Close Details
-                </button>
+                <HoverScale scale={1.05}>
+                  <button
+                    onClick={toggleExpand}
+                    className="px-4 py-2 bg-[#251c31] border border-[#4f228d] rounded-lg text-white text-sm font-medium hover:bg-[#2c1250] transition-colors"
+                  >
+                    Close Details
+                  </button>
+                </HoverScale>
               </div>
             </div>
           )}
