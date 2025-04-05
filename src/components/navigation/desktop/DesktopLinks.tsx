@@ -1,13 +1,7 @@
 import React from 'react';
+import { scrollToSection } from '../../../utils/functions';
 
 const NavDesktopLinks: React.FC = () => {
-  const scrollToSection = (sectionId: string): void => {
-    const section = document.querySelector(`#${sectionId}`);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const scrollToTop = (): void => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

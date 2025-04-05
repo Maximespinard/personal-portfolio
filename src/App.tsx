@@ -18,11 +18,7 @@ const App: React.FC = () => {
         <main className="min-h-screen py-6 px-10 sm:p-20 md:px-30 lg:px-20 2xl:px-[20%] overflow-hidden">
           <div className="space-y-12">
             <Hero />
-            <IntroShowCase
-              handleHireMeClick={() => {
-                // Add your desired functionality here for the "Hire Me" button click
-              }}
-            />
+            <IntroShowCase />
             <Services />
             <CareerTimeline />
             <FeaturedProjects />

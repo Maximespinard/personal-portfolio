@@ -29,16 +29,6 @@ const Services = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-2xl opacity-0 group-hover:opacity-70 blur transition duration-500"></div>
 
               <div className="relative bg-gradient-to-br from-[#1a0b2e] to-[#11071f] p-8 rounded-2xl border border-[#2c1250] h-full transform transition-all duration-500 group-hover:translate-y-[-8px]">
-                <div className="absolute right-6 top-6 opacity-20">
-                  <svg
-                    className="w-24 h-24 text-[#7127ba]/30"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                  </svg>
-                </div>
-
                 <div className="w-16 h-16 mb-6 bg-gradient-to-br from-[#7127ba] to-[#4f228d] rounded-2xl flex items-center justify-center shadow-lg mx-auto">
                   <svg
                     className="w-8 h-8 text-white"
@@ -89,16 +79,6 @@ const Services = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-2xl opacity-0 group-hover:opacity-70 blur transition duration-500"></div>
 
               <div className="relative bg-gradient-to-br from-[#1a0b2e] to-[#11071f] p-8 rounded-2xl border border-[#2c1250] h-full transform transition-all duration-500 group-hover:translate-y-[-8px]">
-                <div className="absolute right-6 top-6 opacity-20">
-                  <svg
-                    className="w-24 h-24 text-[#7127ba]/30"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                  </svg>
-                </div>
-
                 <div className="w-16 h-16 mb-6 bg-gradient-to-br from-[#7127ba] to-[#4f228d] rounded-2xl flex items-center justify-center shadow-lg mx-auto">
                   <svg
                     className="w-8 h-8 text-white"
@@ -149,16 +129,6 @@ const Services = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-2xl opacity-0 group-hover:opacity-70 blur transition duration-500"></div>
 
               <div className="relative bg-gradient-to-br from-[#1a0b2e] to-[#11071f] p-8 rounded-2xl border border-[#2c1250] h-full transform transition-all duration-500 group-hover:translate-y-[-8px]">
-                <div className="absolute right-6 top-6 opacity-20">
-                  <svg
-                    className="w-24 h-24 text-[#7127ba]/30"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
-                  </svg>
-                </div>
-
                 <div className="w-16 h-16 mb-6 bg-gradient-to-br from-[#7127ba] to-[#4f228d] rounded-2xl flex items-center justify-center shadow-lg mx-auto">
                   <svg
                     className="w-8 h-8 text-white"

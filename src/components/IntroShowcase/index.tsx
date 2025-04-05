@@ -1,3 +1,4 @@
+import { scrollToSection } from '../../utils/functions';
 import {
   FadeIn,
   HoverScale,
@@ -5,10 +6,7 @@ import {
   SlideFromRight,
 } from '../animations';
 
-interface IntroShowCaseProps {
-  handleHireMeClick: (e: React.MouseEvent) => void;
-}
-const IntroShowCase = ({ handleHireMeClick }: IntroShowCaseProps) => {
+const IntroShowCase = () => {
   return (
     <div className="relative pt-10 pb-16 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#1a0b2e]/60 to-[#11071f] z-0"></div>
@@ -40,6 +38,10 @@ const IntroShowCase = ({ handleHireMeClick }: IntroShowCaseProps) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <HoverScale>
               <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('projects-section');
+                }}
                 href="#projects"
                 className="px-8 py-3 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-xl text-white font-medium shadow-lg shadow-purple-900/20 border border-[#693b93]"
               >
@@ -48,7 +50,10 @@ const IntroShowCase = ({ handleHireMeClick }: IntroShowCaseProps) => {
             </HoverScale>
             <HoverScale>
               <a
-                onClick={handleHireMeClick}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('contact-section');
+                }}
                 href="#contact-section"
                 className="px-8 py-3 bg-[#251c31] border border-[#4f228d] rounded-xl text-white font-medium"
               >
