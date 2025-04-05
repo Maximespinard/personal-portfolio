@@ -61,7 +61,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
         </h2>
         <FadeIn delay={0.2}>
           <p className="text-zinc-400 max-w-2xl mx-auto">
-            Scroll to explore projects
+            Scroll to explore projects or click to view details
           </p>
         </FadeIn>
       </SlideUpOnScroll>
@@ -128,7 +128,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className="min-w-[300px] sm:min-w-[400px] md:min-w-[500px] snap-start"
+                className="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] h-[450px] snap-start"
               >
                 <ProjectCard
                   project={project}
