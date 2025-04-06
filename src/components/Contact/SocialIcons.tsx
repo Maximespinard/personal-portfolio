@@ -1,5 +1,5 @@
 import React from 'react';
-import { HoverScale } from '../../animations';
+import { HoverScale } from '../animations';
 
 const SocialIcons: React.FC = () => {
   const linkedInIcon =

@@ -58,6 +58,36 @@
     -webkit-box-shadow: 0 0 0 30px theme('colors.stack-bg') inset !important;
     box-shadow: 0 0 0 30px theme('colors.stack-bg') inset !important;
   }
+
+  /* Featured project cards */
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .custom-title-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, white, #d8b4fe);
+  }
 }
 
 @theme {

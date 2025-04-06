@@ -1,3 +1,4 @@
+import { scrollToSection } from '../../utils/functions';
 import {
   FadeIn,
   HoverScale,
@@ -5,13 +6,13 @@ import {
   SlideFromRight,
 } from '../animations';
 
-interface HeaderProps {
-  handleHireMeClick: (e: React.MouseEvent) => void;
-}
-const Header = ({ handleHireMeClick }: HeaderProps) => {
+const IntroShowCase = () => {
   return (
-    <div className="relative pt-10 pb-16 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1a0b2e]/60 to-[#11071f] z-0"></div>
+    <div
+      className="relative max-md:pt-10 pb-16 overflow-hidden"
+      id="intro-showcase-section"
+    >
+      <div className="absolute inset-0  z-0"></div>
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#7127ba]/20 via-transparent to-transparent blur-xl"></div>
@@ -20,7 +21,7 @@ const Header = ({ handleHireMeClick }: HeaderProps) => {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         <SlideFromLeft delay={0.2} className="mb-4">
           <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-300">
             Transforming Ideas Into Digital Solutions
@@ -28,7 +29,7 @@ const Header = ({ handleHireMeClick }: HeaderProps) => {
         </SlideFromLeft>
 
         <SlideFromRight delay={0.4} className="mb-8">
-          <p className="text-lg md:text-xl text-zinc-300 mt-4 max-w-3xl mx-auto">
+          <p className="text-lg md:text-base text-zinc-300 mt-4 max-w-3xl mx-auto">
             From concept to deployment, I craft tailor-made web applications
             that solve real business challenges. My expertise spans the entire
             development lifecycle with a focus on creating scalable,
@@ -40,6 +41,10 @@ const Header = ({ handleHireMeClick }: HeaderProps) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <HoverScale>
               <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('projects-section');
+                }}
                 href="#projects"
                 className="px-8 py-3 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-xl text-white font-medium shadow-lg shadow-purple-900/20 border border-[#693b93]"
               >
@@ -48,7 +53,10 @@ const Header = ({ handleHireMeClick }: HeaderProps) => {
             </HoverScale>
             <HoverScale>
               <a
-                onClick={handleHireMeClick}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('contact-section');
+                }}
                 href="#contact-section"
                 className="px-8 py-3 bg-[#251c31] border border-[#4f228d] rounded-xl text-white font-medium"
               >
@@ -61,4 +69,4 @@ const Header = ({ handleHireMeClick }: HeaderProps) => {
     </div>
   );
 };
-export default Header;
+export default IntroShowCase;

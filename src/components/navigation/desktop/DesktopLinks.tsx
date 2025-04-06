@@ -1,43 +1,58 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { scrollToSection } from '../../../utils/functions';
 
 const NavDesktopLinks: React.FC = () => {
-  const scrollToContact = (): void => {
-    // Find the contact form section and scroll to it
-    const contactSection = document.querySelector('#contact-section');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const scrollToTop = (): void => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <ul className="flex flex-row justify-between basis-2/5 text-base">
+    <ul className="flex flex-row justify-between w-full basis-3/5 lg:basis-2/5 text-base">
       <li>
-        <NavLink
-          to="/"
+        <a
+          href="#"
           className="hover:text-primary transition-colors text-secondary"
-          onClick={scrollToTop}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToTop();
+          }}
         >
           Home
-        </NavLink>
+        </a>
       </li>
       <li>
-        <NavLink
-          to="/journey"
+        <a
+          href="#services-section"
           className="hover:text-primary transition-colors text-secondary"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('services-section');
+          }}
+        >
+          Services
+        </a>
+      </li>
+      <li>
+        <a
+          href="#career-section"
+          className="hover:text-primary transition-colors text-secondary"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('career-section');
+          }}
         >
           Journey
-        </NavLink>
+        </a>
       </li>
       <li className="cursor-pointer">
         <a
-          onClick={scrollToContact}
+          href="#contact-section"
           className="hover:text-primary transition-colors cursor-pointer"
           aria-label="Scroll to contact section"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('contact-section');
+          }}
         >
           Connect
         </a>

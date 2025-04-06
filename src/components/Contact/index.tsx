@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { useBotProtection } from '../../../hooks/useBotProtection';
-import { submitContactForm } from '../../../services/contactApi';
+import { useBotProtection } from '../../hooks/useBotProtection';
+import { submitContactForm } from '../../services/contactApi';
 import {
   contactFormSchema,
   ContactFormData,
-} from '../../../utils/formValidations';
-import { SlideFromLeft } from '../../animations';
+} from '../../utils/formValidations';
+import { SlideFromLeft } from '../animations';
 
 import ContactSuccess from './ContactSuccess';
 import ContactFormFields from './ContactFormFields';
@@ -59,27 +59,29 @@ const ContactForm: React.FC = () => {
   }
 
   return (
-    <div id="contact-section" className="w-full mx-auto mt-20">
-      <div className="bg-gradient-to-br from-[#1a0b2e] to-[#11071f] rounded-3xl shadow-2xl overflow-hidden border border-[#2c1250]">
-        <SlideFromLeft
-          className="p-10 md:p-12 md:pb-6"
-          delay={0.25}
-          duration={1}
-        >
-          <ContactHeader />
-          <ContactFormFields register={register} errors={errors} />
+    <div id="contact-section" className="w-full mb-12">
+      <div className="mx-auto sm:px-6 lg:px-20 2xl:px-[20%]">
+        <div className="bg-gradient-to-br from-[#1a0b2e] to-[#11071f] rounded-3xl shadow-2xl overflow-hidden border border-[#2c1250]">
+          <SlideFromLeft
+            className="p-10 md:p-12 md:pb-6"
+            delay={0.25}
+            duration={1}
+          >
+            <ContactHeader />
+            <ContactFormFields register={register} errors={errors} />
 
-          <BotProtectionField
-            onProtectionReady={({ formToken }) => {
-              console.log('Protection ready', { formToken });
-            }}
-          />
+            <BotProtectionField
+              onProtectionReady={({ formToken }) => {
+                console.log('Protection ready', { formToken });
+              }}
+            />
 
-          <ContactFooter
-            onSubmit={handleSubmit(onSubmit)}
-            isSubmitting={isSubmitting}
-          />
-        </SlideFromLeft>
+            <ContactFooter
+              onSubmit={handleSubmit(onSubmit)}
+              isSubmitting={isSubmitting}
+            />
+          </SlideFromLeft>
+        </div>
       </div>
     </div>
   );

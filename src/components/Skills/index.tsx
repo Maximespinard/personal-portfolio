@@ -1,5 +1,5 @@
 import React from 'react';
-import { SlideFromLeft, SlideFromRight } from '../../components/animations';
+import { SlideFromLeft, SlideFromRight } from '../animations';
 import { stacksData } from '../../utils/data';
 
 interface SkillCategoryProps {
@@ -56,9 +56,11 @@ const SkillsSpotlight: React.FC = () => {
   return (
     <section className="my-16">
       <SlideFromLeft className="mb-12 text-center">
-        <h2 className="text-3xl font-bold">Skills & Achievements</h2>
+        <h2 className="text-3xl font-bold custom-title-gradient">
+          Technical Skills
+        </h2>
         <p className="text-zinc-400 mt-2">
-          Technical expertise and professional highlights
+          My expertise across frontend and backend technologies
         </p>
       </SlideFromLeft>
 

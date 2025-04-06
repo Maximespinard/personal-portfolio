@@ -1,8 +1,12 @@
 import React from 'react';
-import { Route, Routes } from 'react-router';
 import NavBar from './components/navigation';
-import Home from './pages/Home';
-import Journey from './pages/Journey';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import CareerTimeline from './components/CareerTimeline';
+import FeaturedProjects from './components/FeaturedProjects';
+import Skills from './components/Skills';
+import ContactForm from './components/Contact';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
@@ -11,12 +15,22 @@ const App: React.FC = () => {
         <header>
           <NavBar />
         </header>
-        <main className="min-h-screen py-6 px-10 sm:p-20 md:px-30 lg:px-20 2xl:px-[20%] overflow-hidden">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/journey" element={<Journey />} />
-          </Routes>
+        <main className="min-h-screen overflow-hidden">
+          <div className="py-6 px-10 sm:py-10 lg:px-20 2xl:px-[20%]">
+            <div className="space-y-12">
+              <Hero />
+              <Services />
+              <CareerTimeline />
+              <FeaturedProjects />
+              <Skills />
+            </div>
+          </div>
+          {/* Contact form en dehors des paddings */}
+          <ContactForm />
         </main>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { FadeIn, SlideUp, HoverScale } from '../../animations';
+import { FadeIn, SlideUp, HoverScale } from '../animations';
 
 interface ContactSuccessProps {
   onReset: () => void;

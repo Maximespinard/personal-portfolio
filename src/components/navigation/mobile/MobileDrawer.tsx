@@ -37,7 +37,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
   return (
     <div
       ref={drawerRef}
-      className={`fixed top-0 left-0 h-screen w-64 bg-navbar text-white transform transition-transform duration-300 ease-in-out z-50 ${
+      className={`fixed bg-main-background top-0 left-0 h-screen w-64 text-white transform transition-transform duration-300 ease-in-out z-50 ${
         isDrawerOpen ? 'translate-x-0' : '-translate-x-full'
       } flex flex-col shadow-2xl`}
     >
