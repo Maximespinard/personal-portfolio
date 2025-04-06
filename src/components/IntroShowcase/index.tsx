@@ -21,7 +21,7 @@ const IntroShowCase = () => {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         <SlideFromLeft delay={0.2} className="mb-4">
           <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-300">
             Transforming Ideas Into Digital Solutions

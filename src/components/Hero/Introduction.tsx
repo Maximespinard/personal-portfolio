@@ -24,13 +24,13 @@ const Introduction: React.FC = () => {
                   A Developer who
                 </p>
                 <p
-                  className="text-4xl font-bold md:text-5xl whitespace-nowrap"
+                  className="text-3xl font-bold md:text-5xl whitespace-nowrap custom-title-gradient"
                   role="heading"
                   aria-level={2}
                 >
                   Builds solutions
                 </p>
-                <p className="text-4xl font-bold md:text-5xl relative">
+                <p className="text-4xl font-bold md:text-5xl relative custom-title-gradient">
                   line by
                   <span className="relative inline-flex items-center whitespace-nowrap left-3 top-0.5">
                     <img
@@ -39,10 +39,10 @@ const Introduction: React.FC = () => {
                       className="absolute z-[3] right-2 w-[130px] sm:w-[150px] h-auto"
                       style={{ objectFit: 'contain' }}
                     />
-                    <span className="text-main-purple relative z-10 text-4xl md:text-5xl">
+                    <span className="text-main-purple relative z-10 text-4xl md:text-5xl custom-title-gradient">
                       line
                     </span>
-                    <span className="text-4xl md:text-5xl md:relative md:top-1 md:left-1">
+                    <span className="text-4xl md:text-5xl md:relative md:top-1 md:left-1 custom-title-gradient">
                       ...
                     </span>
                   </span>

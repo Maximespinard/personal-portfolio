@@ -20,7 +20,9 @@ const ContactHeader: React.FC = () => {
             />
           </svg>
         </div>
-        <h2 className="text-3xl font-bold text-white">Let's Collaborate</h2>
+        <h2 className="text-3xl font-bold text-white custom-title-gradient">
+          Let's Collaborate
+        </h2>
       </div>
       <p className="text-zinc-400 text-lg mb-10 max-w-2xl">
         Ready to build something exceptional? Contact me now for fast,

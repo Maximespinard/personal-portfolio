@@ -81,6 +81,13 @@
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  .custom-title-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, white, #d8b4fe);
+  }
 }
 
 @theme {
