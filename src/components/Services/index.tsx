@@ -8,11 +8,11 @@ const Services = () => {
   };
   return (
     <section
-      className="relative z-10 lg:py-20 overflow-hidden"
+      className="relative z-10 py-10 lg:py-20 overflow-hidden"
       id="services-section"
     >
-      {/* Enhanced Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-b from-[#11071f] via-[#1a0b2e] to-[#11071f] overflow-hidden">
+      {/* Enhanced Background - hidden on mobile, visible from lg breakpoint */}
+      <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none bg-gradient-to-b from-[#11071f] via-[#1a0b2e] to-[#11071f] overflow-hidden">
         {/* Animated gradient orbs */}
         <div className="absolute -top-20 left-1/4 w-96 h-96 bg-gradient-radial from-[#7127ba]/10 to-transparent rounded-full blur-3xl opacity-60"></div>
         <div className="absolute top-1/3 -right-20 w-80 h-80 bg-gradient-radial from-[#4f228d]/10 to-transparent rounded-full blur-3xl opacity-50"></div>
@@ -29,7 +29,7 @@ const Services = () => {
         ></div>
       </div>
 
-      <div className="container mx-auto  sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto sm:px-6 lg:px-8 relative z-10">
         <SlideUpOnScroll className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-300">
             Services Offered
@@ -40,7 +40,7 @@ const Services = () => {
         </SlideUpOnScroll>
 
         {/* Service Cards - Redesigned */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* E-Commerce */}
           <SlideFromLeft delay={0.1}>
             <ServiceCard
@@ -162,13 +162,15 @@ const ServiceCard = ({ icon, title, description, features }) => {
         <div className="absolute -inset-0.5 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-xl opacity-0 group-hover:opacity-60 blur-sm transition-all duration-300"></div>
 
         {/* Card content */}
-        <div className="relative bg-gradient-to-br from-[#1a0b2e]/80 to-[#11071f] backdrop-blur-sm p-2 rounded-xl border border-[#4f228d]/30 h-full flex flex-col group">
+        <div className="relative p-6 bg-gradient-to-br from-[#1a0b2e]/80 to-[#11071f] backdrop-blur-sm p-2 rounded-xl border border-[#4f228d]/30 h-full flex flex-col group">
           {/* Service icon */}
           <div className="mb-6 flex items-center">
-            <div className="w-14 h-14 bg-gradient-to-br from-[#7127ba] to-[#4f228d] rounded-lg flex items-center justify-center shadow-lg mr-4 group-hover:shadow-[#7127ba]/30 transition-all duration-300">
-              {icon}
+            <div className="w-12 h-12 bg-gradient-to-br from-[#7127ba] to-[#4f228d] rounded-lg flex items-center justify-center shadow-lg mr-4 group-hover:shadow-[#7127ba]/30 transition-all duration-300 flex-shrink-0">
+              <div className="w-8 h-8 flex items-center justify-center">
+                {icon}
+              </div>
             </div>
-            <h3 className="text-2xl font-bold text-white">{title}</h3>
+            <h3 className="text-xl font-semibold text-white">{title}</h3>
           </div>
 
           {/* Description */}
