@@ -1,16 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import DesktopLogo from './DesktopLogo';
 import DesktopLinks from './DesktopLinks';
+import useNavHeight from '../../../hooks/useNavHeight';
 
 const Desktop: React.FC = () => {
-  const navRef = useRef<HTMLDivElement>(null);
-  const [navHeight, setNavHeight] = useState<number>(0);
-
-  useEffect(() => {
-    if (navRef.current) {
-      setNavHeight(navRef.current.offsetHeight);
-    }
-  }, []);
+  const { navRef, navHeight } = useNavHeight();
 
   return (
     <>
@@ -21,7 +15,7 @@ const Desktop: React.FC = () => {
         <DesktopLogo />
         <DesktopLinks />
       </div>
-      <div style={{ height: navHeight }}></div>
+      <div style={{ height: navHeight }} />
     </>
   );
 };

@@ -20,11 +20,11 @@ const ContactHeader: React.FC = () => {
             />
           </svg>
         </div>
-        <h2 className="text-3xl font-bold text-white">Get in Touch</h2>
+        <h2 className="text-3xl font-bold text-white">Let's Collaborate</h2>
       </div>
       <p className="text-zinc-400 text-lg mb-10 max-w-2xl">
-        Have a project in mind or just want to chat? Drop me a message and I'll
-        get back to you as soon as possible.
+        Ready to build something exceptional? Contact me now for fast,
+        professional development services that deliver results.
       </p>
     </>
   );

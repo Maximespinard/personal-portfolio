@@ -8,7 +8,10 @@ import {
 
 const IntroShowCase = () => {
   return (
-    <div className="relative pt-10 pb-16 overflow-hidden">
+    <div
+      className="relative pt-10 pb-16 overflow-hidden"
+      id="intro-showcase-section"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-[#1a0b2e]/60 to-[#11071f] z-0"></div>
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 opacity-30">

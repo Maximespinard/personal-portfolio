@@ -7,7 +7,7 @@ const NavDesktopLogo: React.FC = () => {
   };
 
   return (
-    <span className="basis-3/5 cursor-pointer">
+    <span className="basis-2/5 cursor-pointer">
       <a
         href="#"
         className="basis-3/5 cursor-pointer"

@@ -11,20 +11,18 @@ const Mobile: React.FC = () => {
   };
 
   return (
-    <nav className="relative">
+    <>
       <MobileHeader toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen} />
-
       {isDrawerOpen && (
         <div
           className="fixed inset-0 bg-main-background opacity-50 z-40"
           onClick={toggleDrawer}
         />
       )}
-
       <MobileDrawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen}>
         <MobileLinks toggleDrawer={toggleDrawer} />
       </MobileDrawer>
-    </nav>
+    </>
   );
 };
 

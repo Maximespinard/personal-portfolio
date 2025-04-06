@@ -7,7 +7,7 @@ const NavDesktopLinks: React.FC = () => {
   };
 
   return (
-    <ul className="flex flex-row justify-between basis-2/5 text-base">
+    <ul className="flex flex-row justify-between basis-3/5 text-base">
       <li>
         <a
           href="#"
