@@ -9,10 +9,10 @@ import {
 const IntroShowCase = () => {
   return (
     <div
-      className="relative pt-10 pb-16 overflow-hidden"
+      className="relative max-md:pt-10 pb-16 overflow-hidden"
       id="intro-showcase-section"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1a0b2e]/60 to-[#11071f] z-0"></div>
+      <div className="absolute inset-0  z-0"></div>
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#7127ba]/20 via-transparent to-transparent blur-xl"></div>
@@ -29,7 +29,7 @@ const IntroShowCase = () => {
         </SlideFromLeft>
 
         <SlideFromRight delay={0.4} className="mb-8">
-          <p className="text-lg md:text-xl text-zinc-300 mt-4 max-w-3xl mx-auto">
+          <p className="text-lg md:text-base text-zinc-300 mt-4 max-w-3xl mx-auto">
             From concept to deployment, I craft tailor-made web applications
             that solve real business challenges. My expertise spans the entire
             development lifecycle with a focus on creating scalable,

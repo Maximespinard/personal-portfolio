@@ -1,7 +1,6 @@
 import React from 'react';
 import NavBar from './components/navigation';
 import Hero from './components/Hero';
-import IntroShowCase from './components/IntroShowcase';
 import Services from './components/Services';
 import CareerTimeline from './components/CareerTimeline';
 import FeaturedProjects from './components/FeaturedProjects';
@@ -15,16 +14,18 @@ const App: React.FC = () => {
         <header>
           <NavBar />
         </header>
-        <main className="min-h-screen py-6 px-10 sm:p-20 md:px-30 lg:px-20 2xl:px-[20%] overflow-hidden">
-          <div className="space-y-12">
-            <Hero />
-            <IntroShowCase />
-            <Services />
-            <CareerTimeline />
-            <FeaturedProjects />
-            <Skills />
-            <ContactForm />
+        <main className="min-h-screen overflow-hidden">
+          <div className="py-6 px-10 sm:py-10 lg:px-20 2xl:px-[20%]">
+            <div className="space-y-12">
+              <Hero />
+              <Services />
+              <CareerTimeline />
+              <FeaturedProjects />
+              <Skills />
+            </div>
           </div>
+          {/* Contact form en dehors des paddings */}
+          <ContactForm />
         </main>
       </div>
     </>

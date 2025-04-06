@@ -20,15 +20,17 @@ const Introduction: React.FC = () => {
             </FadeIn>
             <div className="mt-4 sm:mt-10 space-y-1 sm:space-y-2">
               <FadeIn delay={0.4} duration={1}>
-                <p className="text-base md:text-base">A Developer who</p>
+                <p className="text-base md:text-base text-gray-300">
+                  A Developer who
+                </p>
                 <p
-                  className="text-3xl font-bold md:text-4xl whitespace-nowrap"
+                  className="text-4xl font-bold md:text-5xl whitespace-nowrap"
                   role="heading"
                   aria-level={2}
                 >
                   Builds solutions
                 </p>
-                <p className="text-3xl font-bold md:text-4xl relative">
+                <p className="text-4xl font-bold md:text-5xl relative">
                   line by
                   <span className="relative inline-flex items-center whitespace-nowrap left-3 top-0.5">
                     <img
@@ -37,15 +39,15 @@ const Introduction: React.FC = () => {
                       className="absolute z-[3] right-2 w-[130px] sm:w-[150px] h-auto"
                       style={{ objectFit: 'contain' }}
                     />
-                    <span className="text-main-purple relative z-10 text-2xl md:text-4xl">
+                    <span className="text-main-purple relative z-10 text-4xl md:text-5xl">
                       line
                     </span>
-                    <span className="text-3xl md:text-4xl md:relative md:top-1 md:left-1">
+                    <span className="text-4xl md:text-5xl md:relative md:top-1 md:left-1">
                       ...
                     </span>
                   </span>
                 </p>
-                <p className="text-sm mt-2 max-w-xs mx-auto sm:mx-0">
+                <p className="text-base mt-2 max-w-xs mx-auto sm:mx-0 text-gray-300">
                   Because clean code today means scalable systems tomorrow.
                 </p>
               </FadeIn>

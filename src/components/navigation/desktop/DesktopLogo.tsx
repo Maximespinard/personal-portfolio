@@ -10,7 +10,6 @@ const NavDesktopLogo: React.FC = () => {
     <span className="basis-2/5 cursor-pointer">
       <a
         href="#"
-        className="basis-3/5 cursor-pointer"
         onClick={(e) => {
           e.preventDefault();
           scrollToTop();
