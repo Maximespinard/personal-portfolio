@@ -1,6 +1,5 @@
 import React from 'react';
 import { SlideFromRight, HoverScale } from '../animations';
-import SocialIcons from './SocialIcons';
 
 interface ContactFooterProps {
   onSubmit: () => void;
@@ -50,8 +49,6 @@ const ContactFooter: React.FC<ContactFooterProps> = ({
             )}
           </button>
         </HoverScale>
-
-        <SocialIcons />
       </div>
     </SlideFromRight>
   );

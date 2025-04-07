@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import PurpleBg from '../../assets/ui/purple-bg.svg';
 import { FadeIn } from '../animations';
-import Introduction from './Introduction';
 import useNavHeight from '../../hooks/useNavHeight';
 import useBreakPoint from '../../hooks/useBreakPoint';
+import Introduction from './Introduction';
 import IntroShowCase from '../IntroShowcase';
 
 const Hero = () => {

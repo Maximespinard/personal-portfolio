@@ -1,4 +1,3 @@
-// TODO: check if needed style
 import { HTMLMotionProps } from 'framer-motion';
 import { ReactNode } from 'react';
 

@@ -2,16 +2,11 @@ import React from 'react';
 
 export * from './animations';
 
-// Project data types
-export interface ExperienceItem {
-  icon: string;
-  title: string;
-  description: string;
-}
-
 export interface StackItem {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>> | undefined;
+  proficiency: number;
   description: string;
+  category: string;
 }
 
 export interface ProjectExample {
@@ -46,6 +41,7 @@ export type TechnologyType =
 export interface FeaturedProject {
   id: string;
   title: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   brief: string; // Short description (used in cards/previews)
   description: string; // Longer description for expanded view
   keyFeatures: string[]; // List of key features
@@ -57,4 +53,27 @@ export interface FeaturedProject {
   demoUrl?: string; // Demo URL (optional)
   codeUrl?: string; // Code repository URL (optional)
   image?: string; // Project image (optional)
+}
+
+// Navigation item structure
+export interface NavItem {
+  sectionId: string; // ID of the section to scroll to
+  label: string;
+}
+
+export type ServiceIconName = 'shopping-bag' | 'browser' | 'clipboard';
+export interface ServiceItem {
+  id: string;
+  title: string;
+  description: string;
+  features: string[];
+  icon: ServiceIconName;
+}
+
+export type CareerIconName = 'code' | 'flask' | 'briefcase' | 'lightning';
+export interface CareerStageItem {
+  id: string;
+  title: string;
+  description: string;
+  icon: CareerIconName;
 }

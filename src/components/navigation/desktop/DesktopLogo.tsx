@@ -1,11 +1,8 @@
 import React from 'react';
 import Logo from '../../../assets/icons/rest/logo.svg';
+import { scrollToTop } from '../../../utils/functions';
 
 const NavDesktopLogo: React.FC = () => {
-  const scrollToTop = (): void => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <span className="basis-2/5 cursor-pointer">
       <a

@@ -4,6 +4,11 @@ import { scrollToSection } from '../../utils/functions';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const navigation = [
+    { name: 'Services', id: 'services-section' },
+    { name: 'Journey', id: 'career-section' },
+    { name: 'Projects', id: 'projects-section' },
+  ];
 
   return (
     <footer className="bg-gradient-to-br from-[#1a0b2e] to-[#11071f] border-t border-[#2c1250] py-6 mt-16">
@@ -15,29 +20,18 @@ const Footer: React.FC = () => {
               © {currentYear} Maxime Spinard. All rights reserved.
             </p>
           </div>
-
           {/* Navigation */}
           <div className="flex space-x-6 mb-4 md:mb-0">
-            <button
-              onClick={() => scrollToSection('services-section')}
-              className="text-zinc-400 hover:text-white transition-colors text-sm"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection('career-section')}
-              className="text-zinc-400 hover:text-white transition-colors text-sm"
-            >
-              Journey
-            </button>
-            <button
-              onClick={() => scrollToSection('projects-section')}
-              className="text-zinc-400 hover:text-white transition-colors text-sm"
-            >
-              Projects
-            </button>
+            {navigation.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-zinc-400 hover:text-white transition-colors text-sm cursor-pointer"
+              >
+                {item.name}
+              </button>
+            ))}
           </div>
-
           {/* Social link */}
           <div>
             <HoverScale scale={1.1}>
