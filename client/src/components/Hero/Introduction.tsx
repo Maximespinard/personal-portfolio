@@ -1,8 +1,8 @@
 // src/components/Hero/Introduction.tsx
 import React from 'react';
 import { SlideFromLeft, FadeIn, SlideFromRight } from '../animations';
-import OptimizedProfileImage from '../shared/OptimizedProfileImage';
 import elipse from '../../assets/ui/elipse.png';
+import ProfileImage from './ProfileImage';
 
 const Introduction: React.FC = () => {
   return (
@@ -62,7 +62,7 @@ const Introduction: React.FC = () => {
           className="relative flex flex-col items-center order-last sm:order-first sm:ml-8 mt-8 sm:mt-12"
         >
           <FadeIn delay={0.6}>
-            <OptimizedProfileImage className="rounded-full" />
+            <ProfileImage size="medium" />
           </FadeIn>
         </SlideFromLeft>
       </div>
