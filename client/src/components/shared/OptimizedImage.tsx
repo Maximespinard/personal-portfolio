@@ -31,7 +31,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const fetchPriorityAttr = priority ? 'high' : 'auto';
 
   // Add rounded corners if requested
-  const roundedClass = rounded ? 'rounded-full' : '';
+  const roundedClass = rounded ? 'rounded-[9999px]' : '';
 
   return (
     <img
