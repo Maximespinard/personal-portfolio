@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/scrollbar';
+
+@layer base {
+  body {
+    @apply text-white font-mono;
+  }
+}
+
+@layer utilities {
+  .prevent-autofill {
+    -webkit-text-fill-color: white !important;
+    -webkit-box-shadow: 0 0 0 30px theme('colors.stack-bg') inset !important;
+    box-shadow: 0 0 0 30px theme('colors.stack-bg') inset !important;
+  }
+
+  /* Featured project cards */
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .custom-title-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, white, #d8b4fe);
+  }
+}
+
+@theme {
+  --color-main-background: #1a0b2e;
+  --color-main-purple: #7127ba;
+  --color-button-bg: #2c1250;
+  --color-button-border: #693b93;
+  --color-stack-bg: #251c31;
+}
