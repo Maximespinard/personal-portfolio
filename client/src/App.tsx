@@ -1,12 +1,18 @@
+// src/App.tsx
 import React from 'react';
 import NavBar from './components/navigation';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import CareerTimeline from './components/CareerTimeline';
-import FeaturedProjects from './components/FeaturedProjects';
-import Skills from './components/Skills';
-import ContactForm from './components/Contact';
-import Footer from './components/Footer';
+import lazyLoad from './components/shared/LazyLoadComponent';
+
+// Lazy load non-critical components
+const CareerTimeline = lazyLoad(() => import('./components/CareerTimeline'));
+const FeaturedProjects = lazyLoad(
+  () => import('./components/FeaturedProjects')
+);
+const Skills = lazyLoad(() => import('./components/Skills'));
+const ContactForm = lazyLoad(() => import('./components/Contact'));
+const Footer = lazyLoad(() => import('./components/Footer'));
 
 const App: React.FC = () => {
   return (
@@ -18,8 +24,11 @@ const App: React.FC = () => {
         <main className="min-h-screen overflow-hidden">
           <div className="py-6 px-10 sm:py-10 lg:px-20 2xl:px-[20%]">
             <div className="space-y-12">
+              {/* Critical components that should load immediately */}
               <Hero />
               <Services />
+
+              {/* Non-critical components that can be lazy loaded */}
               <CareerTimeline />
               <FeaturedProjects />
               <Skills />

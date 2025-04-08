@@ -1,6 +1,7 @@
+// src/components/Hero/Introduction.tsx
 import React from 'react';
 import { SlideFromLeft, FadeIn, SlideFromRight } from '../animations';
-import meIcon from '../../assets/icons/rest/me-icon.png';
+import OptimizedProfileImage from '../shared/OptimizedProfileImage';
 import elipse from '../../assets/ui/elipse.png';
 
 const Introduction: React.FC = () => {
@@ -37,6 +38,8 @@ const Introduction: React.FC = () => {
                       src={elipse}
                       alt="Ellipse"
                       className="absolute z-[3] right-2 w-[130px] sm:w-[150px] h-auto"
+                      width="150"
+                      height="50"
                       style={{ objectFit: 'contain' }}
                     />
                     <span className="text-main-purple relative z-10 text-4xl md:text-5xl custom-title-gradient">
@@ -59,11 +62,7 @@ const Introduction: React.FC = () => {
           className="relative flex flex-col items-center order-last sm:order-first sm:ml-8 mt-8 sm:mt-12"
         >
           <FadeIn delay={0.6}>
-            <img
-              src={meIcon}
-              alt="Maxime Spinard"
-              className="min-w-[180px] max-w-[180px] sm:min-w-[200px] sm:max-w-[200px] lg:min-w-[250px] lg:max-w-[250px]"
-            />
+            <OptimizedProfileImage className="rounded-full" />
           </FadeIn>
         </SlideFromLeft>
       </div>

@@ -1,7 +1,11 @@
-export { FadeIn } from './FadeIn';
-export { HoverScale } from './HoverScale';
-export { SlideIn } from './SlideIn';
-export { SlideUp } from './SlideUp';
-export { SlideUpOnScroll } from './SlideUpOnScroll';
-export { SlideFromLeft } from './SlideFromLeft';
-export { SlideFromRight } from './SlideFromRight';
+export {
+  AnimationWrapper,
+  FadeIn,
+  HoverScale,
+  SlideIn,
+  SlideUp,
+  SlideUpOnScroll,
+  SlideFromLeft,
+  SlideFromRight,
+  FadeInSpan,
+} from './AnimationWrapper';
