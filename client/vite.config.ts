@@ -1,3 +1,4 @@
+// vite.config.ts
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
@@ -12,7 +13,7 @@ export default defineConfig({
       svgrOptions: {
         exportType: 'default',
         ref: true,
-        svgo: false,
+        svgo: true, // Enable SVG optimization
         titleProp: true,
       },
       include: '**/*.svg',
@@ -27,19 +28,39 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    target: 'es2020',
+    cssCodeSplit: true,
+    minify: 'terser', // Use Terser for better minification
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split vendor code into separate chunks
+          'react-vendor': ['react', 'react-dom'],
+          'motion-vendor': ['framer-motion'],
+          'form-vendor': ['react-hook-form', 'zod'],
+          'ui-utils': ['react-responsive'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000, // Increase the warning limit
+  },
   server: {
     headers: {
       'Cache-Control': 'no-store',
     },
     host: '0.0.0.0',
     hmr: {
-      // Pour le rechargement à chaud (Hot Module Replacement)
-      clientPort: 443, // Important pour ngrok HTTPS
+      clientPort: 443,
     },
-    // Ajoutez ces deux lignes
     cors: true,
     strictPort: true,
-    // Ajoutez l'hôte ngrok à la liste des hôtes autorisés
     allowedHosts: ['865a-178-197-198-62.ngrok-free.app', 'localhost'],
   },
 });
