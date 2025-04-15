@@ -1,8 +1,8 @@
 import { NavItem } from '../../types';
 
 export const navLinks: NavItem[] = [
-  { sectionId: 'home', label: 'Home' },
-  { sectionId: 'services-section', label: 'Services' },
-  { sectionId: 'career-section', label: 'Journey' },
-  { sectionId: 'contact-section', label: 'Connect' },
+  { sectionId: 'home', labelKey: 'nav.home' },
+  { sectionId: 'services-section', labelKey: 'nav.services' },
+  { sectionId: 'career-section', labelKey: 'nav.journey' },
+  { sectionId: 'contact-section', labelKey: 'nav.connect' },
 ];

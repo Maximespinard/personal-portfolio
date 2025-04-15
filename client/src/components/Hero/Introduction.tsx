@@ -1,12 +1,14 @@
 // src/components/Hero/Introduction.tsx
 import React from 'react';
-import { SlideFromLeft, FadeIn, SlideFromRight } from '../animations';
 import elipse from '../../assets/ui/elipse.png';
+import useBreakPoint from '../../hooks/useBreakPoint';
+import { SlideFromLeft, FadeIn, SlideFromRight } from '../animations';
 import ProfileImage from './ProfileImage';
 
 const Introduction: React.FC = () => {
+  const { isMobile } = useBreakPoint();
   return (
-    <div className="container mx-auto flex items-center justify-center">
+    <div className="container mx-auto flex items-center justify-center sm:mt-15">
       <div className="flex flex-col sm:flex-row items-center">
         <SlideFromRight
           duration={1}
@@ -62,7 +64,11 @@ const Introduction: React.FC = () => {
           className="relative flex flex-col items-center order-last sm:order-first sm:ml-8 mt-8 sm:mt-12"
         >
           <FadeIn delay={0.6}>
-            <ProfileImage size="medium" />
+            {isMobile ? (
+              <ProfileImage size="medium" />
+            ) : (
+              <ProfileImage size="large" />
+            )}
           </FadeIn>
         </SlideFromLeft>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../../../assets/icons/rest/logo.svg';
 import useNavHeight from '../../../hooks/useNavHeight';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 interface MobileHeaderProps {
   toggleDrawer: () => void;
@@ -18,31 +19,36 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
         ref={navRef}
         className="fixed bg-main-background top-0 w-full flex items-center justify-between p-4 z-100"
       >
-        <button
-          onClick={toggleDrawer}
-          className="text-white focus:outline-none cursor-pointer"
-          aria-label="Ouvrir le menu"
-          aria-expanded={isDrawerOpen}
-        >
-          <svg
-            className="h-8 w-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+        {/* Left section - Menu button */}
+        <div className="w-16 flex justify-start">
+          <button
+            onClick={toggleDrawer}
+            className="text-white focus:outline-none cursor-pointer"
+            aria-label="Ouvrir le menu"
+            aria-expanded={isDrawerOpen}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-        <div className="flex-grow flex justify-center">
+            <svg
+              className="h-8 w-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Center section - Logo */}
+        <div className="flex-grow-0 flex justify-center">
           <a
             href="#/"
-            className="cursor-pointer"
+            className="cursor-pointer scale-90"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -51,7 +57,11 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
             <Logo />
           </a>
         </div>
-        <div className="w-6" />
+
+        {/* Right section - Language switcher */}
+        <div className="w-16 flex justify-end items-center">
+          <LanguageSwitcher isMobile={true} />
+        </div>
       </div>
       <div style={{ height: navHeight }} />
     </>

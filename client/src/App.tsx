@@ -4,6 +4,7 @@ import NavBar from './components/navigation';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import lazyLoad from './components/shared/LazyLoadComponent';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 // Lazy load non-critical components
 const CareerTimeline = lazyLoad(() => import('./components/CareerTimeline'));
@@ -16,7 +17,7 @@ const Footer = lazyLoad(() => import('./components/Footer'));
 
 const App: React.FC = () => {
   return (
-    <>
+    <LanguageProvider>
       <div className="bg-main-background">
         <header>
           <NavBar />
@@ -41,7 +42,7 @@ const App: React.FC = () => {
           <Footer />
         </footer>
       </div>
-    </>
+    </LanguageProvider>
   );
 };
 
