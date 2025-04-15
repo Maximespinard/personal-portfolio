@@ -1,5 +1,6 @@
 import React, { ComponentType, SVGProps } from 'react';
 import { HoverScale } from '../animations';
+import { useLanguage } from '../../contexts';
 
 // Common Components
 export const CardTitle: React.FC<{ title: string }> = ({ title }) => (
@@ -29,19 +30,24 @@ export const CardIcon: React.FC<{
 
 export const FeaturesList: React.FC<{ features: string[] }> = ({
   features,
-}) => (
-  <div className="mb-4">
-    <h4 className="text-sm font-semibold text-purple-300 mb-2">Key Features</h4>
-    <ul className="space-y-1">
-      {features.slice(0, 2).map((feature, i) => (
-        <li key={i} className="flex items-start text-sm">
-          <span className="text-purple-400 mr-2">•</span>
-          <span className="text-zinc-300 line-clamp-1">{feature}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+}) => {
+  const { t } = useLanguage();
+  return (
+    <div className="mb-4">
+      <h4 className="text-sm font-semibold text-purple-300 mb-2">
+        {t('projects.metadata.features')}
+      </h4>
+      <ul className="space-y-1">
+        {features.slice(0, 2).map((feature, i) => (
+          <li key={i} className="flex items-start text-sm">
+            <span className="text-purple-400 mr-2">•</span>
+            <span className="text-zinc-300 line-clamp-1">{feature}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export const TechnologiesList: React.FC<{ technologies: string[] }> = ({
   technologies,
@@ -69,30 +75,33 @@ export const TechnologiesList: React.FC<{ technologies: string[] }> = ({
   );
 };
 
-export const ViewDetailsButton: React.FC = () => (
-  <div className="mt-auto">
-    <HoverScale scale={1.05}>
-      <button className="w-full px-4 py-2 bg-gradient-to-r from-[#251c31] to-[#2c1250] border border-[#4f228d] rounded-lg text-white text-sm font-medium transition-all duration-300 hover:bg-gradient-to-r hover:from-[#2c1250] hover:to-[#3d1a68] hover:border-[#7127ba]/40 hover:shadow-md hover:shadow-[#7127ba]/20 group">
-        <span className="inline-flex items-center">
-          View Details
-          <svg
-            className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            />
-          </svg>
-        </span>
-      </button>
-    </HoverScale>
-  </div>
-);
+export const ViewDetailsButton: React.FC = () => {
+  const { t } = useLanguage();
+  return (
+    <div className="mt-auto">
+      <HoverScale scale={1.05}>
+        <button className="w-full px-4 py-2 bg-gradient-to-r from-[#251c31] to-[#2c1250] border border-[#4f228d] rounded-lg text-white text-sm font-medium transition-all duration-300 hover:bg-gradient-to-r hover:from-[#2c1250] hover:to-[#3d1a68] hover:border-[#7127ba]/40 hover:shadow-md hover:shadow-[#7127ba]/20 group">
+          <span className="inline-flex items-center">
+            {t('projects.metadata.viewDetails')}
+            <svg
+              className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </span>
+        </button>
+      </HoverScale>
+    </div>
+  );
+};
 
 // Back Card Components
 export const CloseButton: React.FC = () => (
@@ -120,42 +129,55 @@ export const CloseButton: React.FC = () => (
 
 export const FullFeaturesList: React.FC<{ features: string[] }> = ({
   features,
-}) => (
-  <div className="mb-4">
-    <h4 className="text-sm font-semibold text-purple-300 mb-2">Key Features</h4>
-    <ul className="space-y-1">
-      {features.map((feature, i) => (
-        <li key={i} className="flex items-start text-sm">
-          <span className="text-purple-400 mr-2">•</span>
-          <span className="text-zinc-300">{feature}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+}) => {
+  const { t } = useLanguage();
+  return (
+    <div className="mb-4">
+      <h4 className="text-sm font-semibold text-purple-300 mb-2">
+        {t('projects.metadata.features')}
+      </h4>
+      <ul className="space-y-1">
+        {features.map((feature, i) => (
+          <li key={i} className="flex items-start text-sm">
+            <span className="text-purple-400 mr-2">•</span>
+            <span className="text-zinc-300">{feature}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export const FullTechnologiesList: React.FC<{ technologies: string[] }> = ({
   technologies,
-}) => (
-  <div className="mb-4">
-    <h4 className="text-sm font-semibold text-purple-300 mb-2">Technologies</h4>
-    <div className="flex flex-wrap gap-2">
-      {technologies.map((tech, i) => (
-        <span
-          key={i}
-          className="px-2 py-1 bg-[#251c31] rounded-full text-xs text-white"
-        >
-          {tech}
-        </span>
-      ))}
+}) => {
+  const { t } = useLanguage();
+
+  return (
+    <div className="mb-4">
+      <h4 className="text-sm font-semibold text-purple-300 mb-2">
+        {t('projects.metadata.technologies')}
+      </h4>
+      <div className="flex flex-wrap gap-2">
+        {technologies.map((tech, i) => (
+          <span
+            key={i}
+            className="px-2 py-1 bg-[#251c31] rounded-full text-xs text-white"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export const ProjectMetadata: React.FC<{
   duration?: string;
   role?: string;
 }> = ({ duration, role }) => {
+  const { t } = useLanguage();
+
   if (!duration && !role) return null;
 
   return (
@@ -176,7 +198,10 @@ export const ProjectMetadata: React.FC<{
             />
           </svg>
           <span>
-            <span className="text-purple-300">Duration:</span> {duration}
+            <span className="text-purple-300">
+              {t('projects.metadata.duration')}:
+            </span>{' '}
+            {duration}
           </span>
         </div>
       )}
@@ -196,7 +221,10 @@ export const ProjectMetadata: React.FC<{
             />
           </svg>
           <span>
-            <span className="text-purple-300">Role:</span> {role}
+            <span className="text-purple-300">
+              {t('projects.metadata.role')}:
+            </span>{' '}
+            {role}
           </span>
         </div>
       )}

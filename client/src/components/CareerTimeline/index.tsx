@@ -1,17 +1,19 @@
 import React from 'react';
 import { SlideFromLeft, SlideFromRight, SlideUpOnScroll } from '../animations';
 import { careerStages } from '../../utils/data';
+import { useLanguage } from '../../contexts';
 import CareerCard from './CareerCard';
 
 const CareerTimeline: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <section className="relative z-10 sm:px-4" id="career-section">
       <SlideUpOnScroll className="text-center mb-12">
         <h2 className="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-300">
-          Professional Path
+          {t('career.title')}{' '}
         </h2>
         <p className="text-zinc-400 max-w-2xl mx-auto">
-          My journey from exploring code to delivering enterprise solutions
+          {t('career.subtitle')}
         </p>
       </SlideUpOnScroll>
 
@@ -26,8 +28,8 @@ const CareerTimeline: React.FC = () => {
             return (
               <CareerCard
                 key={stage.id}
-                title={stage.title}
-                description={stage.description}
+                title={t(`career.stages.${stage.id}.title`)}
+                description={t(`career.stages.${stage.id}.description`)}
                 icon={stage.icon}
                 animationWrapper={AnimationWrapper}
                 delay={delay}

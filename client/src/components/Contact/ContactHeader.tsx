@@ -1,6 +1,10 @@
 import React from 'react';
 
-const ContactHeader: React.FC = () => {
+interface ContactHeaderProps {
+  t: (key: string, params?: Record<string, string | number>) => string;
+}
+
+const ContactHeader: React.FC<ContactHeaderProps> = ({ t }) => {
   return (
     <>
       <div className="flex items-center mb-8">
@@ -21,12 +25,11 @@ const ContactHeader: React.FC = () => {
           </svg>
         </div>
         <h2 className="text-3xl font-bold text-white custom-title-gradient">
-          Let's Collaborate
+          {t('contact.title')}
         </h2>
       </div>
       <p className="text-zinc-400 text-lg mb-10 max-w-2xl">
-        Ready to build something exceptional? Contact me now for fast,
-        professional development services that deliver results.
+        {t('contact.subtitle')}
       </p>
     </>
   );

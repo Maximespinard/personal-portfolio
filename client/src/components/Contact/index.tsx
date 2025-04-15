@@ -8,6 +8,7 @@ import {
   contactFormSchema,
   ContactFormData,
 } from '../../utils/formValidations';
+import { useLanguage } from '../../contexts';
 import { SlideFromLeft } from '../animations';
 
 import ContactSuccess from './ContactSuccess';
@@ -19,6 +20,7 @@ import ContactFooter from './ContactFooter';
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 const ContactForm: React.FC = () => {
+  const { t } = useLanguage();
   const [formStatus, setFormStatus] = useState<FormStatus>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
   const { BotProtectionField, formToken, validateSubmission } =
@@ -80,7 +82,7 @@ const ContactForm: React.FC = () => {
   };
 
   if (formStatus === 'success') {
-    return <ContactSuccess onReset={resetForm} />;
+    return <ContactSuccess onReset={resetForm} props={{ t }} />;
   }
 
   if (formStatus === 'error') {
@@ -92,8 +94,8 @@ const ContactForm: React.FC = () => {
       <div className="mx-auto sm:px-6 lg:px-20 2xl:px-[20%]">
         <div className="bg-gradient-to-br from-[#1a0b2e] to-[#11071f] rounded-3xl shadow-2xl overflow-hidden border border-[#2c1250]">
           <SlideFromLeft className="p-10 md:p-12 md:pb-6" delay={0.25}>
-            <ContactHeader />
-            <ContactFormFields register={register} errors={errors} />
+            <ContactHeader t={t} />
+            <ContactFormFields register={register} errors={errors} t={t} />
 
             <BotProtectionField
               onProtectionReady={({ formToken }) => {
@@ -104,6 +106,7 @@ const ContactForm: React.FC = () => {
             <ContactFooter
               onSubmit={handleSubmit(onSubmit)}
               isSubmitting={formStatus === 'submitting'}
+              t={t}
             />
           </SlideFromLeft>
         </div>

@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 import { FadeIn, SlideUp, HoverScale } from '../animations';
+import { useLanguage } from '../../contexts';
 
 interface ContactErrorProps {
   onRetry: () => void;
-  errorMessage?: string;
+  props: {
+    t: (key: string, params?: Record<string, string | number>) => string;
+  };
 }
 
-const ContactError: React.FC<ContactErrorProps> = ({
-  onRetry,
-  errorMessage = 'Failed to send your message. Please try again.',
-}) => {
+const ContactError: React.FC<ContactErrorProps> = ({ onRetry, props }) => {
+  const { t: translate = (key) => key } = useLanguage();
+  const t = props.t || translate;
+
   // Prevent scrolling while the error modal is shown
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -45,11 +48,15 @@ const ContactError: React.FC<ContactErrorProps> = ({
           </FadeIn>
 
           <SlideUp delay={0.5} duration={0.5} y={20}>
-            <h3 className="text-4xl font-bold mb-4 text-white">Oops!</h3>
+            <h3 className="text-4xl font-bold mb-4 text-white">
+              {t('contact.error.title')}
+            </h3>
           </SlideUp>
 
           <SlideUp delay={0.6} duration={0.5} y={20}>
-            <p className="mb-12 text-zinc-300 text-lg">{errorMessage}</p>
+            <p className="mb-12 text-zinc-300 text-lg">
+              {t('contact.error.defaultMessage')}
+            </p>
           </SlideUp>
 
           <FadeIn
@@ -62,7 +69,7 @@ const ContactError: React.FC<ContactErrorProps> = ({
                 onClick={onRetry}
                 className="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-[#7127ba] to-[#4f228d] text-white font-medium rounded-xl transition duration-200 border border-[#693b93] shadow-lg shadow-[#7127ba]/20"
               >
-                Try Again
+                {t('contact.error.button')}
               </button>
             </HoverScale>
           </FadeIn>
