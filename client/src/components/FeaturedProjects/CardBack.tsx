@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FeaturedProject } from '../../types';
+import { useLanguage } from '../../contexts';
 import {
   CardTitle,
   CardDescription,
@@ -8,6 +9,8 @@ import {
   FullFeaturesList,
   FullTechnologiesList,
   ProjectMetadata,
+  ProjectInsights,
+  ProjectOutcomes,
 } from './CardComponents';
 
 interface CardBackProps {
@@ -15,14 +18,15 @@ interface CardBackProps {
 }
 
 const CardBack: React.FC<CardBackProps> = ({ project }) => {
-  const {
-    title,
-    description,
-    keyFeatures = [],
-    technologies = [],
-    duration,
-    role,
-  } = project;
+  const { t } = useLanguage();
+  const { id, technologies = [] } = project;
+
+  // We now use translation keys for all project text content
+  const title = t(`projects.${id}.title`);
+  const description = t(`projects.${id}.description`);
+  const keyFeatures = Array(6).fill(''); // Just need the array length for mapping
+  const insights = Array(3).fill(''); // Just need the array length for mapping
+  const outcomes = Array(3).fill(''); // Just need the array length for mapping
 
   return (
     <motion.div
@@ -48,14 +52,18 @@ const CardBack: React.FC<CardBackProps> = ({ project }) => {
           <CardDescription description={description} />
 
           {keyFeatures.length > 0 && (
-            <FullFeaturesList features={keyFeatures} />
+            <FullFeaturesList features={keyFeatures} projectId={id} />
           )}
 
           {technologies.length > 0 && (
             <FullTechnologiesList technologies={technologies} />
           )}
 
-          <ProjectMetadata duration={duration} role={role} />
+          <ProjectInsights insights={insights} projectId={id} />
+
+          <ProjectOutcomes outcomes={outcomes} projectId={id} />
+
+          <ProjectMetadata projectId={id} duration="duration" role="role" />
         </div>
       </div>
     </motion.div>

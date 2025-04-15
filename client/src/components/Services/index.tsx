@@ -2,6 +2,7 @@ import React from 'react';
 import { SlideFromLeft, SlideFromRight, SlideUpOnScroll } from '../animations';
 import { scrollToSection } from '../../utils/functions';
 import { servicesData } from '../../utils/data';
+import { useLanguage } from '../../contexts';
 
 // Imported components
 import ServiceCard from './ServiceCard';
@@ -10,6 +11,8 @@ import SectionHeader from './SectionHeader';
 import CallToActionButton from './CallToActionButton';
 
 const Services: React.FC = () => {
+  const { t } = useLanguage();
+
   const handleContactClick = () => {
     scrollToSection('contact-section');
   };
@@ -25,8 +28,8 @@ const Services: React.FC = () => {
       <div className="container mx-auto sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <SectionHeader
-          title="Services Offered"
-          subtitle="Transforming ideas into exceptional digital experiences"
+          title={t('services.title')}
+          subtitle={t('services.subtitle')}
         />
 
         {/* Service Cards Grid */}
@@ -43,12 +46,7 @@ const Services: React.FC = () => {
 
             return (
               <AnimationWrapper key={service.id} delay={0.1 * (index + 1)}>
-                <ServiceCard
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  features={service.features}
-                />
+                <ServiceCard serviceId={service.id} icon={service.icon} />
               </AnimationWrapper>
             );
           })}
@@ -57,7 +55,7 @@ const Services: React.FC = () => {
         {/* Call to Action Button */}
         <CallToActionButton
           onClick={handleContactClick}
-          text="Let's Work Together"
+          text={t('services.cta')}
         />
       </div>
     </section>

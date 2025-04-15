@@ -1,11 +1,17 @@
 import React, { useEffect } from 'react';
 import { FadeIn, SlideUp, HoverScale } from '../animations';
+import { useLanguage } from '../../contexts';
 
 interface ContactSuccessProps {
   onReset: () => void;
+  props: {
+    t?: (key: string, params?: Record<string, string | number>) => string;
+  };
 }
 
-const ContactSuccess: React.FC<ContactSuccessProps> = ({ onReset }) => {
+const ContactSuccess: React.FC<ContactSuccessProps> = ({ onReset, props }) => {
+  const { t: translate = (key: string): string => key } = useLanguage();
+  const t = props.t || translate;
   // Prevent scrolling while the success modal is shown
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -41,14 +47,21 @@ const ContactSuccess: React.FC<ContactSuccessProps> = ({ onReset }) => {
           </FadeIn>
 
           <SlideUp delay={0.5} duration={0.5} y={20}>
-            <h3 className="text-4xl font-bold mb-4 text-white">Thank You!</h3>
+            <h3 className="text-4xl font-bold mb-4 text-white">
+              {t('contact.success.title')}
+            </h3>
           </SlideUp>
 
           <SlideUp delay={0.6} duration={0.5} y={20}>
             <p className="mb-12 text-zinc-300 text-lg">
-              Your message has been sent successfully.
-              <br />
-              I'll get back to you soon.
+              {t('contact.success.message')
+                .split('\n')
+                .map((line: string, i: number) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    {i === 0 && <br />}
+                  </React.Fragment>
+                ))}
             </p>
           </SlideUp>
 
@@ -58,7 +71,7 @@ const ContactSuccess: React.FC<ContactSuccessProps> = ({ onReset }) => {
                 onClick={onReset}
                 className="px-10 py-4 bg-gradient-to-r from-[#7127ba] to-[#4f228d] text-white font-medium rounded-xl transition duration-200 border border-[#693b93] shadow-lg shadow-[#7127ba]/20"
               >
-                Back to Home
+                {t('contact.success.button')}
               </button>
             </HoverScale>
           </FadeIn>

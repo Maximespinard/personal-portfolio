@@ -7,11 +7,13 @@ import FormField from './FormField';
 interface ContactFormFieldsProps {
   register: UseFormRegister<ContactFormData>;
   errors: FieldErrors<ContactFormData>;
+  t: (key: string, params?: Record<string, string | number>) => string;
 }
 
 const ContactFormFields: React.FC<ContactFormFieldsProps> = ({
   register,
   errors,
+  t,
 }) => {
   return (
     <div className="grid md:grid-cols-2 gap-8">
@@ -19,7 +21,7 @@ const ContactFormFields: React.FC<ContactFormFieldsProps> = ({
         <FormField
           id="name"
           type="text"
-          label="Your name"
+          label={t('contact.form.name')}
           register={register}
           error={errors.name}
         />
@@ -27,7 +29,7 @@ const ContactFormFields: React.FC<ContactFormFieldsProps> = ({
         <FormField
           id="email"
           type="email"
-          label="Your email"
+          label={t('contact.form.email')}
           register={register}
           error={errors.email}
         />
@@ -37,7 +39,7 @@ const ContactFormFields: React.FC<ContactFormFieldsProps> = ({
         <FormField
           id="message"
           type="textarea"
-          label="Your message"
+          label={t('contact.form.message')}
           register={register}
           error={errors.message}
           rows={4}

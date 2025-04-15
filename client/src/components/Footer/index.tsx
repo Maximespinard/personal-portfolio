@@ -1,13 +1,15 @@
 import React from 'react';
 import { HoverScale } from '../animations';
 import { scrollToSection } from '../../utils/functions';
+import { useLanguage } from '../../contexts';
 
 const Footer: React.FC = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
   const navigation = [
-    { name: 'Services', id: 'services-section' },
-    { name: 'Journey', id: 'career-section' },
-    { name: 'Projects', id: 'projects-section' },
+    { name: t('footer.services'), id: 'services-section' },
+    { name: t('footer.journey'), id: 'career-section' },
+    { name: t('footer.projects'), id: 'projects-section' },
   ];
 
   return (
@@ -17,7 +19,7 @@ const Footer: React.FC = () => {
           {/* Copyright and name */}
           <div className="mb-4 md:mb-0">
             <p className="text-zinc-400 text-sm">
-              © {currentYear} Maxime Spinard. All rights reserved.
+              {t('footer.copyright', { year: currentYear })}
             </p>
           </div>
           {/* Navigation */}
