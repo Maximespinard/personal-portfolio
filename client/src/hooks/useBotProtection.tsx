@@ -7,7 +7,8 @@ interface BotProtectionProps {
 interface BotProtectionReturn {
   BotProtectionField: React.FC<BotProtectionProps>;
   honeypot: string;
-  formToken: string;
+  formToken: string; // TODO: check if still neded
+
   validateSubmission: () => boolean;
 }
 

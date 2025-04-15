@@ -57,8 +57,8 @@ export interface FeaturedProject {
 
 // Navigation item structure
 export interface NavItem {
-  sectionId: string; // ID of the section to scroll to
-  label: string;
+  sectionId: string;
+  labelKey: string;
 }
 
 export type ServiceIconName = 'shopping-bag' | 'browser' | 'clipboard';

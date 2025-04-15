@@ -56,9 +56,7 @@ export default defineConfig({
       'Cache-Control': 'no-store',
     },
     host: '0.0.0.0',
-    hmr: {
-      clientPort: 443,
-    },
+    hmr: true,
     cors: true,
     strictPort: true,
     allowedHosts: ['865a-178-197-198-62.ngrok-free.app', 'localhost'],
