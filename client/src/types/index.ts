@@ -77,3 +77,15 @@ export interface CareerStageItem {
   description: string;
   icon: CareerIconName;
 }
+
+export type Language = 'en' | 'fr';
+
+// Record of translations
+export type Translations = Record<string, string | number>;
+
+// Context interface
+export interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (key: string, params?: Record<string, string | number>) => string;
+}
