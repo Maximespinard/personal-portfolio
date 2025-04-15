@@ -28,20 +28,24 @@ export const CardIcon: React.FC<{
   </div>
 );
 
-export const FeaturesList: React.FC<{ features: string[] }> = ({
-  features,
-}) => {
+export const FeaturesList: React.FC<{
+  features: string[];
+  projectId: string;
+}> = ({ features, projectId }) => {
   const { t } = useLanguage();
+
   return (
     <div className="mb-4">
       <h4 className="text-sm font-semibold text-purple-300 mb-2">
         {t('projects.metadata.features')}
       </h4>
       <ul className="space-y-1">
-        {features.slice(0, 2).map((feature, i) => (
+        {features.slice(0, 2).map((_, i) => (
           <li key={i} className="flex items-start text-sm">
             <span className="text-purple-400 mr-2">•</span>
-            <span className="text-zinc-300 line-clamp-1">{feature}</span>
+            <span className="text-zinc-300 line-clamp-1">
+              {t(`projects.${projectId}.keyFeatures.${i}`)}
+            </span>
           </li>
         ))}
       </ul>
@@ -52,10 +56,14 @@ export const FeaturesList: React.FC<{ features: string[] }> = ({
 export const TechnologiesList: React.FC<{ technologies: string[] }> = ({
   technologies,
 }) => {
+  const { t } = useLanguage();
   const previewTechnologies = technologies.slice(0, 4);
 
   return (
     <div className="mb-4">
+      <h4 className="text-sm font-semibold text-purple-300 mb-2">
+        {t('projects.metadata.technologies')}
+      </h4>
       <div className="flex flex-wrap gap-2">
         {previewTechnologies.map((tech, i) => (
           <span
@@ -77,6 +85,7 @@ export const TechnologiesList: React.FC<{ technologies: string[] }> = ({
 
 export const ViewDetailsButton: React.FC = () => {
   const { t } = useLanguage();
+
   return (
     <div className="mt-auto">
       <HoverScale scale={1.05}>
@@ -127,20 +136,24 @@ export const CloseButton: React.FC = () => (
   </HoverScale>
 );
 
-export const FullFeaturesList: React.FC<{ features: string[] }> = ({
-  features,
-}) => {
+export const FullFeaturesList: React.FC<{
+  features: string[];
+  projectId: string;
+}> = ({ features, projectId }) => {
   const { t } = useLanguage();
+
   return (
     <div className="mb-4">
       <h4 className="text-sm font-semibold text-purple-300 mb-2">
         {t('projects.metadata.features')}
       </h4>
       <ul className="space-y-1">
-        {features.map((feature, i) => (
+        {features.map((_, i) => (
           <li key={i} className="flex items-start text-sm">
             <span className="text-purple-400 mr-2">•</span>
-            <span className="text-zinc-300">{feature}</span>
+            <span className="text-zinc-300">
+              {t(`projects.${projectId}.keyFeatures.${i}`)}
+            </span>
           </li>
         ))}
       </ul>
@@ -172,10 +185,65 @@ export const FullTechnologiesList: React.FC<{ technologies: string[] }> = ({
   );
 };
 
+export const ProjectInsights: React.FC<{
+  insights: string[];
+  projectId: string;
+}> = ({ insights, projectId }) => {
+  const { t } = useLanguage();
+
+  if (!insights?.length) return null;
+
+  return (
+    <div className="mb-4">
+      <h4 className="text-sm font-semibold text-purple-300 mb-2">
+        {t('projects.metadata.insights')}
+      </h4>
+      <ul className="space-y-1">
+        {insights.map((_, i) => (
+          <li key={i} className="flex items-start text-sm">
+            <span className="text-purple-400 mr-2">•</span>
+            <span className="text-zinc-300">
+              {t(`projects.${projectId}.insights.${i}`)}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export const ProjectOutcomes: React.FC<{
+  outcomes: string[];
+  projectId: string;
+}> = ({ outcomes, projectId }) => {
+  const { t } = useLanguage();
+
+  if (!outcomes?.length) return null;
+
+  return (
+    <div className="mb-4">
+      <h4 className="text-sm font-semibold text-purple-300 mb-2">
+        {t('projects.metadata.outcomes')}
+      </h4>
+      <ul className="space-y-1">
+        {outcomes.map((_, i) => (
+          <li key={i} className="flex items-start text-sm">
+            <span className="text-purple-400 mr-2">•</span>
+            <span className="text-zinc-300">
+              {t(`projects.${projectId}.outcomes.${i}`)}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 export const ProjectMetadata: React.FC<{
   duration?: string;
   role?: string;
-}> = ({ duration, role }) => {
+  projectId: string;
+}> = ({ duration, role, projectId }) => {
   const { t } = useLanguage();
 
   if (!duration && !role) return null;
@@ -201,7 +269,7 @@ export const ProjectMetadata: React.FC<{
             <span className="text-purple-300">
               {t('projects.metadata.duration')}:
             </span>{' '}
-            {duration}
+            {t(`projects.${projectId}.duration`)}
           </span>
         </div>
       )}
@@ -224,7 +292,7 @@ export const ProjectMetadata: React.FC<{
             <span className="text-purple-300">
               {t('projects.metadata.role')}:
             </span>{' '}
-            {role}
+            {t(`projects.${projectId}.role`)}
           </span>
         </div>
       )}

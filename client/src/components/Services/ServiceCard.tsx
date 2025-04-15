@@ -2,20 +2,23 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceIcon from './ServiceIcon';
 import { ServiceIconName } from '../../types';
+import { useLanguage } from '../../contexts';
 
 interface ServiceCardProps {
+  serviceId: string;
   icon: ServiceIconName;
-  title: string;
-  description: string;
-  features: string[];
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({
-  icon,
-  title,
-  description,
-  features,
-}) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ serviceId, icon }) => {
+  const { t } = useLanguage();
+
+  // Get title, description and features from translations
+  const title = t(`services.${serviceId}.title`);
+  const description = t(`services.${serviceId}.description`);
+  const features = [0, 1, 2].map((i) =>
+    t(`services.${serviceId}.features.${i}`)
+  );
+
   return (
     <motion.div
       className="h-full"

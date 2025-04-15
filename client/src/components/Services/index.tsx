@@ -46,14 +46,7 @@ const Services: React.FC = () => {
 
             return (
               <AnimationWrapper key={service.id} delay={0.1 * (index + 1)}>
-                <ServiceCard
-                  icon={service.icon}
-                  title={t(`services.${service.id}.title`)}
-                  description={t(`services.${service.id}.description`)}
-                  features={service.features.map((_, i) =>
-                    t(`services.${service.id}.features.${i}`)
-                  )}
-                />
+                <ServiceCard serviceId={service.id} icon={service.icon} />
               </AnimationWrapper>
             );
           })}

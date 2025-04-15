@@ -260,6 +260,22 @@ export default {
       defaultMessage: "Échec de l'envoi de votre message. Veuillez réessayer.",
       button: 'Réessayer',
     },
+    validation: {
+      name: {
+        min: 'Le nom doit comporter au moins 2 caractères',
+        max: 'Le nom ne peut pas dépasser 50 caractères',
+        format: 'Le nom ne peut contenir que des lettres et des espaces',
+      },
+      email: {
+        required: "L'email est requis",
+        invalid: 'Adresse email invalide',
+        max: "L'email ne peut pas dépasser 100 caractères",
+      },
+      message: {
+        min: 'Le message doit comporter au moins 10 caractères',
+        max: 'Le message ne peut pas dépasser 500 caractères',
+      },
+    },
   },
 
   // Footer

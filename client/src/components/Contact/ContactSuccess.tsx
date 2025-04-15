@@ -10,7 +10,7 @@ interface ContactSuccessProps {
 }
 
 const ContactSuccess: React.FC<ContactSuccessProps> = ({ onReset, props }) => {
-  const { t: translate = (key) => key } = useLanguage();
+  const { t: translate = (key: string): string => key } = useLanguage();
   const t = props.t || translate;
   // Prevent scrolling while the success modal is shown
   useEffect(() => {

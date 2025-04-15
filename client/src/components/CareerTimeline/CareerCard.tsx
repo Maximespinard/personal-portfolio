@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react';
 import CareerIcon from './CareerIcon';
 import { CareerIconName } from '../../types';
+import { useLanguage } from '../../contexts';
 
 interface CareerCardProps {
-  title: string;
-  description: string;
+  stageId: string;
   icon: CareerIconName;
   animationWrapper: React.FC<{
     delay: number;
@@ -15,12 +15,17 @@ interface CareerCardProps {
 }
 
 const CareerCard: React.FC<CareerCardProps> = ({
-  title,
-  description,
+  stageId,
   icon,
   animationWrapper: AnimationWrapper,
   delay,
 }) => {
+  const { t } = useLanguage();
+
+  // Get title and description from translations
+  const title = t(`career.stages.${stageId}.title`);
+  const description = t(`career.stages.${stageId}.description`);
+
   return (
     <AnimationWrapper
       delay={delay}

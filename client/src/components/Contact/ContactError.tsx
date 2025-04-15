@@ -7,10 +7,11 @@ interface ContactErrorProps {
   props: {
     t: (key: string, params?: Record<string, string | number>) => string;
   };
+  errorMessage?: string;
 }
 
 const ContactError: React.FC<ContactErrorProps> = ({ onRetry, props }) => {
-  const { t: translate = (key) => key } = useLanguage();
+  const { t: translate = (key: string) => key } = useLanguage();
   const t = props.t || translate;
 
   // Prevent scrolling while the error modal is shown

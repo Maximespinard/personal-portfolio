@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FeaturedProject } from '../../types';
+import { useLanguage } from '../../contexts';
 import {
   CardIcon,
   CardTitle,
@@ -15,14 +16,13 @@ interface CardFrontProps {
 }
 
 const CardFront: React.FC<CardFrontProps> = ({ project }) => {
-  const {
-    icon,
-    title,
-    brief,
-    description,
-    keyFeatures,
-    technologies = [],
-  } = project;
+  const { t } = useLanguage();
+  const { id, icon, technologies = [] } = project;
+
+  // We now use translation keys for all project text content
+  const title = t(`projects.${id}.title`);
+  const brief = t(`projects.${id}.brief`);
+  const keyFeatures = Array(6).fill(''); // Just need the array length for mapping
 
   return (
     <motion.div
@@ -43,10 +43,10 @@ const CardFront: React.FC<CardFrontProps> = ({ project }) => {
           <CardTitle title={title} />
         </div>
 
-        <CardDescription description={brief || description} />
+        <CardDescription description={brief} />
 
-        {keyFeatures && keyFeatures.length > 0 && (
-          <FeaturesList features={keyFeatures} />
+        {keyFeatures.length > 0 && (
+          <FeaturesList features={keyFeatures} projectId={id} />
         )}
 
         {technologies.length > 0 && (

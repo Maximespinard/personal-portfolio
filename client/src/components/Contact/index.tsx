@@ -86,7 +86,13 @@ const ContactForm: React.FC = () => {
   }
 
   if (formStatus === 'error') {
-    return <ContactError onRetry={resetForm} errorMessage={errorMessage} />;
+    return (
+      <ContactError
+        onRetry={resetForm}
+        errorMessage={errorMessage}
+        props={{ t }}
+      />
+    );
   }
 
   return (

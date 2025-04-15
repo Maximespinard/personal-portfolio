@@ -258,6 +258,22 @@ export default {
       defaultMessage: 'Failed to send your message. Please try again.',
       button: 'Try Again',
     },
+    validation: {
+      name: {
+        min: 'Name must be at least 2 characters',
+        max: 'Name cannot exceed 50 characters',
+        format: 'Name can only contain letters and spaces',
+      },
+      email: {
+        required: 'Email is required',
+        invalid: 'Invalid email address',
+        max: 'Email cannot exceed 100 characters',
+      },
+      message: {
+        min: 'Message must be at least 10 characters',
+        max: 'Message cannot exceed 500 characters',
+      },
+    },
   },
 
   // Footer

@@ -6,11 +6,12 @@ import CareerCard from './CareerCard';
 
 const CareerTimeline: React.FC = () => {
   const { t } = useLanguage();
+
   return (
     <section className="relative z-10 sm:px-4" id="career-section">
       <SlideUpOnScroll className="text-center mb-12">
         <h2 className="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-300">
-          {t('career.title')}{' '}
+          {t('career.title')}
         </h2>
         <p className="text-zinc-400 max-w-2xl mx-auto">
           {t('career.subtitle')}
@@ -28,8 +29,7 @@ const CareerTimeline: React.FC = () => {
             return (
               <CareerCard
                 key={stage.id}
-                title={t(`career.stages.${stage.id}.title`)}
-                description={t(`career.stages.${stage.id}.description`)}
+                stageId={stage.id}
                 icon={stage.icon}
                 animationWrapper={AnimationWrapper}
                 delay={delay}
