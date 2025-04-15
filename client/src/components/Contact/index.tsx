@@ -5,8 +5,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useBotProtection } from '../../hooks/useBotProtection';
 import { submitContactForm } from '../../services/contactApi';
 import {
-  contactFormSchema,
   ContactFormData,
+  getValidationSchemas,
 } from '../../utils/formValidations';
 import { useLanguage } from '../../contexts';
 import { SlideFromLeft } from '../animations';
@@ -21,6 +21,8 @@ type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 const ContactForm: React.FC = () => {
   const { t } = useLanguage();
+  const { language } = useLanguage();
+  const { contactFormSchema } = getValidationSchemas(language as 'en' | 'fr');
   const [formStatus, setFormStatus] = useState<FormStatus>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
   const { BotProtectionField, formToken, validateSubmission } =

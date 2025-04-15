@@ -51,8 +51,8 @@ export const getValidationSchemas = (language: 'en' | 'fr' = 'en') => {
   return { nameSchema, emailSchema, messageSchema, contactFormSchema };
 };
 
-// Export default schemas with English
-export const { nameSchema, emailSchema, messageSchema, contactFormSchema } =
-  getValidationSchemas('en');
-
-export type ContactFormData = z.infer<typeof contactFormSchema>;
+// Define ContactFormData type using a generic English schema
+// This is just for TypeScript typing purposes
+export type ContactFormData = z.infer<
+  ReturnType<typeof getValidationSchemas>['contactFormSchema']
+>;
