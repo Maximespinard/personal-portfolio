@@ -13,9 +13,17 @@ const Hero = () => {
 
   useEffect(() => {
     if (isMinTablet) {
-      setHeroStyle({ minHeight: `calc(80vh - ${navHeight}px)` });
+      // Change to use flex properties for better vertical centering
+      setHeroStyle({
+        minHeight: `calc(90vh - ${navHeight}px)`,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+      });
     } else {
-      setHeroStyle({});
+      setHeroStyle({
+        minHeight: '100%',
+      });
     }
   }, [isMinTablet, navHeight]);
 
@@ -26,7 +34,7 @@ const Hero = () => {
       </FadeIn>
 
       {/* Content positioned relative to appear above the background */}
-      <div className="relative flex flex-col justify-between z-10 md:space-y-10">
+      <div className="relative flex flex-col justify-center z-10 h-full md:gap-10 md:mb-[3%]">
         <Introduction />
         <IntroShowCase />
       </div>

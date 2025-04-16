@@ -9,7 +9,7 @@ const Introduction: React.FC = () => {
   const { t } = useLanguage();
   const { isMobile } = useBreakPoint();
   return (
-    <div className="container mx-auto flex items-center justify-center sm:mt-15">
+    <div className="container mx-auto flex items-center justify-center">
       <div className="flex flex-col sm:flex-row items-center">
         <SlideFromRight
           duration={1}

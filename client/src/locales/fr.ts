@@ -116,6 +116,7 @@ export default {
       viewDetails: 'Voir les Détails',
       insights: 'Analyses',
       outcomes: 'Résultats',
+      more: 'plus',
     },
 
     // Individual Projects by ID

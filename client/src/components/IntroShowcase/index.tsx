@@ -11,7 +11,7 @@ const IntroShowCase = () => {
   const { t } = useLanguage();
   return (
     <div
-      className="relative max-md:pt-10 pb-16 overflow-hidden"
+      className="relative pt-4 pb-16 overflow-hidden"
       id="intro-showcase-section"
     >
       <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -26,7 +26,7 @@ const IntroShowCase = () => {
           </p>
         </SlideFromRight>
         <FadeIn delay={0.6}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <div className="flex flex-col sm:flex-row gap-10 sm:gap-4 justify-center mt-10 sm:mt-8">
             <HoverScale>
               <a
                 onClick={(e) => {
