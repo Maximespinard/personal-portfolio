@@ -114,6 +114,7 @@ export default {
       viewDetails: 'View Details',
       insights: 'Insights',
       outcomes: 'Outcomes',
+      more: 'more',
     },
 
     // Individual Projects by ID

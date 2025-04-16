@@ -75,7 +75,7 @@ export const TechnologiesList: React.FC<{ technologies: string[] }> = ({
         ))}
         {technologies.length > 4 && (
           <span className="px-2 py-1 bg-[#251c31] rounded-full text-xs text-white">
-            +{technologies.length - 4} more
+            +{technologies.length - 4} {t('projects.metadata.more')}
           </span>
         )}
       </div>
