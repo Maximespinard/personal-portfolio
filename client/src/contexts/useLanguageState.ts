@@ -2,7 +2,13 @@
 import { useState, useEffect } from 'react';
 import enTranslations from '../locales/en';
 import frTranslations from '../locales/fr';
-import { Language, LanguageContextType, Translations } from '../types';
+import { Language, Translations } from '../types';
+
+interface LanguageContextType {
+  language: Language;
+  setLanguage: (language: Language) => void;
+  t: (key: string, params?: Record<string, string | number>) => string;
+}
 
 // Translations object
 const translations: Record<Language, Translations> = {
@@ -36,12 +42,12 @@ export const useLanguageState = (): LanguageContextType => {
   // Translation function that supports nested keys (e.g., 'nav.home')
   const t = (key: string, params?: Record<string, string | number>): string => {
     const keys = key.split('.');
-    let value: any = translations[language];
+    let value: unknown = translations[language];
 
     // Navigate through nested objects
     for (const k of keys) {
       if (value === undefined) return key;
-      value = value[k];
+      value = (value as Record<string, unknown>)[k];
     }
 
     // If value not found, return the key

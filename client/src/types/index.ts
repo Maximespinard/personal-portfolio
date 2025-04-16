@@ -64,3 +64,11 @@ export interface CareerStageItem {
   id: string;
   icon: CareerIconName;
 }
+
+export type TranslationValue =
+  | string
+  | string[]
+  | { [key: string]: string | string[] | Record<string, unknown> };
+
+export type Translations = Record<string, TranslationValue>;
+export type Language = 'en' | 'fr';
