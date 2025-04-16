@@ -30,7 +30,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ serviceId, icon }) => {
         <div className="absolute -inset-0.5 bg-gradient-to-r from-[#7127ba] to-[#4f228d] rounded-xl opacity-0 group-hover:opacity-60 blur-sm transition-all duration-300"></div>
 
         {/* Card content */}
-        <div className="relative p-6 bg-gradient-to-br from-[#1a0b2e]/80 to-[#11071f] backdrop-blur-sm rounded-xl border border-[#4f228d]/30 h-full flex flex-col group">
+        <div className="relative p-6 md:p-8 bg-gradient-to-br from-[#1a0b2e]/80 to-[#11071f] backdrop-blur-sm rounded-xl border border-[#4f228d]/30 h-full flex flex-col group">
           {/* Service icon */}
           <div className="mb-6 flex items-center">
             <div className="w-12 h-12 bg-gradient-to-br from-[#7127ba] to-[#4f228d] rounded-lg flex items-center justify-center shadow-lg mr-4 group-hover:shadow-[#7127ba]/30 transition-all duration-300 flex-shrink-0">
