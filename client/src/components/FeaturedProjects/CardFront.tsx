@@ -21,7 +21,7 @@ const CardFront: React.FC<CardFrontProps> = ({ project }) => {
 
   // We now use translation keys for all project text content
   const title = t(`projects.${id}.title`);
-  const keyFeatures = Array(6).fill(''); // Just need the array length for mapping
+  const keyFeatures = Array(6).fill('');
   const description = t(`projects.${id}.description`);
 
   return (
