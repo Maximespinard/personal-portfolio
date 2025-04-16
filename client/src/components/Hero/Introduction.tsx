@@ -41,7 +41,7 @@ const Introduction: React.FC = () => {
                     <img
                       src={elipse}
                       alt="Ellipse"
-                      className="absolute z-[3] right-2 w-[130px] sm:w-[150px] h-auto"
+                      className="absolute z-[3] right-9 w-[130px] sm:w-[150px] sm:right-6 md:right-16 h-auto"
                       width="150"
                       height="50"
                       style={{ objectFit: 'contain' }}
