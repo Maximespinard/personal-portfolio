@@ -21,8 +21,8 @@ const CardFront: React.FC<CardFrontProps> = ({ project }) => {
 
   // We now use translation keys for all project text content
   const title = t(`projects.${id}.title`);
-  const brief = t(`projects.${id}.brief`);
   const keyFeatures = Array(6).fill(''); // Just need the array length for mapping
+  const description = t(`projects.${id}.description`);
 
   return (
     <motion.div
@@ -43,7 +43,7 @@ const CardFront: React.FC<CardFrontProps> = ({ project }) => {
           <CardTitle title={title} />
         </div>
 
-        <CardDescription description={brief} />
+        <CardDescription description={description} isFront={true} />
 
         {keyFeatures.length > 0 && (
           <FeaturesList features={keyFeatures} projectId={id} />

@@ -11,9 +11,14 @@ export const CardTitle: React.FC<{ title: string }> = ({ title }) => (
   </div>
 );
 
-export const CardDescription: React.FC<{ description: string }> = ({
-  description,
-}) => <p className="text-zinc-400 mb-4 line-clamp-2">{description}</p>;
+export const CardDescription: React.FC<{
+  description: string;
+  isFront?: boolean;
+}> = ({ description, isFront }) => (
+  <p className={`text-zinc-400 mb-4 ${isFront && 'line-clamp-2'}`}>
+    {description}
+  </p>
+);
 
 // Front Card Components
 export const CardIcon: React.FC<{

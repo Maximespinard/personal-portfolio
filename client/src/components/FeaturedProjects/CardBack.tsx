@@ -21,12 +21,11 @@ const CardBack: React.FC<CardBackProps> = ({ project }) => {
   const { t } = useLanguage();
   const { id, technologies = [] } = project;
 
-  // We now use translation keys for all project text content
   const title = t(`projects.${id}.title`);
   const description = t(`projects.${id}.description`);
-  const keyFeatures = Array(6).fill(''); // Just need the array length for mapping
-  const insights = Array(3).fill(''); // Just need the array length for mapping
-  const outcomes = Array(3).fill(''); // Just need the array length for mapping
+  const keyFeatures = Array(6).fill('');
+  const insights = Array(3).fill('');
+  const outcomes = Array(3).fill('');
 
   return (
     <motion.div

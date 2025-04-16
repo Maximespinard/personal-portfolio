@@ -120,8 +120,6 @@ export default {
     // Individual Projects by ID
     'car-sharing-platform': {
       title: 'Smart Car-Sharing Platform',
-      brief:
-        'Seamless vehicle booking system with real-time availability checks and integrated payment flows.',
       description:
         'A comprehensive car-sharing solution that optimizes vehicle utilization through intelligent scheduling and routing algorithms. The platform handles everything from user registration and vehicle selection to payments and post-rental feedback.',
       keyFeatures: [
@@ -142,8 +140,8 @@ export default {
         'Reduced operational costs by 25% through automated processes',
         'Customer satisfaction score of 4.8/5 based on post-rental surveys',
       ],
-      duration: '6 months',
-      role: 'Lead Full Stack Developer',
+      duration: '+2 years',
+      role: 'Front end Developer',
     },
     'elearning-ecosystem': {
       title: 'E-Learning Ecosystem',
@@ -153,51 +151,54 @@ export default {
         'A comprehensive learning management system designed for educational institutions to streamline their digital learning offerings. The platform provides a unified interface for administrators, instructors, and students to manage all aspects of online education.',
       keyFeatures: [
         'Intuitive course creation and management dashboard',
-        'Interactive live sessions with recording capabilities',
-        'Automated assignment distribution and grading system',
-        'Progress tracking with detailed analytics',
-        'Virtual classrooms with collaboration tools',
-        'Resource library with search and filtering capabilities',
+        'Automated homework distribution and grading system',
+        'Comprehensive progress tracking with detailed analytics and parent access to grades',
+        'Centralized resource library with upload capabilities for teachers and advanced search/filter options',
+        'Yearly school cursus management with admin tools and student schedule visibility',
       ],
       insights: [
         'Designing for multiple user roles required careful planning of permission systems',
-        'Video streaming optimization was crucial for serving users with varying connection speeds',
+        'Tracking user engagement provided valuable insights for improving the platform experience',
         'Implementing accessibility features from the start was more efficient than retrofitting',
       ],
       outcomes: [
-        'Reduced administrative workload by 35%',
-        'Increased student engagement by 45% compared to previous systems',
-        'Successfully scaled to support 10,000+ concurrent users',
+        '35% reduction in administrative workload',
+        '45% increase in student engagement compared to previous systems',
+        'Improved user satisfaction based on feedback from teachers, parents, and students',
       ],
+
       duration: '8 months',
       role: 'Full Stack Developer & UI/UX Consultant',
     },
     'visual-asset-hub': {
       title: 'Visual Asset Hub',
       brief:
-        'Advanced photo management webapp with AI tagging, batch uploads and smart filtering capabilities.',
+        'Advanced photo management webapp, batch uploads and smart filtering capabilities.',
       description:
-        'A sophisticated digital asset management platform that leverages AI to streamline the organization and discovery of visual content. Built for photographers, marketers, and content creators who need to efficiently manage large collections of images.',
+        'A powerful digital asset management platform built specifically for photographers, marketers, and content creators to efficiently organize, search, and access large collections of photos. Designed to streamline workflows and enhance collaboration.',
+
       keyFeatures: [
-        'AI-powered automatic image tagging and categorization',
-        'Smart search with natural language processing',
-        'Batch upload and editing functionality',
-        'Custom metadata fields and organization system',
-        'Role-based access controls and sharing options',
-        'Integration with Adobe Creative Cloud and other design tools',
+        'Automatic photo tagging and categorization for quick access',
+        'Advanced search functionality with customizable filters and sorting options',
+        'Bulk upload and batch editing tools for streamlined asset management',
+        'Customizable metadata fields to enhance photo organization',
+        'Role-based access controls with secure sharing settings',
+        'Integration with Adobe Creative Cloud and other design tools for seamless editing',
       ],
+
       insights: [
-        'Implementing client-side image processing significantly reduced server load',
-        'Breaking the monolith into microservices improved scalability and maintenance',
-        'Custom caching strategies reduced API calls by 60%',
+        'Client-side image processing helped optimize server load and performance',
+        'Switching to a microservices architecture improved system scalability and ease of updates',
+        'Custom caching strategies reduced API calls by 60%, enhancing platform speed',
       ],
+
       outcomes: [
-        'Average search time reduced from minutes to seconds',
-        'Asset organization time decreased by 75% with AI assistance',
-        'Platform successfully adopted by several major marketing agencies',
+        'Search times reduced from minutes to seconds, speeding up workflow',
+        'Photo organization time decreased by 75% thanks to efficient categorization tools',
+        'Adopted by major photography studios and creative agencies for its performance and ease of use',
       ],
       duration: '10 months',
-      role: 'Backend Developer & AI Integration Specialist',
+      role: 'Full Stack Developer',
     },
     'auto-rental-engine': {
       title: 'Auto Rental Engine',
