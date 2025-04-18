@@ -59,6 +59,10 @@ export default defineConfig({
     hmr: true,
     cors: true,
     strictPort: true,
-    allowedHosts: ['865a-178-197-198-62.ngrok-free.app', 'localhost'],
+    allowedHosts: [
+      '865a-178-197-198-62.ngrok-free.app',
+      'localhost',
+      'http://codebymax-dev.com',
+    ],
   },
 });
