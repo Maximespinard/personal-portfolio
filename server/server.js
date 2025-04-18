@@ -12,16 +12,16 @@ const app = express();
 
 const PORT = process.env.PORT || 3001;
 
-// CORS Configuration - Appliquer en premier pour les préflight requests
+// CORS Configuration - Apply first for preflight requests
 const corsOptions = {
   origin:
     process.env.NODE_ENV === 'production'
-      ? [process.env.CLIENT_URL]
+      ? ['https://codebymax-dev.com']
       : ['http://localhost:3000', 'http://localhost:5173'],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
   credentials: true,
-  maxAge: 86400, // Cache CORS préflight pour 24 heures
+  maxAge: 86400, // Cache CORS preflight for 24 hours
   optionsSuccessStatus: 204,
 };
 
@@ -42,7 +42,7 @@ if (process.env.NODE_ENV === 'production') {
 // Morgan for logging
 app.use(morgan('dev'));
 
-// Rate limiting - protection contre les attaques par force brute et DDoS
+// Rate limiting - protection against brute force attacks and DDoS
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 5, // limit each IP to 5 requests per windowMs
@@ -88,7 +88,17 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Configure for o2switch Passenger
+if (typeof PhusionPassenger !== 'undefined') {
+  PhusionPassenger.configure({ autoInstall: false });
+}
+
+// Start server with Passenger support
+if (typeof PhusionPassenger !== 'undefined') {
+  app.listen('passenger');
+  console.log('Server started with Passenger');
+} else {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
