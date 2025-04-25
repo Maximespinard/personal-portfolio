@@ -4,7 +4,7 @@ import { scrollToTop } from '../../../utils/functions';
 
 const NavDesktopLogo: React.FC = () => {
   return (
-    <span className="basis-2/5 cursor-pointer">
+    <span className="basis-1/4 cursor-pointer">
       <a
         href="#"
         onClick={(e) => {

@@ -10,7 +10,7 @@ const Desktop: React.FC = () => {
     <>
       <div
         ref={navRef}
-        className="fixed w-full top-0 bg-main-background h-20 flex flex-row items-center justify-between px-30 py-5 z-100"
+        className="fixed w-full top-0 bg-main-background h-20 flex flex-row items-center justify-between px-8 py-5 z-100 md:px-[10%]"
       >
         <DesktopLogo />
         <DesktopLinks />

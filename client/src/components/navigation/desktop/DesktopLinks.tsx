@@ -17,7 +17,7 @@ const NavDesktopLinks: React.FC = () => {
   return (
     <>
       {' '}
-      <div className="flex flex-row items-center justify-between w-full basis-3/5 text-base">
+      <div className="flex flex-row items-center justify-center w-full basis-3/4 text-base">
         <ul className="flex flex-row justify-between w-full mr-6 gap-4">
           {navLinks.map((link) => {
             const { sectionId, labelKey } = link;

@@ -24,7 +24,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   // For desktop nav which looks like your screenshot
   if (!isMobile) {
     return (
-      <div className="flex items-center justify-end gap-2">
+      <div className="basis-1/5 flex justify-end">
         <button
           onClick={() => switchToLanguage('fr')}
           className={`${baseButtonClass} ${language === 'fr' ? activeClass : inactiveClass}`}
