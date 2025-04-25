@@ -1,40 +1,21 @@
 import React from 'react';
-import { HoverScale } from '../animations';
-import { scrollToSection } from '../../utils/functions';
 import { useLanguage } from '../../contexts';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
-  const navigation = [
-    { name: t('footer.services'), id: 'services-section' },
-    { name: t('footer.journey'), id: 'career-section' },
-    { name: t('footer.projects'), id: 'projects-section' },
-  ];
 
   return (
     <footer className="bg-gradient-to-br from-[#1a0b2e] to-[#11071f] border-t border-[#2c1250] py-6 mt-16">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col justify-center items-center">
           {/* Copyright and name */}
-          <div className="mb-4 md:mb-0">
-            <p className="text-zinc-400 text-sm">
-              {t('footer.copyright', { year: currentYear })}
-            </p>
-          </div>
-          {/* Navigation */}
-          <div className="flex space-x-6 mb-4 md:mb-0">
-            {navigation.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-zinc-400 hover:text-white transition-colors text-sm cursor-pointer"
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
+          <p className="text-zinc-400 text-sm text-center">
+            {t('footer.copyright', { year: currentYear })}
+          </p>
+
           {/* Social link */}
+          {/* 
           <div>
             <HoverScale scale={1.1}>
               <a
@@ -54,6 +35,7 @@ const Footer: React.FC = () => {
               </a>
             </HoverScale>
           </div>
+          */}
         </div>
       </div>
     </footer>
