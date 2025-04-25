@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3001;
 const corsOptions = {
   origin:
     process.env.NODE_ENV === 'production'
-      ? ['https://codebymax-dev.com']
+      ? ['http://codebymax-dev.com']
       : ['http://localhost:3000', 'http://localhost:5173'],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
