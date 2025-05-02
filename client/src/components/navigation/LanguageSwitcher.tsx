@@ -26,18 +26,18 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     return (
       <div className="basis-1/5 flex justify-end">
         <button
-          onClick={() => switchToLanguage('fr')}
-          className={`${baseButtonClass} ${language === 'fr' ? activeClass : inactiveClass}`}
-          aria-label="Français"
-        >
-          FR
-        </button>
-        <button
           onClick={() => switchToLanguage('en')}
           className={`${baseButtonClass} ${language === 'en' ? activeClass : inactiveClass}`}
           aria-label="English"
         >
           EN
+        </button>
+        <button
+          onClick={() => switchToLanguage('fr')}
+          className={`${baseButtonClass} ${language === 'fr' ? activeClass : inactiveClass}`}
+          aria-label="Français"
+        >
+          FR
         </button>
       </div>
     );

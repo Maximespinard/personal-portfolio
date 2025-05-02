@@ -37,39 +37,45 @@ export default {
     subtitle: 'Transformer les idées en expériences numériques exceptionnelles',
     cta: 'Travaillons ensemble',
 
-    // Services individuels
     ecommerce: {
-      title: 'Solutions E-Commerce',
+      title: 'Site E-Commerce',
       description:
-        'Boutiques en ligne personnalisées avec traitement sécurisé des paiements, gestion des stocks et expériences utilisateurs optimisées pour la conversion.',
+        'Une boutique en ligne performante adaptée à votre image. Responsive, sécurisée et optimisée pour la conversion.',
+      price: 'À partir de 2500€',
       features: [
-        'Passerelles de paiement sécurisées',
-        'Systèmes de suivi des stocks',
-        'Achats optimisés pour mobile',
+        'Design responsive personnalisé',
+        'Paiement sécurisé intégré',
+        "Interface d'administration intuitive",
       ],
+      button: 'Voir un exemple',
     },
+
     portfolio: {
-      title: 'Pages Portfolio & Landing',
+      title: 'Portfolio / Landing Page',
       description:
-        'Sites web magnifiques et à forte conversion, conçus pour mettre en valeur votre travail et transformer les visiteurs en clients.',
+        'Un site élégant et performant pour présenter votre marque, vos compétences, votre produit SaaS ou votre offre de services.',
+      price: 'À partir de 750€',
       features: [
-        'Dispositions optimisées pour la conversion',
-        'Expériences utilisateurs interactives',
-        'Architecture SEO-friendly',
+        'Mise en page claire et responsive',
+        'Structure optimisée pour le SEO',
+        "Appel à l'action clair",
       ],
+      button: 'Voir un exemple',
     },
+
     business: {
       title: "Outils d'affaires personnalisés",
       description:
-        "Applications sur mesure comme des générateurs de factures, des tableaux de bord CRM et des outils d'automatisation des workflows.",
+        'Applications web sur mesure (CRM, tableaux de bord, automatisation de tâches) pour répondre à vos besoins métier.',
+      price: 'À partir de 1750€',
       features: [
-        'Systèmes de gestion des factures',
-        "Tableaux de bord d'administration personnalisés",
-        'Automatisation des workflows',
+        "Dashboards d'administration sur mesure",
+        'Authentification et gestion des rôles',
+        'Automatisation des processus',
       ],
+      button: 'Voir un exemple',
     },
   },
-
   // Section Carrière
   career: {
     title: 'Parcours Professionnel',

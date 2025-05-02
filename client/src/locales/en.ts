@@ -36,36 +36,43 @@ export default {
     subtitle: 'Transforming ideas into exceptional digital experiences',
     cta: "Let's Work Together",
 
-    // Individual Services
     ecommerce: {
-      title: 'E-Commerce Solutions',
+      title: 'E-Commerce Website',
       description:
-        'Custom online stores with secure payment processing, inventory management, and conversion-focused user experiences.',
+        'A high-converting online store tailored to your brand. Fully responsive, secure, and built for performance.',
+      price: 'Starting at €2500',
       features: [
-        'Secure payment gateways',
-        'Inventory tracking systems',
-        'Mobile-optimized shopping',
+        'Custom responsive design',
+        'Integrated secure payments',
+        'Easy-to-use admin panel',
       ],
+      button: 'See Example',
     },
+
     portfolio: {
-      title: 'Portfolio & Landing Pages',
+      title: 'Portfolio / Landing Page',
       description:
-        'Stunning, high-converting websites designed to showcase your work and turn visitors into clients.',
+        'A sleek and high-performing site to showcase your brand, skills, SaaS product, or service offering.',
+      price: 'Starting at €750',
       features: [
-        'Conversion-optimized layouts',
-        'Interactive user experiences',
+        'Clean responsive layout',
         'SEO-friendly architecture',
+        'Clear call-to-action',
       ],
+      button: 'See Example',
     },
+
     business: {
       title: 'Custom Business Tools',
       description:
-        'Tailored applications like invoice generators, CRM dashboards, and workflow automation tools.',
+        'Tailor-made web apps such as dashboards, CRMs, or workflow tools designed to solve real business problems.',
+      price: 'Starting at €1750',
       features: [
-        'Invoice management systems',
         'Custom admin dashboards',
+        'Authentication & user roles',
         'Workflow automation',
       ],
+      button: 'See Example',
     },
   },
 
