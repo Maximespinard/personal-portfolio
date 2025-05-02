@@ -5,6 +5,18 @@ import { ServiceIconName } from '../../types';
 import { useLanguage } from '../../contexts';
 import OptimizedImage from '../shared/OptimizedImage';
 
+// Import the images directly
+import ecommerceImg from '../../assets/ui/ecommerce.webp';
+import portfolioImg from '../../assets/ui/portfolio.webp';
+import businessImg from '../../assets/ui/business.webp';
+
+// Image mapping
+const serviceImages: { [key: string]: string } = {
+  ecommerce: ecommerceImg,
+  portfolio: portfolioImg,
+  business: businessImg,
+};
+
 interface ServiceCardProps {
   serviceId: string;
   icon: ServiceIconName;
@@ -21,6 +33,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ serviceId, icon }) => {
   const price = t(`services.${serviceId}.price`);
   const button = t(`services.${serviceId}.button`);
 
+  // Get the correct image based on serviceId
+  const imageSrc = serviceImages[serviceId] || '';
+
   return (
     <motion.div
       className="h-full"
@@ -36,7 +51,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ serviceId, icon }) => {
             className="h-full w-full"
           >
             <OptimizedImage
-              src={`/src/assets/ui/${serviceId}.webp`}
+              src={imageSrc}
               alt={title}
               className="w-full h-full"
               objectFit="cover"
