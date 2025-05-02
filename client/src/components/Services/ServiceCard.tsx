@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import ServiceIcon from './ServiceIcon';
 import { ServiceIconName } from '../../types';
 import { useLanguage } from '../../contexts';
+import OptimizedImage from '../shared/OptimizedImage';
 
 interface ServiceCardProps {
   serviceId: string;
@@ -27,15 +28,20 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ serviceId, icon }) => {
       transition={{ duration: 0.3 }}
     >
       <div className="relative h-full rounded-xl overflow-hidden group shadow-xl border border-[#2c1250] bg-[#1a0b2e]">
-        {/* Improved image container with hover effect */}
+        {/* Image container with OptimizedImage */}
         <div className="relative h-60 w-full overflow-hidden">
-          <motion.img
-            src={`/src/assets/ui/${serviceId}.webp`}
-            alt={title}
-            className="object-cover w-full h-full"
+          <motion.div
             whileHover={{ scale: 1.08 }}
             transition={{ duration: 0.5 }}
-          />
+            className="h-full w-full"
+          >
+            <OptimizedImage
+              src={`/src/assets/ui/${serviceId}.webp`}
+              alt={title}
+              className="w-full h-full"
+              objectFit="cover"
+            />
+          </motion.div>
           {/* Gradient overlay for better text visibility */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a0b2e] to-transparent opacity-60"></div>
           <span className="absolute top-3 left-3 bg-[#7127ba] text-white text-sm px-3 py-1 rounded-md shadow-sm font-medium">

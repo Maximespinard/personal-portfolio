@@ -4,6 +4,7 @@ import { useLanguage } from '../../contexts';
 import useBreakPoint from '../../hooks/useBreakPoint';
 import { SlideFromLeft, FadeIn, SlideFromRight } from '../animations';
 import ProfileImage from './ProfileImage';
+import OptimizedImage from '../shared/OptimizedImage';
 
 const Introduction: React.FC = () => {
   const { t } = useLanguage();
@@ -38,13 +39,13 @@ const Introduction: React.FC = () => {
                   {t('hero.accent').split(' ')[0]}{' '}
                   {t('hero.accent').split(' ')[1]}
                   <span className="relative inline-flex items-center whitespace-nowrap left-3 top-0.5">
-                    <img
+                    <OptimizedImage
                       src={elipse}
                       alt="Ellipse"
                       className="absolute z-[3] right-9 w-[130px] sm:w-[150px] sm:right-6 md:right-16 h-auto"
-                      width="150"
-                      height="50"
-                      style={{ objectFit: 'contain' }}
+                      width={150}
+                      height={50}
+                      objectFit="contain"
                     />
                     <span className="text-main-purple relative z-10 text-4xl md:text-5xl custom-title-gradient">
                       {t('hero.accent').split(' ')[2]}
