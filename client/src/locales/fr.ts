@@ -53,7 +53,7 @@ export default {
     portfolio: {
       title: 'Portfolio / Landing Page',
       description:
-        'Un site fluide et performant pour présenter votre activité ou vos compétences avec impact.',
+        'Un site élégant et performant pour présenter votre marque, vos compétences, votre produit SaaS ou votre offre de services.',
       price: 'À partir de 750€',
       features: [
         'Mise en page claire et responsive',

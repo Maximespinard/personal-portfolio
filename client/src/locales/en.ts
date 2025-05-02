@@ -52,7 +52,7 @@ export default {
     portfolio: {
       title: 'Portfolio / Landing Page',
       description:
-        'A sleek and high-performing site to showcase your brand, skills, or service offering.',
+        'A sleek and high-performing site to showcase your brand, skills, SaaS product, or service offering.',
       price: 'Starting at €750',
       features: [
         'Clean responsive layout',
