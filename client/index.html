@@ -5,8 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Critical Preloads -->
-    <!-- Fixe pour Lighthouse LCP measurement -->
+    <!-- Critical Preload: Avatar visible in Hero -->
     <link
       rel="preload"
       href="/src/assets/icons/rest/avatar/avatar-medium.webp"
@@ -15,42 +14,13 @@
       fetchpriority="high"
     />
 
-    <!-- Uniquement pour les appareils mobiles -->
-    <link
-      rel="preload"
-      href="/src/assets/icons/rest/avatar/avatar-small.webp"
-      as="image"
-      type="image/webp"
-      fetchpriority="high"
-      media="(max-width: 767px)"
-    />
-
-    <!-- Pour les tablettes -->
-    <link
-      rel="preload"
-      href="/src/assets/icons/rest/avatar/avatar-medium.webp"
-      as="image"
-      type="image/webp"
-      fetchpriority="high"
-      media="(min-width: 768px) and (max-width: 1023px)"
-    />
-
-    <!-- Pour les desktop -->
-    <link
-      rel="preload"
-      href="/src/assets/icons/rest/avatar/avatar-large.webp"
-      as="image"
-      type="image/webp"
-      fetchpriority="high"
-      media="(min-width: 1024px)"
-    />
-
-    <link
+    <!-- REMOVE or move to CSS if not immediately visible -->
+    <!-- <link
       rel="preload"
       href="/src/assets/ui/purple-bg.svg"
       as="image"
       type="image/svg+xml"
-    />
+    /> -->
 
     <!-- Meta Tags -->
     <meta

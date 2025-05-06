@@ -1,5 +1,5 @@
 import React from 'react';
-import elipse from '../../assets/ui/elipse.png';
+import elipse from '../../assets/ui/elipse.webp';
 import { useLanguage } from '../../contexts';
 import useBreakPoint from '../../hooks/useBreakPoint';
 import ProfileImage from './ProfileImage';
@@ -39,6 +39,7 @@ const Introduction: React.FC = () => {
                     width={150}
                     height={50}
                     objectFit="contain"
+                    critical
                   />
                   <span className="text-main-purple relative z-10 text-4xl md:text-5xl custom-title-gradient">
                     {t('hero.accent').split(' ')[2]}

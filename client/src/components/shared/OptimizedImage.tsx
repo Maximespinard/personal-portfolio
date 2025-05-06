@@ -1,4 +1,3 @@
-// src/components/shared/OptimizedImage.tsx
 import React from 'react';
 
 interface OptimizedImageProps {
@@ -8,13 +7,14 @@ interface OptimizedImageProps {
   height?: number | string;
   className?: string;
   priority?: boolean;
+  critical?: boolean; // <- pour les images LCP (hero section)
   rounded?: boolean;
   objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
 }
 
 /**
- * A reusable component that optimizes image loading and rendering
- * It applies best practices for performance and accessibility
+ * A reusable component that optimizes image loading and rendering.
+ * It applies best practices for performance and accessibility.
  */
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
@@ -23,14 +23,12 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   height = 'auto',
   className = '',
   priority = false,
+  critical = false,
   rounded = false,
   objectFit = 'cover',
 }) => {
-  // Determine if this is a critical image that should be prioritized
-  const loadingAttr = priority ? 'eager' : 'lazy';
-  const fetchPriorityAttr = priority ? 'high' : 'auto';
-
-  // Add rounded corners if requested
+  const loadingAttr = critical || priority ? 'eager' : 'lazy';
+  const fetchPriorityAttr = critical || priority ? 'high' : 'auto';
   const roundedClass = rounded ? 'rounded-[9999px]' : '';
 
   return (

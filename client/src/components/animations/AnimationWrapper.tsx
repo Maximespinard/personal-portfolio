@@ -1,8 +1,7 @@
 import React, { ReactNode, lazy, Suspense } from 'react';
 import type { HTMLMotionProps } from 'framer-motion';
 
-// Types
-
+// Define animation types
 type AnimationType =
   | 'fade-in'
   | 'slide-up'
@@ -12,6 +11,7 @@ type AnimationType =
   | 'slide-up-on-scroll'
   | 'hover-scale';
 
+// Define animation props interface
 interface AnimationProps
   extends Omit<
     HTMLMotionProps<'div'>,
@@ -32,12 +32,16 @@ interface AnimationProps
   y?: number;
   x?: number;
 }
-
-// Dynamic import
+// Properly typed lazy loading of motion components
 const LazyMotionDiv = lazy(() =>
   import('framer-motion').then((mod) => ({ default: mod.motion.div }))
 );
 
+const LazyMotionSpan = lazy(() =>
+  import('framer-motion').then((mod) => ({ default: mod.motion.span }))
+);
+
+// Animation props generator
 const getAnimationProps = (
   type: AnimationType,
   options: {
@@ -46,7 +50,7 @@ const getAnimationProps = (
     y?: number;
     x?: number;
   }
-) => {
+): Record<string, unknown> => {
   const { distance = 100, scale = 1.05, y = 50, x = 50 } = options;
 
   switch (type) {
@@ -92,6 +96,7 @@ const getAnimationProps = (
   }
 };
 
+// Main animation wrapper component
 export const AnimationWrapper: React.FC<AnimationProps> = ({
   children,
   type,
@@ -120,25 +125,31 @@ export const AnimationWrapper: React.FC<AnimationProps> = ({
   );
 };
 
-// Convenience components
+// Convenience component exports with proper TypeScript typing
 export const FadeIn: React.FC<Omit<AnimationProps, 'type'>> = (props) => (
   <AnimationWrapper type="fade-in" {...props} />
 );
+
 export const SlideUp: React.FC<Omit<AnimationProps, 'type'>> = (props) => (
   <AnimationWrapper type="slide-up" {...props} />
 );
+
 export const SlideIn: React.FC<Omit<AnimationProps, 'type'>> = (props) => (
   <AnimationWrapper type="slide-in" {...props} />
 );
+
 export const SlideFromLeft: React.FC<Omit<AnimationProps, 'type'>> = (
   props
 ) => <AnimationWrapper type="slide-from-left" {...props} />;
+
 export const SlideFromRight: React.FC<Omit<AnimationProps, 'type'>> = (
   props
 ) => <AnimationWrapper type="slide-from-right" {...props} />;
+
 export const SlideUpOnScroll: React.FC<Omit<AnimationProps, 'type'>> = (
   props
 ) => <AnimationWrapper type="slide-up-on-scroll" {...props} />;
+
 export const HoverScale: React.FC<Omit<AnimationProps, 'type'>> = (props) => (
   <AnimationWrapper type="hover-scale" {...props} />
 );
@@ -150,10 +161,6 @@ export const FadeInSpan: React.FC<Omit<AnimationProps, 'type'>> = ({
   className = '',
   ...props
 }) => {
-  const LazyMotionSpan = lazy(() =>
-    import('framer-motion').then((mod) => ({ default: mod.motion.span }))
-  );
-
   return (
     <Suspense fallback={<span className={className}>{children}</span>}>
       <LazyMotionSpan
