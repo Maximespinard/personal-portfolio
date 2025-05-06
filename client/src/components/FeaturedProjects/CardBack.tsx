@@ -1,6 +1,7 @@
 import React from 'react';
 import { FeaturedProject } from '../../types';
 import { useLanguage } from '../../contexts';
+import { MotionDiv } from '../animations/MotionElement';
 import {
   CardTitle,
   CardDescription,
@@ -11,7 +12,6 @@ import {
   ProjectInsights,
   ProjectOutcomes,
 } from './CardComponents';
-import { MotionDiv } from '../animations/MotionElement';
 
 interface CardBackProps {
   project: FeaturedProject;
