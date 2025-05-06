@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FeaturedProject } from '../../types';
 import { useLanguage } from '../../contexts';
 import {
@@ -10,6 +9,7 @@ import {
   TechnologiesList,
   ViewDetailsButton,
 } from './CardComponents';
+import { MotionDiv } from '../animations/MotionElement';
 
 interface CardFrontProps {
   project: FeaturedProject;
@@ -19,13 +19,12 @@ const CardFront: React.FC<CardFrontProps> = ({ project }) => {
   const { t } = useLanguage();
   const { id, icon, technologies = [] } = project;
 
-  // We now use translation keys for all project text content
   const title = t(`projects.${id}.title`);
   const keyFeatures = Array(6).fill('');
   const description = t(`projects.${id}.description`);
 
   return (
-    <motion.div
+    <MotionDiv
       className="absolute w-full h-full rounded-2xl backface-hidden group overflow-hidden"
       style={{
         backfaceVisibility: 'hidden',
@@ -55,7 +54,7 @@ const CardFront: React.FC<CardFrontProps> = ({ project }) => {
 
         <ViewDetailsButton />
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 };
 

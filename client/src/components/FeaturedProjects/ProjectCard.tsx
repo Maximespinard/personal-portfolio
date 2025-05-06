@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FeaturedProject } from '../../types';
 import { useLanguage } from '../../contexts';
-import { motion } from 'framer-motion';
+import { MotionDiv } from '../animations/MotionElement';
 
 const colorMap: Record<string, string> = {
   'car-sharing-platform': 'from-indigo-700 to-blue-800',
@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
   return (
     <div className="h-full w-full perspective">
-      <motion.div
+      <MotionDiv
         className="relative w-full rounded-2xl preserve-3d cursor-pointer"
         initial={false}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
@@ -42,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         }}
       >
         {/* Front Card */}
-        <motion.div
+        <MotionDiv
           className="absolute w-full h-full rounded-2xl backface-hidden group overflow-hidden"
           style={{
             backfaceVisibility: 'hidden',
@@ -149,10 +149,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               </button>
             </div>
           </div>
-        </motion.div>
+        </MotionDiv>
 
         {/* Back Card */}
-        <motion.div
+        <MotionDiv
           className="absolute w-full h-full rounded-2xl backface-hidden overflow-auto"
           style={{
             backfaceVisibility: 'hidden',
@@ -386,8 +386,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               </div>
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+        </MotionDiv>
+      </MotionDiv>
     </div>
   );
 };

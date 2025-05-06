@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import { MotionDiv, MotionSpan } from './MotionElement';
 
 interface AnimationProps {
   children: ReactNode;
@@ -27,7 +27,7 @@ export const FadeIn: React.FC<AnimationProps> = ({
   className = '',
   ...props
 }) => (
-  <motion.div
+  <MotionDiv
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ duration, delay }}
@@ -35,7 +35,7 @@ export const FadeIn: React.FC<AnimationProps> = ({
     {...props}
   >
     {children}
-  </motion.div>
+  </MotionDiv>
 );
 
 export const FadeInOnScroll: React.FC<AnimationProps> = ({
@@ -45,7 +45,7 @@ export const FadeInOnScroll: React.FC<AnimationProps> = ({
   className = '',
   ...props
 }) => (
-  <motion.div
+  <MotionDiv
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: '-100px' }}
@@ -54,7 +54,7 @@ export const FadeInOnScroll: React.FC<AnimationProps> = ({
     {...props}
   >
     {children}
-  </motion.div>
+  </MotionDiv>
 );
 
 export const SlideUp: React.FC<SlideProps> = ({
@@ -65,7 +65,7 @@ export const SlideUp: React.FC<SlideProps> = ({
   className = '',
   ...props
 }) => (
-  <motion.div
+  <MotionDiv
     initial={{ opacity: 0, y }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration, delay }}
@@ -73,7 +73,7 @@ export const SlideUp: React.FC<SlideProps> = ({
     {...props}
   >
     {children}
-  </motion.div>
+  </MotionDiv>
 );
 
 export const SlideUpOnScroll: React.FC<SlideProps> = ({
@@ -84,7 +84,7 @@ export const SlideUpOnScroll: React.FC<SlideProps> = ({
   className = '',
   ...props
 }) => (
-  <motion.div
+  <MotionDiv
     initial={{ opacity: 0, y }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: '-100px' }}
@@ -93,7 +93,7 @@ export const SlideUpOnScroll: React.FC<SlideProps> = ({
     {...props}
   >
     {children}
-  </motion.div>
+  </MotionDiv>
 );
 
 export const SlideDownOnScroll: React.FC<SlideProps> = ({
@@ -104,7 +104,7 @@ export const SlideDownOnScroll: React.FC<SlideProps> = ({
   className = '',
   ...props
 }) => (
-  <motion.div
+  <MotionDiv
     initial={{ opacity: 0, y: -y }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: '-100px' }}
@@ -113,7 +113,7 @@ export const SlideDownOnScroll: React.FC<SlideProps> = ({
     {...props}
   >
     {children}
-  </motion.div>
+  </MotionDiv>
 );
 
 export const SlideIn: React.FC<SlideInProps> = ({
@@ -124,7 +124,7 @@ export const SlideIn: React.FC<SlideInProps> = ({
   className = '',
   ...props
 }) => (
-  <motion.div
+  <MotionDiv
     initial={{ opacity: 0, x }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration, delay }}
@@ -132,7 +132,7 @@ export const SlideIn: React.FC<SlideInProps> = ({
     {...props}
   >
     {children}
-  </motion.div>
+  </MotionDiv>
 );
 
 export const HoverScale: React.FC<HoverProps> = ({
@@ -142,14 +142,14 @@ export const HoverScale: React.FC<HoverProps> = ({
   className = '',
   ...props
 }) => (
-  <motion.div
+  <MotionDiv
     whileHover={{ scale }}
     transition={{ duration }}
     className={className}
     {...props}
   >
     {children}
-  </motion.div>
+  </MotionDiv>
 );
 
 export const FadeInSpan: React.FC<AnimationProps> = ({
@@ -159,7 +159,7 @@ export const FadeInSpan: React.FC<AnimationProps> = ({
   className = '',
   ...props
 }) => (
-  <motion.span
+  <MotionSpan
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ duration, delay }}
@@ -167,5 +167,5 @@ export const FadeInSpan: React.FC<AnimationProps> = ({
     {...props}
   >
     {children}
-  </motion.span>
+  </MotionSpan>
 );
