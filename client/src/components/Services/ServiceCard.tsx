@@ -1,9 +1,21 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import ServiceIcon from './ServiceIcon';
 import { ServiceIconName } from '../../types';
 import { useLanguage } from '../../contexts';
 import OptimizedImage from '../shared/OptimizedImage';
+import { MotionDiv, MotionButton } from '../animations/MotionElement';
+
+// Import the images directly
+import ecommerceImg from '../../assets/ui/ecommerce.webp';
+import portfolioImg from '../../assets/ui/portfolio.webp';
+import businessImg from '../../assets/ui/business.webp';
+
+// Image mapping
+const serviceImages: { [key: string]: string } = {
+  ecommerce: ecommerceImg,
+  portfolio: portfolioImg,
+  business: businessImg,
+};
 
 interface ServiceCardProps {
   serviceId: string;
@@ -21,8 +33,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ serviceId, icon }) => {
   const price = t(`services.${serviceId}.price`);
   const button = t(`services.${serviceId}.button`);
 
+  // Get the correct image based on serviceId
+  const imageSrc = serviceImages[serviceId] || '';
+
   return (
-    <motion.div
+    <MotionDiv
       className="h-full"
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ duration: 0.3 }}
@@ -30,18 +45,18 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ serviceId, icon }) => {
       <div className="relative h-full rounded-xl overflow-hidden group shadow-xl border border-[#2c1250] bg-[#1a0b2e]">
         {/* Image container with OptimizedImage */}
         <div className="relative h-60 w-full overflow-hidden">
-          <motion.div
+          <MotionDiv
             whileHover={{ scale: 1.08 }}
             transition={{ duration: 0.5 }}
             className="h-full w-full"
           >
             <OptimizedImage
-              src={`/src/assets/ui/${serviceId}.webp`}
+              src={imageSrc}
               alt={title}
               className="w-full h-full"
               objectFit="cover"
             />
-          </motion.div>
+          </MotionDiv>
           {/* Gradient overlay for better text visibility */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a0b2e] to-transparent opacity-60"></div>
           <span className="absolute top-3 left-3 bg-[#7127ba] text-white text-sm px-3 py-1 rounded-md shadow-sm font-medium">
@@ -85,16 +100,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ serviceId, icon }) => {
           </ul>
 
           {/* CTA Button with hover effects */}
-          <motion.button
+          <MotionButton
             className="mt-auto w-full px-4 py-3 rounded-lg bg-gradient-to-r from-[#7127ba] to-[#4f228d] text-white font-medium shadow-md border border-[#693b93]"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
             {button}
-          </motion.button>
+          </MotionButton>
         </div>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 };
 

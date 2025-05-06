@@ -6,12 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Critical Preloads -->
+    <!-- Fixe pour Lighthouse LCP measurement -->
     <link
       rel="preload"
-      href="/src/assets/icons/rest/me-icon.webp"
+      href="/src/assets/icons/rest/avatar/avatar-medium.webp"
       as="image"
       type="image/webp"
       fetchpriority="high"
+    />
+
+    <!-- Uniquement pour les appareils mobiles -->
+    <link
+      rel="preload"
+      href="/src/assets/icons/rest/avatar/avatar-small.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+      media="(max-width: 767px)"
+    />
+
+    <!-- Pour les tablettes -->
+    <link
+      rel="preload"
+      href="/src/assets/icons/rest/avatar/avatar-medium.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+      media="(min-width: 768px) and (max-width: 1023px)"
+    />
+
+    <!-- Pour les desktop -->
+    <link
+      rel="preload"
+      href="/src/assets/icons/rest/avatar/avatar-large.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+      media="(min-width: 1024px)"
     />
 
     <link

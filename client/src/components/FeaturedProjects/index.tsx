@@ -3,7 +3,7 @@ import { FeaturedProject } from '../../types';
 import { featuredProjects as defaultProjects } from '../../utils/data';
 import { useLanguage } from '../../contexts';
 
-import { SlideUpOnScroll, FadeIn } from '../animations';
+import { SlideUpOnScroll, FadeIn, SlideFromRight } from '../animations';
 import ProjectsScrollContainer from './ProjectsScrollContainer';
 
 interface FeaturedProjectsProps {
@@ -29,10 +29,12 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
         </FadeIn>
       </SlideUpOnScroll>
       <div className="relative max-w-full mx-auto">
-        <ProjectsScrollContainer
-          scrollContainerRef={scrollContainerRef}
-          projects={projects}
-        />
+        <SlideFromRight>
+          <ProjectsScrollContainer
+            scrollContainerRef={scrollContainerRef}
+            projects={projects}
+          />
+        </SlideFromRight>
       </div>
     </section>
   );

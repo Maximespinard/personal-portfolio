@@ -1,7 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FeaturedProject } from '../../types';
 import { useLanguage } from '../../contexts';
+import { MotionDiv } from '../animations/MotionElement';
 import {
   CardTitle,
   CardDescription,
@@ -28,7 +28,7 @@ const CardBack: React.FC<CardBackProps> = ({ project }) => {
   const outcomes = Array(3).fill('');
 
   return (
-    <motion.div
+    <MotionDiv
       className="absolute w-full h-full rounded-2xl backface-hidden overflow-auto"
       style={{
         backfaceVisibility: 'hidden',
@@ -65,7 +65,7 @@ const CardBack: React.FC<CardBackProps> = ({ project }) => {
           <ProjectMetadata projectId={id} duration="duration" role="role" />
         </div>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 };
 

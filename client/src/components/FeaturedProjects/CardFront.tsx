@@ -1,7 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FeaturedProject } from '../../types';
 import { useLanguage } from '../../contexts';
+import { MotionDiv } from '../animations/MotionElement';
 import {
   CardIcon,
   CardTitle,
@@ -25,8 +25,9 @@ const CardFront: React.FC<CardFrontProps> = ({ project }) => {
   const description = t(`projects.${id}.description`);
 
   return (
-    <motion.div
+    <MotionDiv
       className="absolute w-full h-full rounded-2xl backface-hidden group overflow-hidden"
+      transition={{ duration: 0.3 }}
       style={{
         backfaceVisibility: 'hidden',
         WebkitBackfaceVisibility: 'hidden',
@@ -55,7 +56,7 @@ const CardFront: React.FC<CardFrontProps> = ({ project }) => {
 
         <ViewDetailsButton />
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 };
 

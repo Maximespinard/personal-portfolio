@@ -1,51 +1,55 @@
 // src/components/shared/ProfileImage.tsx
 import React from 'react';
 import OptimizedImage from '../shared/OptimizedImage';
-import meIcon from '../../assets/icons/rest/me-icon.webp';
+import useBreakPoint from '../../hooks/useBreakPoint';
+
+// Import all avatar sizes
+import avatarSmall from '../../assets/icons/rest/avatar/avatar-small.webp';
+import avatarMedium from '../../assets/icons/rest/avatar/avatar-medium.webp';
+import avatarLarge from '../../assets/icons/rest/avatar/avatar-large.webp';
 
 interface ProfileImageProps {
   className?: string;
   alt?: string;
   size?: 'small' | 'medium' | 'large';
+  useResponsive?: boolean;
 }
 
-/**
- * Profile image component that uses the OptimizedImage component with
- * appropriate settings for the profile image
- */
 const ProfileImage: React.FC<ProfileImageProps> = ({
   className = '',
   alt = 'Maxime Spinard',
   size = 'medium',
+  useResponsive = false,
 }) => {
-  // Size mapping for different profile image sizes
-  const sizeMap = {
-    small: {
-      width: 120,
-      height: 120,
-      className: 'min-w-[120px] max-w-[120px]',
-    },
-    medium: {
-      width: 180,
-      height: 180,
-      className: 'min-w-[180px] max-w-[180px]',
-    },
-    large: {
-      width: 250,
-      height: 250,
-      className: 'min-w-[250px] max-w-[250px]',
-    },
+  const { isMobile, isMinTablet } = useBreakPoint();
+
+  // Image source and dimensions based on size prop or responsive breakpoints
+  const getImageDetails = () => {
+    if (useResponsive) {
+      if (isMobile) return { src: avatarSmall, width: 120, height: 120 };
+      if (isMinTablet) return { src: avatarMedium, width: 180, height: 180 };
+      return { src: avatarLarge, width: 250, height: 250 };
+    }
+
+    // Non-responsive mode using the size prop
+    const sizeMap = {
+      small: { src: avatarSmall, width: 120, height: 120 },
+      medium: { src: avatarMedium, width: 180, height: 180 },
+      large: { src: avatarLarge, width: 250, height: 250 },
+    };
+
+    return sizeMap[size];
   };
 
-  const { width, height, className: sizeClassName } = sizeMap[size];
+  const { src, width, height } = getImageDetails();
 
   return (
     <OptimizedImage
-      src={meIcon}
+      src={src}
       alt={alt}
       width={width}
       height={height}
-      className={`${sizeClassName} ${className}`}
+      className={className}
       priority={true}
       rounded={true}
     />
