@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import PurpleBg from '../../assets/ui/purple-bg.svg';
-import { FadeIn } from '../animations';
 import useNavHeight from '../../hooks/useNavHeight';
 import useBreakPoint from '../../hooks/useBreakPoint';
 import Introduction from './Introduction';
@@ -29,9 +28,9 @@ const Hero = () => {
 
   return (
     <div className="relative" style={heroStyle}>
-      <FadeIn className="absolute inset-0 top-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 top-0 z-0 pointer-events-none">
         <PurpleBg className="w-full h-full" />
-      </FadeIn>
+      </div>
 
       {/* Content positioned relative to appear above the background */}
       <div className="relative flex flex-col justify-center z-10 h-full md:gap-10 md:mb-[3%]">

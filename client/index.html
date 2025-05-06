@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Critical Preloads -->
+    <!-- Fixe pour Lighthouse LCP measurement -->
+    <link
+      rel="preload"
+      href="/src/assets/icons/rest/avatar/avatar-medium.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+    />
+
     <!-- Uniquement pour les appareils mobiles -->
     <link
       rel="preload"
